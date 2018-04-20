@@ -2,7 +2,7 @@ CREATE TABLE utente (
   id         int4 NOT NULL, 
   patologias text, 
   medicacao  text, 
-  prof_saude int4, 
+  prof_saude int4 NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE logs (
   id         SERIAL NOT NULL, 
@@ -40,6 +40,7 @@ CREATE TABLE episodio_dor (
   intensidade int4 NOT NULL, 
   tipo        int4 NOT NULL, 
   utente      int4 NOT NULL, 
+  concluido   bool NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE tipo (
   id   int4 NOT NULL, 
@@ -65,11 +66,14 @@ CREATE TABLE Profissional_Saude (
   id int4 NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE treino (
-  id         SERIAL NOT NULL, 
-  data       date NOT NULL, 
-  descricao  varchar(255) NOT NULL, 
-  prof_saude int4 NOT NULL, 
-  utente     int4 NOT NULL, 
+  id           SERIAL NOT NULL, 
+  data_criacao date NOT NULL, 
+  data_inicio  date NOT NULL, 
+  data_fim     date NOT NULL, 
+  descricao    varchar(255) NOT NULL, 
+  prof_saude   int4 NOT NULL, 
+  utente       int4 NOT NULL, 
+  concluido    bool NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE utilizador (
   id              SERIAL NOT NULL, 
@@ -87,6 +91,24 @@ CREATE TABLE utilizador (
   data_registo    date NOT NULL, 
   data_login      date, 
   PRIMARY KEY (id));
+CREATE TABLE consultas (
+  id         SERIAL NOT NULL, 
+  data       date NOT NULL, 
+  prof_saude int4 NOT NULL, 
+  utente     int4 NOT NULL, 
+  notas      text, 
+  PRIMARY KEY (id));
+CREATE TABLE Video (
+  id        SERIAL NOT NULL, 
+  autor     int4 NOT NULL, 
+  url       varchar(255) NOT NULL, 
+  descricao varchar(255), 
+  PRIMARY KEY (id));
+CREATE TABLE Video_categoria (
+  Videoid     int4 NOT NULL, 
+  categoriaid int4 NOT NULL, 
+  PRIMARY KEY (Videoid, 
+  categoriaid));
 ALTER TABLE utente ADD CONSTRAINT FKutente662518 FOREIGN KEY (id) REFERENCES utilizador (id);
 ALTER TABLE utilizador ADD CONSTRAINT FKutilizador782488 FOREIGN KEY (role) REFERENCES role (id);
 ALTER TABLE artigo_categoria ADD CONSTRAINT FKartigo_cat204593 FOREIGN KEY (artigoid) REFERENCES artigo (id);
@@ -96,7 +118,6 @@ ALTER TABLE episodio_dor ADD CONSTRAINT FKepisodio_d549683 FOREIGN KEY (tipo) RE
 ALTER TABLE episodio_dor ADD CONSTRAINT FKepisodio_d630886 FOREIGN KEY (intensidade) REFERENCES intensidade (id);
 ALTER TABLE episodio_dor ADD CONSTRAINT FKepisodio_d918555 FOREIGN KEY (zona) REFERENCES zona (id);
 ALTER TABLE artigo ADD CONSTRAINT FKartigo676544 FOREIGN KEY (autor) REFERENCES Profissional_Saude (id);
-ALTER TABLE utente ADD CONSTRAINT FKutente432380 FOREIGN KEY (prof_saude) REFERENCES Profissional_Saude (id);
 ALTER TABLE treino ADD CONSTRAINT FKtreino913584 FOREIGN KEY (prof_saude) REFERENCES Profissional_Saude (id);
 ALTER TABLE treino ADD CONSTRAINT FKtreino161551 FOREIGN KEY (utente) REFERENCES utente (id);
 ALTER TABLE zona ADD CONSTRAINT FKzona596722 FOREIGN KEY (id) REFERENCES categoria (id);
@@ -105,3 +126,9 @@ ALTER TABLE tipo ADD CONSTRAINT FKtipo412286 FOREIGN KEY (id) REFERENCES categor
 ALTER TABLE Profissional_Saude ADD CONSTRAINT FKProfission960750 FOREIGN KEY (id) REFERENCES utilizador (id);
 ALTER TABLE mensagem ADD CONSTRAINT FKmensagem76278 FOREIGN KEY (destino) REFERENCES utilizador (id);
 ALTER TABLE mensagem ADD CONSTRAINT FKmensagem908651 FOREIGN KEY (origem) REFERENCES utilizador (id);
+ALTER TABLE utente ADD CONSTRAINT FKutente432380 FOREIGN KEY (prof_saude) REFERENCES Profissional_Saude (id);
+ALTER TABLE consultas ADD CONSTRAINT FKconsultas342457 FOREIGN KEY (prof_saude) REFERENCES Profissional_Saude (id);
+ALTER TABLE consultas ADD CONSTRAINT FKconsultas238912 FOREIGN KEY (utente) REFERENCES utente (id);
+ALTER TABLE Video ADD CONSTRAINT FKVideo73440 FOREIGN KEY (autor) REFERENCES Profissional_Saude (id);
+ALTER TABLE Video_categoria ADD CONSTRAINT FKVideo_cate227648 FOREIGN KEY (Videoid) REFERENCES Video (id);
+ALTER TABLE Video_categoria ADD CONSTRAINT FKVideo_cate290999 FOREIGN KEY (categoriaid) REFERENCES categoria (id);
