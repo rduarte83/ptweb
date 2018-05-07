@@ -1,0 +1,24 @@
+.navbarDropdownLogin{
+    width: 300px !important;
+    margin-left: -225px;
+    padding:20px;
+    padding-top:10px;
+}
+
+.cardview{
+    margin-top:50px;
+}
+
+.tagsTop{
+    margin-top:70px;
+    padding:20px;
+    
+}
+
+.tagsTop > div > a {
+    margin-right:5px;
+}
+
+.tagsTop > div > a:first-child {
+    margin-left:10px;
+}

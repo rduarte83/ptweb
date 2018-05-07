@@ -1,0 +1,41 @@
+.profSaude{
+    margin-left: 20px;
+    color: white;
+}
+
+.menu{
+    height: 250px;
+    background-color: grey;
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.menu:first-child{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menu > h2 {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+
+.menu-row{
+    margin-top: 100px;
+}
+
+.tamIcon{
+    margin:auto;
+    font-size: 140px;
+    color: white;
+    
+}
+
+.topPadding{
+    position: absolute;
+    z-index: 10000;
+    margin-top: 10px;
+}
