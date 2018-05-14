@@ -20,7 +20,8 @@ class Artigos
 
     public function listaArtigos()
     {
-        $db = $GLOBALS["DB"];
+        $db = new Database();
+        $db = $db->db;
         
         $sql = "SELECT * FROM artigo";
 
@@ -29,7 +30,6 @@ class Artigos
         $result = $stmt->fetchAll();
 
         var_dump($result);
-        return $lista;
     }
 
 }

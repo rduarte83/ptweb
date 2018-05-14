@@ -20,7 +20,7 @@ class Database extends PDO
         $this->password = "8%23wK988Z";
         $this->port = "5432";
 
-        $this->db = new PDO("pgsql:host=$this->hostname;dbname=$this->database;port=$this->port;charset=utf8", $this->username, $this->password);
+        $this->db = new PDO("pgsql:host=$this->hostname;dbname=$this->database;port=$this->port;", $this->username, $this->password);
 
         $GLOBALS["DB"]=$this->db;
     }
