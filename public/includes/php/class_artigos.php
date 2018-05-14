@@ -1,6 +1,10 @@
 <?php
+require_once("class_database.php");
 
-class artigos
+$art = new Artigos();
+$art->listaArtigos();
+
+class Artigos
 {
 
     private $lista = [ 
@@ -16,10 +20,15 @@ class artigos
 
     public function listaArtigos()
     {
-        $GLOBALS[""];
+        $db = $GLOBALS["DB"];
         
+        $sql = "SELECT * FROM artigo";
 
-    
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+
+        var_dump($result);
         return $lista;
     }
 

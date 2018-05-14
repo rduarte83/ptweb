@@ -12,7 +12,7 @@ class Database extends PDO
     protected $password;
     protected $port;
 
-    public function Database()
+    public function __construct()
     {
         $this->database = "ptaw-gr4-2018";
         $this->hostname = "estga-dev.clients.ua.pt";
