@@ -43,16 +43,29 @@
     
 }
 
-
 /* ADMIN CLASSES */
 .dropdown-container {
-    position: absolute;
-    left:0;
-    right:0;
-    background-color: #262626;
-    padding: 10px;
+    display:none;
+    background-color: #262826;
+    padding:0;
 }
 
+.dropdown-container > ul > li {
+    padding: 0;
+    margin:0;
+    font-size: 1.2em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    list-style-type: none;
+}
+
+.dropdown-container > ul > li:hover{
+    background-color: gray;
+}
+
+a{
+    style: none;
+}
 
 @media only screen and (max-width: 600px) {
     

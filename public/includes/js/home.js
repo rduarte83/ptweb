@@ -4,7 +4,11 @@
 $(document).ready(function(){
 
     
-    $("#openDropDown").click(function(){
-        $(".dropdown-container").slideToggle( "slow" );
+    $("#openDropDownPacientes").click(function(){
+        $("div[class='dropdown-container Pacientes']").slideToggle( "slow" );
+    });
+
+    $("#openDropDownNoticias").click(function(){
+        $("div[class='dropdown-container Noticias']").slideToggle( "slow" );
     });
 });
