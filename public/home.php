@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION["tipo"]="admin";
+    $_SESSION["tipo"]="profissional";
     if( !isset($_SESSION)){
         header ( "location: index.php" ); 
     }
@@ -24,7 +24,7 @@
                 case "paciente":
                     require_once("modules/home/home_paciente.php");
                     break;
-                case "profS":
+                case "profissional":
                     require_once("modules/home/home_profissional.php");
                     break;
                 case "admin":
