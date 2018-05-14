@@ -30,18 +30,31 @@
                     {
                 ?>
                     <li class="nav-item">
-                        <a id="openDropDown" class="nav-link" href="#">
+                        <a id="openDropDownPacientes" class="nav-link" href="#">
                             <i class="fas fa-users"></i>
-                            Utilizadores Gays
+                            Pacientes
                             <i class="fa fa-caret-down"></i>
                         </a>
-                        <div class="dropdown-container">
+                        <div class="dropdown-container Pacientes">
                             <ul>
-                                <li><a href="#">Adicionar Utilizador</a></li>
-                                <li><a href="#">Cenas Gays</a></li>
+                                <li><a href="#">Tratamentos</a></li>
+                                <li><a href="#">Informações</a></li>
                             </ul>                     
-                        </div>                
-                        </li>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a id="openDropDownNoticias" class="nav-link" href="#">
+                            <i class="fas fa-users"></i>
+                            Notícias
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-container Noticias">
+                            <ul>
+                                <li><a href="#">Adicionar</a></li>
+                                <li><a href="#">Editar</a></li>
+                            </ul>                     
+                        </div>  
+                    </li>
                 <?php
                     }
                 ?>
