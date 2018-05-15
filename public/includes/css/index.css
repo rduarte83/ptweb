@@ -1,6 +1,24 @@
 body{
     background-color: #E6E3D4;
+    
 }
+
+.background-img {
+    
+    position: fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    
+    z-index: -1;
+    background-image: url("../img/idoso-2.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .navbarDropdownLogin{
     width: 300px !important;
     margin-left: -225px;
@@ -15,15 +33,18 @@ body{
 .tagsTop{
     margin-top:170px;
     padding:20px;
+    text-align: center;
     
 }
 
 .tagsTop > div > a {
+    border-radius: 25px;
+    margin-top:10px;
     margin-right:5px;
 }
 
-.tagsTop > div > a:first-child {
-    margin-left:10px;
+.tagsTop > div {
+    margin:auto;
 }
 
 .topText{
@@ -62,4 +83,9 @@ body{
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 1s, opacity 1s linear;
+}
+
+
+@media only screen and (max-width: 600px) {
+    
 }
