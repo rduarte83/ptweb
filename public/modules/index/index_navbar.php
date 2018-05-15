@@ -1,8 +1,9 @@
 <div class="row">
-    <nav class="navbar fixed-top navbar-expand-lg topText corTop">
-        <h1>DorLogo</h1>
+    <nav  class="navbar navbar-expand-lg topText corTop">
+        <div id="img-backtop"><h1>DorLogo</h1></div>
     </nav>
-</div>
+</div
+
 <div class="row">
     <nav id="navTop" class="navbar fixed-top navbar-expand-lg navbar-dark topPadding corTop">
         <a id="logoDor" class="navbar-brand" href="#">DorLogo</a>
@@ -19,6 +20,12 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <?php
+                        require_once("includes/php/class_artigos.php");
+                        $art = new Artigos();
+                        $lista = $art->listaCategorias();
+                        foreach($lista as $elem){
+                            echo "<a class='dropdown-item' href='#'>$elem</a>";
+                        }
                         /*  HERE PHP TO GET ALL CATEGORIES */
                         /*
                         <a class="dropdown-item" href="#">Action</a>

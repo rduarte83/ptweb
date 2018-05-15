@@ -1,13 +1,14 @@
 $(document).ready(function(){
     var scrollDown = false;
-    var lastScrollTop = 0;
+    var lastScrollTop = 10;
     $(window).scroll(function(event){
         var st = $(this).scrollTop();
         if (st > lastScrollTop){
             // downscroll code
             if(!scrollDown){
-                $(".topText").animate({"margin-top": "-100px"},510);
+                $(".topText").animate({"margin-top": "-200px"},510);
                 $("#navTop").animate({"margin-top": "0px"},500);
+                $("#logoDor").show();
                 scrollDown = true;
             }
                 
@@ -16,12 +17,10 @@ $(document).ready(function(){
             // upscroll code
             if( st <= 1){
                 $(".topText").animate({"margin-top": "0px"},500);
-                $("#navTop").animate({"margin-top": "100px"},550);
+                $("#navTop").animate({"margin-top": "300px"},550);
+                $("#logoDor").hide();
                 scrollDown = false;
-                
-            }
-            
-           
+            }           
         }
         lastScrollTop = st;
     });

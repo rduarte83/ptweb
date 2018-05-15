@@ -12,6 +12,7 @@
 
     <div class="background-img "></div>
     <div class="container-fluid">
+    
         <?php require_once("modules/index/index_navbar.php"); ?>
         
         <?php require_once("modules/index/index_tags.php"); ?>
