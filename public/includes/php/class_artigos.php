@@ -1,9 +1,6 @@
 <?php
 require_once("class_database.php");
 
-$art = new Artigos();
-$art->listaArtigos();
-
 class Artigos
 {
 
@@ -23,13 +20,13 @@ class Artigos
         $db = new Database();
         $db = $db->db;
         
-        $sql = "SELECT * FROM artigo";
+        $sql = "SELECT * FROM vw_artigo";
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
 
-        var_dump($result);
+        return ($result);
     }
 
     public function listaCategorias()
@@ -37,13 +34,13 @@ class Artigos
         $db = new Database();
         $db = $db->db;
         
-        $sql = "SELECT * FROM artigo";
+        $sql = "SELECT DISTINCT nome_expressao, nome_zona FROM vw_categoria";
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
 
-        var_dump($result);
+        return ($result);
     }
 
 }
