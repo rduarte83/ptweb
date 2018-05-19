@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION["tipo"]="profissional";
+    $_SESSION["tipo"]="paciente";
     if( !isset($_SESSION)){
         header ( "location: index.php" ); 
     }

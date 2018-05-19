@@ -23,7 +23,7 @@ $xx = "
                     <!-- POST DAY -->
                     <div class='mb-1 text-muted'>".$elem["data_criacao"]."</div>
                     <!-- CONTENT -->
-                    <p class='card-text mb-auto'>".$elem["conteudo"]."</p>
+                    <p class='card-text mb-auto'>".$artigo->limit_text($elem["conteudo"],80)."</p>
                     <a href='#'>Continue reading</a>
                 </div>
             </div>

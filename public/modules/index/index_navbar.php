@@ -24,7 +24,7 @@
                         $art = new Artigos();
                         $lista = $art->listaCategorias();
                         foreach($lista as $elem){
-                            echo "<a class='dropdown-item' href='#'>".$elem['nome_zona']."</a>";
+                            echo "<a class='dropdown-item' href='#'>".$elem['cat']."</a>";
                         }
                         /*  HERE PHP TO GET ALL CATEGORIES */
                         /*
