@@ -1,14 +1,17 @@
 /* ADMIN */
 
 
-$(document).ready(function(){
-
-    
-    $("#openDropDownPacientes").click(function(){
-        $("div[class='dropdown-container Pacientes']").slideToggle( "slow" );
+$(document).ready(function()
+{
+    $("#openDropDownUtentes").click(function(){
+        $("div[class='dropdown-container Utentes']").slideToggle( "fast" );
     });
 
-    $("#openDropDownNoticias").click(function(){
-        $("div[class='dropdown-container Noticias']").slideToggle( "slow" );
+    $("#openDropDownArtigos").click(function(){
+        $("div[class='dropdown-container Artigos']").slideToggle( "fast" );
+    });
+
+    $("#openDropDownVideos").click(function(){
+        $("div[class='dropdown-container Videos']").slideToggle( "fast" );
     });
 });
