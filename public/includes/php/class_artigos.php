@@ -48,14 +48,14 @@ class Artigos
         }
 
         // Query nome_zona
-        $sql = "SELECT DISTINCT nome_zona FROM vw_categoria";
+        $sql = "SELECT DISTINCT nome_zona, id_zona FROM vw_categoria";
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ( $result as $item ) {
-            array_push($this->listaCat, ["cat" => $item["nome_zona"]]);
+            array_push($this->listaCat, ["id" => $item["id"],"cat" => $item["nome_zona"]]);
         }
 
         return ($this->listaCat);

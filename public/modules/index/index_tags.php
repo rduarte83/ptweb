@@ -6,7 +6,7 @@
             $tags = new Artigos();
             foreach($tags->listaCategorias() as $tag){
                 
-                echo "<a class='btn btn-primary btn-sm' href='#' role='button'>" .$tag['cat']."</a>";
+                echo "<a class='btn btn-primary btn-sm' href='#' role='button' tag-id='".$tag["id"]."'>" .$tag['cat']."</a>";
             }
         ?>
     </div>
