@@ -1,7 +1,7 @@
 ﻿--DROP EXTENSION pgcrypto;
 --DROP TRIGGER t_password ON utilizador;
 
-CREATE EXTENSION pgcrypto;
+--CREATE EXTENSION pgcrypto;
 
 --Autenticação - devolve true se password validacao
 --SELECT password = crypt('entered password', password) FROM utilizador; 
@@ -18,10 +18,3 @@ $$ LANGUAGE plpgsql SECURITY DEFINER;
 CREATE TRIGGER t_password
 BEFORE INSERT OR UPDATE OF password ON utilizador
 FOR EACH ROW EXECUTE PROCEDURE f_password();
-
-
-/*
- TODO inserts dor-intensidade dor-expressões dor-local???
- inserts roles
-inserts 1 prof saude 1 utente 1 admin
-*/
