@@ -21,10 +21,14 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <?php
                         require_once("includes/php/class_artigos.php");
-                        $art = new Artigos();
-                        $lista = $art->listaCategorias();
-                        foreach($lista as $elem){
-                            echo "<a class='dropdown-item' href='#'>".$elem['cat']."</a>";
+                        try {
+                            $art = new Artigos();
+                            $lista = $art->listaCategorias();
+                            foreach($lista as $elem){
+                                echo "<a class='dropdown-item' href='#'>".$elem['cat']."</a>";
+                            }
+                        }catch(Exception $e){
+                            var_dump($e);
                         }
                         /*  HERE PHP TO GET ALL CATEGORIES */
                         /*

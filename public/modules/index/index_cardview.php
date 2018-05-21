@@ -6,7 +6,7 @@ require_once("includes/php/class_artigos.php");
 $artigo = new Artigos();
 
 foreach($artigo->listaArtigos() as $elem){
-    foreach ($artigo->listaCategoriasID($elem["id"])as $cat){
+    //foreach ($artigo->listaCategoriasID($elem["id"])as $cat){
 
     
     $xx = "
@@ -34,7 +34,7 @@ foreach($artigo->listaArtigos() as $elem){
         </div>
     ";
     echo $xx;
-    }
+    //}
 }
 
 
