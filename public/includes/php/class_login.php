@@ -11,12 +11,13 @@ class Login
 {
     public function __contruct($email, $pwd)
     {
+        //New
         $gestor = new Database();
-        $parametros = [
+        $email_array = [
             ':email'    => $email
         ];
         verifyData($email);
-        $dados = $gestor->EXE_QUERY('SELECT * FROM vw_utilizadores WHERE mail = :email',$parametros);
+        $dados = $gestor->EXE_QUERY('SELECT * FROM vw_utilizadores WHERE mail = :email',$email_array);
 
         $id = $dados[0]['id'];
 
@@ -60,7 +61,4 @@ class Login
             exit();
         }
     }
-
-
-
 }

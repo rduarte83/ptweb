@@ -13,11 +13,13 @@ class Database extends PDO
 
     public function __construct()
     {
-        $this->database = "ptaw-gr4-2018";
-        $this->hostname = "estga-dev.clients.ua.pt";
-        $this->username = "ptaw-gr4-2018";
-        $this->password = "8%23wK988Z";
-        $this->port = "5432";
+        $configs = include('config.php');
+
+        $this->hostname = $configs['BD_HOST'];
+        $this->database = $configs['BD_DATABASE'];
+        $this->username = $configs['BD_USERNAME'];
+        $this->password = $configs['BD_PASSWORD'];
+        $this->port = $configs['BD_PORT'];
 
         $this->db = new PDO("pgsql:host=$this->hostname;dbname=$this->database;port=$this->port;", $this->username, $this->password);
 
