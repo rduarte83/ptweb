@@ -19,6 +19,4 @@ return [
     
     //endereço base
     'BASE_URL'          =>''
-]   
-
-?>
+];

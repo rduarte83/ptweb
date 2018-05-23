@@ -1,11 +1,8 @@
-﻿--DROP EXTENSION pgcrypto;
---DROP TRIGGER t_password ON utilizador;
-
---CREATE EXTENSION pgcrypto;
+﻿--DROP TRIGGER t_password ON utilizador;
+--DROP TRIGGER t_profSaude ON utilizador;
 
 --Autenticação - devolve true se password validacao
 --SELECT password = crypt('entered password', password) FROM utilizador; 
-
 
 --Trigger para encriptar a password
 CREATE OR REPLACE FUNCTION f_password() RETURNS trigger AS $$
@@ -23,12 +20,14 @@ FOR EACH ROW EXECUTE PROCEDURE f_password();
 
 --Auto fill TRIGGERS
 
-CREATE OR REPLACE FUNCTION f_artigo() RETURNS trigger AS $$
+CREATE OR REPLACE FUNCTION f_profSaude() RETURNS trigger AS $$
 	BEGIN
-		UPDATE paciente SET em_tratamento='s' WHERE id_paciente = NEW.paciente;
-		RETURN NULL;
+	IF (NEW.role = 2) OR (NEW.role = 3) THEN
+		INSERT INTO profissional_saude VALUES (NEW.id);
+		RETURN NEW;
+	END IF;
 	END;
-$% LANGUAGE plpgsql SECURITY DEFINER;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
 
-CREATE TRIGGER tg_emtratamento AFTER INSERT ON tratamento
-FOR EACH ROW EXECUTE PROCEDURE func_emtratamento();
+CREATE TRIGGER t_profSaude AFTER INSERT ON utilizador
+FOR EACH ROW EXECUTE PROCEDURE f_profSaude();

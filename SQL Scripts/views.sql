@@ -1,12 +1,27 @@
-﻿CREATE OR REPLACE VIEW vw_utilizadores AS
-SELECT uti.*
-	, ute.patologias
-	, ute.medicacao
-	, ute.prof_saude
-FROM utilizador uti
-LEFT JOIN utente ute              ON uti.id = ute.id
-LEFT JOIN profissional_saude prof ON uti.id = prof.id
-ORDER BY uti.id;
+﻿CREATE OR REPLACE VIEW public.vw_utilizadores AS 
+ SELECT uti.id,
+    uti.password,
+    uti.nome,
+    uti.morada,
+    uti.nacionalidade,
+    uti.nif,
+    uti.cc,
+    uti.genero,
+    uti.data_nascimento,
+    uti.contacto,
+    uti.mail,
+    uti.role,
+    uti.data_registo,
+    uti.data_login,
+    ute.patologias,
+    ute.medicacao,
+    ute.prof_saude,
+    r.nome AS role_nome
+   FROM utilizador uti
+     LEFT JOIN utente ute ON uti.id = ute.id
+     LEFT JOIN profissional_saude prof ON uti.id = prof.id
+     LEFT JOIN role r ON uti.role = r.id
+  ORDER BY uti.id;
 
 DROP VIEW vw_categoria;
 CREATE OR REPLACE VIEW vw_categoria AS
