@@ -62,7 +62,7 @@ class Database extends PDO
                 $gestor = $this->db->prepare($query);
                 $gestor->execute();
             }
-            $ligacao->commit();
+            $this->db->commit();
         } catch (PDOException $e) {
             echo '<p>' . $e . '</p>';
             $this->db->rollBack();

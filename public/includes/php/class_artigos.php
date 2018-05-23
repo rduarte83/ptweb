@@ -20,28 +20,18 @@ class Artigos
     public function listaArtigos()
     {
         $db = new Database();
-        $db = $db->db;
-        
         $sql = "SELECT * FROM vw_artigo";
-
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->fetchAll();
-
+        $result = $db->EXE_NON_QUERY($sql);
         return ($result);
+
     }
 
     public function listaCategorias()
     {
-        $db = new Database();
-        $db = $db->db;
-        
         // Query nome_expressao
+        $db = new Database();
         $sql = "SELECT DISTINCT nome_expressao FROM vw_categoria";
-
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $db->EXE_NON_QUERY($sql);
 
         foreach ( $result as $item ) {
             array_push($this->listaCat, ["cat" => $item["nome_expressao"]]);
@@ -50,9 +40,7 @@ class Artigos
         // Query nome_zona
         $sql = "SELECT DISTINCT nome_zona, id_zona FROM vw_categoria";
 
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $db->EXE_NON_QUERY($sql);
 
         foreach ( $result as $item ) {
             array_push($this->listaCat, ["id" => $item["id"],"cat" => $item["nome_zona"]]);

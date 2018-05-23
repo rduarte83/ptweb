@@ -1,8 +1,9 @@
 ﻿--Users
 INSERT INTO role VALUES 
 	(1, 'Admin'), 
-	(2, 'Prof Saúde'), 
-	(3, 'Utente');
+	(2, 'Prof Saúde Sénior'),
+	(3, 'Prof Saúde'),
+	(4, 'Utente');
 
 --Expressoes
 INSERT INTO expressoes VALUES
