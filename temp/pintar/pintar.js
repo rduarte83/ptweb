@@ -1,20 +1,23 @@
 var cor="";
+var zona="";
 
 //$(".items").unbind("click");
 
 $(document).ready(function () {
-    $(".grid-item").click(function () {
-        parteCorpo($(this));
-    })
-
     $(".cores").click(function () {
         escolheCor($(this));
     })
+
+    $(".grid-item").click(function () {
+        zonaCorpo($(this));
+        getUrl($(this));
+    })
+
 });
 
-function parteCorpo(e) {
-    var bg = e.css("background-Image");
-    if (bg == "none" || bg == "") {
+function zonaCorpo(e) {
+    zona = e.css("background-Image");
+    if (zona == "none" || zona == "") {
         e.css({
             "background-color": cor
         });
@@ -22,7 +25,7 @@ function parteCorpo(e) {
 }
 
 function escolheCor(e) {
-    //limpar as restantes seleccções
+    //limpar a selecção anterior
     $(".cores").css({
         "border": "3px solid transparent"
     });
@@ -30,4 +33,12 @@ function escolheCor(e) {
     e.css({
         "border": "3px solid black"
     });
+}
+
+function getUrl (e) {
+    //cleanup do url p obter apenas o nome do ficheiro
+    var url = e.css("background-Image");
+    var cleanup = /\"|\'|\)/g;
+    zona = url.split('/').pop().replace(cleanup, '');
+    alert(zona);
 }
