@@ -5,17 +5,17 @@ var zona="";
 
 $(document).ready(function () {
     $(".cores").click(function () {
-        escolheCor($(this));
+        escolherCor($(this));
     })
 
     $(".grid-item").click(function () {
-        zonaCorpo($(this));
-        getUrl($(this));
+        pintarZonaCorpo($(this));
+        limparUrl($(this));
     })
 
 });
 
-function zonaCorpo(e) {
+function pintarZonaCorpo(e) {
     zona = e.css("background-Image");
     if (zona == "none" || zona == "") {
         e.css({
@@ -24,7 +24,7 @@ function zonaCorpo(e) {
     }
 }
 
-function escolheCor(e) {
+function escolherCor(e) {
     //limpar a selecção anterior
     $(".cores").css({
         "border": "3px solid transparent"
@@ -35,10 +35,10 @@ function escolheCor(e) {
     });
 }
 
-function getUrl (e) {
-    //cleanup do url p obter apenas o nome do ficheiro
+function limparUrl (e) {
+    //cleanup do url p obter apenas o nome do ficheiro sem extensão
     var url = e.css("background-Image");
     var cleanup = /\"|\'|\)/g;
-    zona = url.split('/').pop().replace(cleanup, '');
-    alert(zona);
+    var filename = url.split('/').pop().replace(cleanup, '');
+    zona = filename.substring(0,filename.length-4);
 }
