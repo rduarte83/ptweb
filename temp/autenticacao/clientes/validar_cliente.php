@@ -7,7 +7,7 @@
     // verificar a sessão
     if(!isset($_SESSION['a'])){
         exit();
-    } 
+    }
 
     $erro = false;
     $sucesso = false;
