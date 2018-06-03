@@ -1,3 +1,16 @@
+function login(form)
+{
+    $.ajax({
+        type:"POST",
+        url:"includes/php/funcsWeb.php",
+        data:form,
+        success: function(response) {
+            console.log(response);
+        }
+    })
+}
+
+
 $(document).ready(function(){
     var scrollDown = false;
     var lastScrollTop = 10;
@@ -23,6 +36,11 @@ $(document).ready(function(){
             }           
         }
         lastScrollTop = st;
+    });
+
+    $("#formLogin").submit(function(e){
+        e.preventDefault();
+        login($(this).serializeArray());
     });
 
 });
