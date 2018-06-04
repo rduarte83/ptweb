@@ -12,10 +12,10 @@ CREATE TABLE logs
 		id SERIAL NOT NULL
 		, tab text
 		, op VARCHAR(10)
-		, TIME TIMESTAMP DEFAULT now()
-		, utilizador VARCHAR(20) DEFAULT current_user
-		, NEW json
-		, OLD json
+		, time TIMESTAMP DEFAULT now()
+		, utilizador VARCHAR(20)
+		, new json
+		, old json
 		, PRIMARY KEY (id)
 	);
 

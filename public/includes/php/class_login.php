@@ -27,8 +27,18 @@ class Login
         ];
 
         $pass = $gestor->EXE_QUERY('SELECT password = crypt(:pwd, password) FROM utilizador WHERE id = :id;',$id_array);
-        if ($pass) self::iniciarSessao($dados);
-            else exit();
+
+        if ($pass) {
+            //query para definir o current user (logs)
+            $query = 'CREATE OR REPLACE FUNCTION f_activeUser() RETURNS integer AS $$ 
+                        DECLARE activeuser int := :id; 
+                        BEGIN 
+                            RETURN activeuser; 
+                        END 
+                      $$ LANGUAGE plpgsql SECURITY DEFINER;';
+            $gestor->EXE_NON_QUERY($query, $id);
+            self::iniciarSessao($dados);
+        } else exit();
     }
 
     public static function verificarLogin(){
