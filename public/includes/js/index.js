@@ -5,6 +5,7 @@ function login(form)
         url:"includes/php/funcsWeb.php",
         data:form,
         success: function(response) {
+            location.reload();
             console.log(response);
         }
     })
