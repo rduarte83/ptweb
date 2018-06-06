@@ -26,6 +26,7 @@ CREATE OR REPLACE FUNCTION f_profSaude() RETURNS trigger AS $$
 		INSERT INTO profissional_saude VALUES (NEW.id);
 		RETURN NEW;
 	END IF;
+	RETURN NEW;
 	END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 

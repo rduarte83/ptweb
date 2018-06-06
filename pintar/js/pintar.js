@@ -26,19 +26,11 @@ $(document).ready(function () {
     $(".grid-item").click(function () {
         pintarZonaCorpo($(this));
         cleanURL($(this));
+        alert(zona);
+    a.toU
     });
     createSlider();
     setCores();
-
-    var seekbar = new Seekbar.Seekbar({
-        renderTo: "#seekbar-container",
-        valueListener: function (value) {
-            this.setValue(Math.round(value));
-        }
-    });
-
-
-
 });
 
 function setCores() {
