@@ -19,7 +19,7 @@ if(isset($_POST,$_POST["cmd"]))
                     $result = User::insertUser($_POST["email"],$_POST["password"],$_POST["nome"],$_POST["genero"],
                     $_POST["data_nascimento"],$_POST["contacto"],$_POST["cc"],$_POST["nif"],
                     $_POST["morada"],$_POST["nacionalidade"],$_POST["role"]);
-                    
+
                     echo json_encode($result);
             }
             break;
@@ -27,8 +27,14 @@ if(isset($_POST,$_POST["cmd"]))
             echo json_encode(User::getUsers());
             break;
         
+        /**
+         * -- LOGIN --
+         */
         case 'login':
-            
+            if(isset($_POST["email"],$_POST["pwd"])){
+                $login = new Login($_POST["email"],$_POST["pwd"]);
+
+            }
             break;
         
         default:

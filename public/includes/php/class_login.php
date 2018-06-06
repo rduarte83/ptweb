@@ -1,14 +1,8 @@
 <?php
 
-require_once("class_database.php");
-
-if ( isset($_POST,$_POST["pwd"],$_POST) ) {
-    return;
-}
-
-
 class Login 
 {
+    private $message = ["status" => 0, "message" => ""];
     public function __contruct($email, $pwd)
     {
         //New
@@ -38,6 +32,7 @@ class Login
                       $$ LANGUAGE plpgsql SECURITY DEFINER;';
             $gestor->EXE_NON_QUERY($query, $id);
             self::iniciarSessao($dados);
+            return $this->message;
         } else exit();
     }
 

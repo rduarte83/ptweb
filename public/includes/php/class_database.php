@@ -14,16 +14,21 @@ class Database extends PDO
     public function __construct()
     {
         $configs = include('config.php');
+        try{
+            $this->hostname = $configs['BD_HOST'];
+            $this->database = $configs['BD_DATABASE'];
+            $this->username = $configs['BD_USERNAME'];
+            $this->password = $configs['BD_PASSWORD'];
+            $this->port = $configs['BD_PORT'];
 
-        $this->hostname = $configs['BD_HOST'];
-        $this->database = $configs['BD_DATABASE'];
-        $this->username = $configs['BD_USERNAME'];
-        $this->password = $configs['BD_PASSWORD'];
-        $this->port = $configs['BD_PORT'];
+            $this->db = new PDO("pgsql:host=$this->hostname;dbname=$this->database;port=$this->port;", $this->username, $this->password);
 
-        $this->db = new PDO("pgsql:host=$this->hostname;dbname=$this->database;port=$this->port;", $this->username, $this->password);
-
-        $GLOBALS["DB"]=$this->db;
+            $GLOBALS["DB"]=$this->db;
+        } catch (PDOException $e) {
+            echo '<p>' . $e . '</p>';
+            $this->db->rollBack();
+            return $gestor;
+        }
     }
 
     public function EXE_QUERY($query, $parametros = NULL, $fechar_ligacao = TRUE)

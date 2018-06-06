@@ -41,7 +41,9 @@ $(document).ready(function(){
 
     $("#formLogin").submit(function(e){
         e.preventDefault();
-        login($(this).serializeArray());
+        var arrEnviar = $(this).serializeArray();
+        arrEnviar.push({"name":"cmd","value":"login"});
+        login(arrEnviar);
     });
 
 });

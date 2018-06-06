@@ -1,5 +1,4 @@
 <?php
-require_once("class_database.php");
 
 class Artigos
 {
@@ -28,22 +27,23 @@ class Artigos
 
     public function listaCategorias()
     {
+        require_once("class_database.php");
         // Query nome_expressao
         $db = new Database();
-        $sql = "SELECT DISTINCT nome_expressao FROM vw_categoria";
-        $result = $db->EXE_NON_QUERY($sql);
+        $sql = "SELECT DISTINCT nome_expressao, id_expressao FROM vw_categoria";
+        $result = $db->EXE_QUERY($sql, null, false);
 
         foreach ( $result as $item ) {
-            array_push($this->listaCat, ["cat" => $item["nome_expressao"]]);
+            array_push($this->listaCat, ["id"=> $item["id_expressao"], "cat" => $item["nome_expressao"]]);
         }
 
         // Query nome_zona
         $sql = "SELECT DISTINCT nome_zona, id_zona FROM vw_categoria";
 
-        $result = $db->EXE_NON_QUERY($sql);
+        $result = $db->EXE_QUERY($sql, null, true);
 
         foreach ( $result as $item ) {
-            array_push($this->listaCat, ["id" => $item["id"],"cat" => $item["nome_zona"]]);
+            array_push($this->listaCat, ["id" => $item["id_zona"],"cat" => $item["nome_zona"]]);
         }
 
         return ($this->listaCat);
