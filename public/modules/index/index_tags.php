@@ -1,4 +1,4 @@
-<div class="row tagsTop">
+<div class="row tagsTop" style="margin-right: 0">
     <div class="row">
         <?php
             // GET TAGS

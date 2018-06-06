@@ -33,6 +33,7 @@ if(isset($_POST,$_POST["cmd"]))
         case 'login':
             if(isset($_POST["email"],$_POST["pwd"])){
                 $login = new Login($_POST["email"],$_POST["pwd"]);
+                echo json_encode($login->message);
 
             }
             break;

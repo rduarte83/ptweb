@@ -2,38 +2,48 @@
 
 class Login 
 {
-    private $message = ["status" => 0, "message" => ""];
+    public $message = ["status" => 0, "message" => "Erro ao dar login"];
     public function __contruct($email, $pwd)
     {
+        
+    }
+
+    public function loginEntra ($email, $pwd){
         //New
         $gestor = new Database();
         $email_array = [
             ':email'    => $email
         ];
-        verifyData($email);
-        $dados = $gestor->EXE_QUERY('SELECT * FROM vw_utilizadores WHERE mail = :email',$email_array);
+        if(verifyData($email)) {
 
-        $id = $dados[0]['id'];
+            $dados = $gestor->EXE_QUERY('SELECT * FROM vw_utilizadores WHERE mail = :email',$email_array,false);
+            $id = $dados[0]['id'];
 
-        $id_array = [
-            ':id' => $id,
-            ':pwd' => $pwd
-        ];
+            $id_array = [
+                ':id' => $id,
+                ':pwd' => $pwd
+            ];
 
-        $pass = $gestor->EXE_QUERY('SELECT password = crypt(:pwd, password) FROM utilizador WHERE id = :id;',$id_array);
+            $pass = $gestor->EXE_QUERY('SELECT password = crypt(:pwd, password) FROM utilizador WHERE id = :id;',$id_array,false);
 
-        if ($pass) {
-            //query para definir o current user (logs)
-            $query = 'CREATE OR REPLACE FUNCTION f_activeUser() RETURNS integer AS $$ 
-                        DECLARE activeuser int := :id; 
-                        BEGIN 
-                            RETURN activeuser; 
-                        END 
-                      $$ LANGUAGE plpgsql SECURITY DEFINER;';
-            $gestor->EXE_NON_QUERY($query, $id);
-            self::iniciarSessao($dados);
-            return $this->message;
-        } else exit();
+            if ($pass) {
+                //query para definir o current user (logs)
+                $query = 'CREATE OR REPLACE FUNCTION f_activeUser() RETURNS integer AS $$ 
+                            DECLARE activeuser int := :id; 
+                            BEGIN 
+                                RETURN activeuser; 
+                            END 
+                        $$ LANGUAGE plpgsql SECURITY DEFINER;';
+                $gestor->EXE_NON_QUERY($query, $id);
+                self::iniciarSessao($dados);
+                $message = [
+                    "status" => 1, 
+                    "message" => "Login com sucessso"];
+            } else exit();
+        }else {
+            
+            $this->message["message"]="ALÇLLAACUUUKACKKKR";
+        }
     }
 
     public static function verificarLogin(){
@@ -63,7 +73,8 @@ class Login
     public static function verifyData($email)
     {
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            exit();
+            return false;
         }
+        return true;
     }
 }

@@ -56,14 +56,14 @@
                         <span class="glyphicon glyphicon-log-in"></span> Entrar
                     </a>
                     <div class="dropdown-menu navbarDropdownLogin" aria-labelledby="navbarDropdownLogin">
-                        <form>
+                        <form id="formLogin">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Palavra-passe</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Palavra-passe">
+                                <input type="password" name="pwd" class="form-control" id="exampleInputPassword1" placeholder="Palavra-passe">
                             </div>
                             <button type="submit" class="btn btn-primary">Entrar</button>
                         </form>

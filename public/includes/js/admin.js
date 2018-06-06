@@ -32,8 +32,7 @@ function insertUser(dados)
             type: "POST",
             url: 'includes/php/funcsWeb.php',
             data: dados, // serializes the form's elements.
-            success: function (data) {
-                alert(data); // show response from the php script.
+            success: function (data) { // show response from the php script.
                 console.log("sucess");
                 console.log(data);
                 $("#error").html(data);

@@ -5,8 +5,12 @@ function login(form)
         url:"includes/php/funcsWeb.php",
         data:form,
         success: function(response) {
-            location.reload();
-            console.log(response);
+            var resposta = $.parseJSON(response);
+            if(resposta.status){
+                window.location.href = "home.php";
+            }else {
+                console.log(resposta.message);
+            }
         }
     })
 }

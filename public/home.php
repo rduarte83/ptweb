@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION["role"]="Admin";
+    //$_SESSION["role"]="Admin";
     if( !isset($_SESSION)){
         header ( "location: index.php" ); 
     }

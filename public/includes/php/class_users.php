@@ -18,15 +18,15 @@ class User
                 ":contacto" => $contacto,
                 ":email" => $email,
                 ":role" => $role,
-                ":data_registo", date("d-m-Y")
+                ":data_registo" => date("d-m-Y")
             ];
+            
+            $query = "INSERT INTO utilizador (id,password,nome,morada,nacionalidade,nif,cc,genero,data_nascimento,contacto,mail,role,data_registo)
+            VALUES(DEFAULT, :password, :nome,:morada,:nacionalidade,:nif,:cc,:genero,:data_nascimento,:contacto,:email,:role,:data_registo);";
 
-            $query = "INSERT INTO utilizador 
-            VALUES(101, :password, :nome,:morada,:nacionalidade,:nif,:cc,:genero,:data_nascimento,:contacto,:email,:role,:data_registo, null);";
-
-            $result = $Database->EXE_NON_QUERY($query, $arrParam);
+            $result = $Database->EXE_NON_QUERY($query, $arrParam,false);
             if($result != null)
-                return $result;
+                return $result->rowCount();
 
         } catch (PDOException $e) {
             echo "ERROR: " . $e->getMessage();
@@ -37,7 +37,7 @@ class User
     {
         try {
             $Database = new Database();
-            $query = "SELECT id, nome, role FROM utilizador fetch first 100 rows only;";
+            $query = "SELECT id, nome role FROM utilizador fetch first 100 rows only;";
 
             $result = $Database->EXE_QUERY($query);
         
