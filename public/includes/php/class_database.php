@@ -55,6 +55,7 @@ class Database extends PDO
     {
         //executa uma query com ou sem parâmetros (INSERT, UPDATE, DELETE)
         //executa a query
+        $gestor;
         $this->db->beginTransaction();
         try {
             if ($parametros != NULL) {
@@ -65,6 +66,8 @@ class Database extends PDO
                 $gestor->execute();
             }
             $this->db->commit();
+
+            
         } catch (PDOException $e) {
             echo '<p>' . $e . '</p>';
             $this->db->rollBack();
@@ -74,6 +77,7 @@ class Database extends PDO
         if ($fechar_ligacao) {
             $this->db = NULL;
         }
+        return $gestor;
     }
 
 }

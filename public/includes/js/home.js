@@ -14,4 +14,9 @@ $(document).ready(function()
     $("#openDropDownVideos").click(function(){
         $("div[class='dropdown-container Videos']").slideToggle( "fast" );
     });
+
+    $("#openDropDownAdmin").click(function(){
+        $("div[class='dropdown-container Admin']").slideToggle( "fast" );
+    });
 });
+

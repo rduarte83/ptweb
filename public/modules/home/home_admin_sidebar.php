@@ -10,15 +10,15 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a id="openDropDown" class="nav-link" href="#">
+                    <a id="openDropDownAdmin" class="nav-link" href="#">
                         <i class="fas fa-users"></i>
                         Utilizadores 
                         <i class="fa fa-caret-down"></i>
                     </a>
                         
-                    <div class="dropdown-container">
+                    <div class="dropdown-container Admin">
                         <ul>
-                            <li><a href="#">Adicionar Utilizador</a></li>
+                            <li><a href="#" id="add_user" data-toggle="modal" data-target="#addUserModal">Adicionar Utilizador</a></li>
                             <li><a href="#">Editar Utilizador</a></li>
                         </ul>                     
                     </div>                
