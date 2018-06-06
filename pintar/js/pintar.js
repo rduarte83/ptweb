@@ -1,7 +1,12 @@
+//TODO renomear as zonas do corpo
+//TODO reduzir o numero de zonas???
+//TODO suportar varias zonas??? (criar array)
+//TODO resize https://github.com/davidjbradshaw/image-map-resizer
+
 //Custom hot to cold temperature color gradient
 //http://web-tech.ga-usa.com/2012/05/creating-a-custom-hot-to-cold-temperature-color-gradient-for-use-with-rrdtool/index.html
 
-var zona, cor, valor, corHex;
+var zona, cor, valor;
 var corArray = [
     "#FF0000",
     "#FF6e00",
@@ -17,13 +22,18 @@ var corArray = [
 
 $(document).ready(function () {
     //Valores default
-    var defaultValor = 1;
+    valor = 1;
+    cor = corArray[0].slice(1);
     $("#pickedColor").css("background-color", corArray[0]);
-    $("#valor").val(defaultValor);
+    $("#valor").val(valor);
+
+    highlightSettings()
 
     createSlider();
     createGradient();
     highlight();
+
+    $('map').imageMapResize();
 });
 
 function createGradient() {
@@ -44,7 +54,9 @@ function createSlider () {
                 if (ui.value == i+1) {
                     $("#pickedColor").css("backgroundColor",corArray[i]);
                     cor = $("#pickedColor").css("backgroundColor");
+                    cor = rgbToHex(cor).slice(1);
                     valor = $("#valor").val();
+                    highlightSettings();
                 }
             }
         }
@@ -59,27 +71,23 @@ function rgbToHex(rgb) {
     return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 }
 
-function createMap () {
-    corHex = rgbToHex(cor).slice(1);
-    console.log("corHex",corHex);
-    console.log("zona",zona);
-    console.log("valr",valor);
+function highlightSettings() {
     $('.map').maphilight({
-        fillColor: corHex,
-        strokeColor: corHex,
-        strokeWidth: 5,
-        fillColor:corHex,
-        fillOpacity:0.6
-    });
+        fillColor: cor,
+        strokeColor: cor,
+        strokeWidth: 1,
+        fillOpacity: 0.8
+    })
 }
 
-function highlight(e) {
+function highlight() {
     $('.corpo').click(function(e) {
-        zona = this.alt;;
-        createMap();
+        zona = this.alt;
+        console.log("cor:",cor,"zona:", zona, "valor:", valor);
+        highlightSettings();
         e.preventDefault();
-        var data = $('.corpo').mouseout().data('maphilight') || {};
+        var data = $(this).mouseout().data('maphilight') || {};
         data.alwaysOn = !data.alwaysOn;
-        $('.corpo').data('maphilight', data).trigger('alwaysOn.maphilight');
+        $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
     })
 }
