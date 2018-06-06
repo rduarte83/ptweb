@@ -15,13 +15,13 @@ var corArray = [
     "#0032ff"
 ].reverse();
 
-//$(".items").unbind("click");
-
 $(document).ready(function () {
     //Valores default
     var defaultValor = 1;
     $("#pickedColor").css("background-color", corArray[0]);
     $("#valor").val(defaultValor);
+
+    $('.map').maphilight({fade: false});
 
     $(".grid-item").click(function () {
         pintarZonaCorpo($(this));
