@@ -1,3 +1,4 @@
+
 .profSaude{
     margin-left: 20px;
     color: white;
@@ -78,6 +79,19 @@ a{
     style: none;
 }
 */
+
+.sidebar{
+    position: fixed
+}
+
+.adminContent{
+    margin-top: 50px;
+}
+
+.lista{
+    max-height: 500px;
+    overflow-y: auto;
+}
 
 @media only screen and (max-width: 600px) {
     

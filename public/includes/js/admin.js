@@ -6,18 +6,19 @@ function getUsers(){
             "cmd":"getUsers"
         },
         success:function(response){
+            console.log(response);
             var resposta = $.parseJSON(response);
             var items = [];
             $.each(resposta, function (key, val) {
-                if (data[key].role == "3") {
+                if (resposta[key].role == "3") {
                     $("#list_pacientes").append(
                         '<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +
-                        data[key].id + '</span>' + data[key].nome +
+                        resposta[key].id + '</span>' + resposta[key].nome +
                         '</li>');
-                } else if (data[key].role == "2") {
+                } else if (resposta[key].role == "2") {
                     $("#list_func").append(
                         '<li class="list-group-item"><span class="badge badge-primary" style="border-right: 1px dashed #333; margin-right: 8px;">' +
-                        data[key].id + '</span>' + data[key].nome +
+                        resposta[key].id + '</span>' + resposta[key].nome +
                         '</li>');
                 }
             });
@@ -35,14 +36,17 @@ function insertUser(dados)
                 alert(data); // show response from the php script.
                 console.log("sucess");
                 console.log(data);
+                $("#error").html(data);
             },
             error: function(response){
-                console.log("error " + response.getAllResponseHeaders);
+                console.log("error->" + response.getAllResponseHeaders);
             }
         });
 }
 
 $(document).ready(function () {
+
+    getUsers();
 
     $("#add_user").click(function(){
         $("#addUserModal").show();

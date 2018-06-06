@@ -1,5 +1,18 @@
 <div class="row offset-md-2 adminContent">
-
+    <div id="lista_funcionario" class="col-md">
+        <h1>Funcionarios</h1>
+        <div id="list_func" class="lista">
+            <li class="list-group-item"> ID | Nome</li>
+        </div>
+    </div>
+    <div id="lista_pacientes" class="col-md">
+        <h1>Pacientes</h1>
+        <div id="list_pacientes" class="lista">
+            <li class="list-group-item"> ID | Nome</li>
+        </div>
+    </div>
+    <div id="error"></div>
+    
     <!-- <div class="menu regDor col-md col-sm">
         <h2>ayy</h2>
         <i class="fas fa-chart-line tamIcon"></i>
