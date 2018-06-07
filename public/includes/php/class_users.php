@@ -40,8 +40,9 @@ class User
         try {
             require_once
             $Database = new Database();
+            // QUERY COM ERRO
             $query = "SELECT id, nome, role FROM utilizador fetch first 100 rows only;";
-
+            
             $result = $Database->EXE_QUERY($query);
         
             return $result;
