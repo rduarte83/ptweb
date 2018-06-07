@@ -107,8 +107,8 @@
                             <div class="col-sm-10">
 
                                 <select class="form-control" name="genero" id="genero">
-                                    <option value="1">Masculino</option>
-                                    <option value="2">Feminino</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Feminino</option>
                                 </select>
                             </div>
                         </div>

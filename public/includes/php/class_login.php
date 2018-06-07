@@ -2,21 +2,27 @@
 
 class Login 
 {
-    public $message = ["status" => 0, "message" => "Erro ao dar login"];
-    public function __contruct($email, $pwd)
+    private static $message = ["status" => 0, "message" => "Erro ao dar login"];
+    public function __contruct()
     {
         
     }
 
-    public function loginEntra ($email, $pwd){
+    public static function loginEntra ($email, $pwd){
         //New
+        require_once("class_database.php");
         $gestor = new Database();
         $email_array = [
             ':email'    => $email
         ];
-        if(verifyData($email)) {
+        if(self::verifyData($email)) {
 
-            $dados = $gestor->EXE_QUERY('SELECT * FROM vw_utilizadores WHERE mail = :email',$email_array,false);
+            $dados = $gestor->EXE_QUERY('SELECT * FROM vw_utilizadores WHERE mail LIKE :email',$email_array,false);
+            //var_dump($dados);
+            
+            if(empty($dados))
+                return self::$message;
+
             $id = $dados[0]['id'];
 
             $id_array = [
@@ -24,9 +30,12 @@ class Login
                 ':pwd' => $pwd
             ];
 
-            $pass = $gestor->EXE_QUERY('SELECT password = crypt(:pwd, password) FROM utilizador WHERE id = :id;',$id_array,false);
+            $pass = $gestor->EXE_QUERY('SELECT password = crypt(:pwd, password) as pass FROM utilizador WHERE id = :id;',$id_array,false);
 
-            if ($pass) {
+           if ($pass[0]["pass"]) {
+               $arrID = [
+                   ":id" => $id
+               ];
                 //query para definir o current user (logs)
                 $query = 'CREATE OR REPLACE FUNCTION f_activeUser() RETURNS integer AS $$ 
                             DECLARE activeuser int := :id; 
@@ -34,16 +43,17 @@ class Login
                                 RETURN activeuser; 
                             END 
                         $$ LANGUAGE plpgsql SECURITY DEFINER;';
-                $gestor->EXE_NON_QUERY($query, $id);
+                $gestor->EXE_NON_QUERY($query, $arrID);
                 self::iniciarSessao($dados);
-                $message = [
-                    "status" => 1, 
-                    "message" => "Login com sucessso"];
-            } else exit();
+                self::$message["status"] = 1;
+                self::$message["message"] = "Login com sucessso";
+            } else{
+                return  self::$message;
+            }
         }else {
-            
-            $this->message["message"]="ALÇLLAACUUUKACKKKR";
+            self::$message["message"]="ALÇLLAACUUUKACKKKR";
         }
+        return  self::$message;
     }
 
     public static function verificarLogin(){

@@ -36,7 +36,5 @@ foreach($artigo->listaArtigos() as $elem){
     echo $xx;
     //}
 }
-
-
-
 ?>
+<div id="error"></div>

@@ -33,7 +33,6 @@ function insertUser(dados)
             url: 'includes/php/funcsWeb.php',
             data: dados, // serializes the form's elements.
             success: function (data) { // show response from the php script.
-                console.log("sucess");
                 console.log(data);
                 $("#error").html(data);
             },
@@ -53,7 +52,6 @@ $(document).ready(function () {
 
     $("#addUserForm").on("submit", function (e) {
         e.preventDefault();
-        console.log("submit in js!");
         var arrDados = $(this).serializeArray();
         arrDados.push({"name":"cmd","value":"insertUser"});
         insertUser(arrDados);

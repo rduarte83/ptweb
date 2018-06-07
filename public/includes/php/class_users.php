@@ -5,6 +5,7 @@ class User
     public static function insertUser ( $email, $password, $nome, $genero, $data_nascimento, $contacto, $cc, $nif, $morada, $nacionalidade, $role)
     {
         try {
+
             $Database = new Database();
             $arrParam = [
                 ":password" => $password,
@@ -14,17 +15,18 @@ class User
                 ":nif" => $nif,
                 ":cc" => $cc,
                 ":genero" => $genero,
-                ":data_nascimento" => $data_nascimento,
+                ":data_nascimento" => date("Y-m-d", strtotime($data_nascimento)),
                 ":contacto" => $contacto,
                 ":email" => $email,
-                ":role" => $role,
-                ":data_registo" => date("d-m-Y")
-            ];
+                ":role" => intval($role)
+            ]; 
             
-            $query = "INSERT INTO utilizador (id,password,nome,morada,nacionalidade,nif,cc,genero,data_nascimento,contacto,mail,role,data_registo)
-            VALUES(DEFAULT, :password, :nome,:morada,:nacionalidade,:nif,:cc,:genero,:data_nascimento,:contacto,:email,:role,:data_registo);";
+            $query = "INSERT INTO utilizador 
+            (id, password, nome, morada, nacionalidade, nif, cc, genero, data_nascimento, contacto,mail, role, data_registo)
+            VALUES(DEFAULT, :password, :nome, :morada, :nacionalidade, :nif, :cc, :genero, :data_nascimento, :contacto, :email, :role, now())";
 
-            $result = $Database->EXE_NON_QUERY($query, $arrParam,false);
+            $result = $Database->EXE_NON_QUERY($query, $arrParam, false);
+ 
             if($result != null)
                 return $result->rowCount();
 
