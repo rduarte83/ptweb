@@ -43,19 +43,12 @@ function getUsers(){
             var items = [];
             $.each(resposta, function (key, val) {
                 if (resposta[key].role == "3") {
-                    listFunc += '<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +
-                    resposta[key].id + '</span>' + resposta[key].nome +
-                    '</li>';
+                    listFunc += '<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome + '</li>';
                     
                 } else if (resposta[key].role == "2") {
-                    listFunc+='<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;"' +
-                        resposta[key].id + '</span>' + resposta[key].nome +
-                        '</li>';
+                    listFunc+='<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' + resposta[key].id + '</span>' + resposta[key].nome +'</li>';
                 } else if (resposta[key].role == "1") {
-                    listAdmin+='<li id="list_' + resposta[key].id +
-                        '" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +
-                        resposta[key].id + '</span>' + resposta[key].nome +
-                        '</li>';
+                    listAdmin+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome +'</li>';
                 }
             });
             $("#list_pacientes").html(listPaciente);
