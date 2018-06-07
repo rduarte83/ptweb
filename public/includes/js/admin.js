@@ -42,9 +42,9 @@ function getUsers(){
             var listAdmin = '<li class="list-group-item"> ID | Nome</li>';
             $.each(resposta, function (key, val) {
                 if (resposta[key].role == "2" || resposta[key].role == "3") {
-                    listFunc += '<li class="list-group-item list-group-item-action"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome + '</li>';
+                    listFunc += '<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome + '</li>';
                 } else if (resposta[key].role == "4") {
-                    listPaciente+='<li class="list-group-item list-group-item-action"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' + resposta[key].id + '</span>' + resposta[key].nome +'</li>';
+                    listPaciente+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' + resposta[key].id + '</span>' + resposta[key].nome +'</li>';
                 } else if (resposta[key].role == "1") {
                     listAdmin+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome +'</li>';
                 }
