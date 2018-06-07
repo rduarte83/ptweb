@@ -26,8 +26,6 @@ class Database extends PDO
             $GLOBALS["DB"]=$this->db;
         } catch (PDOException $e) {
             echo '<p>' . $e . '</p>';
-            $this->db->rollBack();
-            return $gestor;
         }
     }
 
