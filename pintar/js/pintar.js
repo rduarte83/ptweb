@@ -1,3 +1,8 @@
+//TODO renomear as zonas do corpo
+//TODO reduzir o numero de zonas???
+//TODO suportar varias zonas??? (criar array)
+//TODO resize https://github.com/davidjbradshaw/image-map-resizer
+
 //Custom hot to cold temperature color gradient
 //http://web-tech.ga-usa.com/2012/05/creating-a-custom-hot-to-cold-temperature-color-gradient-for-use-with-rrdtool/index.html
 
@@ -15,33 +20,23 @@ var corArray = [
     "#0032ff"
 ].reverse();
 
-//$(".items").unbind("click");
-
 $(document).ready(function () {
     //Valores default
-    var defaultValor = 1;
+    valor = 1;
+    cor = corArray[0].slice(1);
     $("#pickedColor").css("background-color", corArray[0]);
-    $("#valor").val(defaultValor);
+    $("#valor").val(valor);
 
-    $(".grid-item").click(function () {
-        pintarZonaCorpo($(this));
-        cleanURL($(this));
-    });
+    highlightSettings()
+
     createSlider();
-    setCores();
+    createGradient();
+    highlight();
 
-    var seekbar = new Seekbar.Seekbar({
-        renderTo: "#seekbar-container",
-        valueListener: function (value) {
-            this.setValue(Math.round(value));
-        }
-    });
-
-
-
+    $('map').imageMapResize();
 });
 
-function setCores() {
+function createGradient() {
     var gradient = "linear-gradient(to right";
     for (var i=0; i<corArray.length ; i++) gradient += ", " + corArray[i];
     gradient += ")";
@@ -59,27 +54,40 @@ function createSlider () {
                 if (ui.value == i+1) {
                     $("#pickedColor").css("backgroundColor",corArray[i]);
                     cor = $("#pickedColor").css("backgroundColor");
+                    cor = rgbToHex(cor).slice(1);
                     valor = $("#valor").val();
+                    highlightSettings();
                 }
             }
         }
     });
 }
 
-
-function pintarZonaCorpo(e) {
-    zona = e.css("background-Image");
-    if (zona == "none" || zona == "") {
-        e.css({
-            "background-color": $("#pickedColor").css("backgroundColor")
-        });
+function rgbToHex(rgb) {
+    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    function hex(x) {
+        return ("0" + parseInt(x).toString(16)).slice(-2);
     }
+    return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 }
 
-function cleanURL (e) {
-    //cleanup do url p obter apenas o nome do ficheiro sem extensão
-    var url = e.css("background-Image");
-    var cleanup = /\"|\'|\)/g;
-    var filename = url.split('/').pop().replace(cleanup, '');
-    zona = filename.substring(0,filename.length-4);
+function highlightSettings() {
+    $('.map').maphilight({
+        fillColor: cor,
+        strokeColor: cor,
+        strokeWidth: 1,
+        fillOpacity: 0.8
+    })
+}
+
+function highlight() {
+    $('.corpo').click(function(e) {
+        zona = this.alt;
+        console.log("cor:",cor,"zona:", zona, "valor:", valor);
+        highlightSettings();
+        e.preventDefault();
+        var data = $(this).mouseout().data('maphilight') || {};
+        data.alwaysOn = !data.alwaysOn;
+        $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+    })
 }
