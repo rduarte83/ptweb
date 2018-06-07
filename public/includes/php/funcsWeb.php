@@ -26,6 +26,22 @@ if(isset($_POST,$_POST["cmd"]))
         case 'getUsers':
             echo json_encode(User::getUsers());
             break;
+
+        case 'getSingleUser':
+            echo json_encode(User::getSingleUser($_POST["key"]));
+            break;
+        case 'updateUser':
+            if(isset($_POST["email"],$_POST["password"],$_POST["nome"],$_POST["genero"],
+            $_POST["data_nascimento"],$_POST["contacto"],$_POST["cc"],$_POST["nif"],
+            $_POST["morada"],$_POST["nacionalidade"],$_POST["role"], $_POST["id"])){
+
+                $result = User::updateUser($_POST["email"],$_POST["password"],$_POST["nome"],$_POST["genero"],
+                $_POST["data_nascimento"],$_POST["contacto"],$_POST["cc"],$_POST["nif"],
+                $_POST["morada"],$_POST["nacionalidade"],$_POST["role"], $_POST["id"]);
+
+                echo json_encode($result);
+            }
+            break;
         
         /**
          * -- LOGIN --
@@ -37,6 +53,7 @@ if(isset($_POST,$_POST["cmd"]))
 
             }
             break;
+        
         
         default:
             # code...

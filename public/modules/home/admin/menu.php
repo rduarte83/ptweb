@@ -11,6 +11,12 @@
             <li class="list-group-item"> ID | Nome</li>
         </div>
     </div>
+    <div id="lista_admin" class="col-md">
+        <h1>Admins</h1>
+        <div id="list_admin" class="lista">
+            <li class="list-group-item"> ID | Nome</li>
+        </div>
+    </div>
     <div id="error"></div>
     
     <!-- <div class="menu regDor col-md col-sm">
