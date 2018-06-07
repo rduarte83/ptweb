@@ -45,14 +45,14 @@ function getUsers(){
                         '</li>');
                 } else if (resposta[key].role == "2") {
                     $("#list_func").append(
-                        '<li class="list-group-item"><span class="badge badge-primary" style="border-right: 1px dashed #333; margin-right: 8px;">' +
+                        '<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;"' +
                         resposta[key].id + '</span>' + resposta[key].nome +
                         '</li>');
-                } else if (data[key].role == "1") {
+                } else if (resposta[key].role == "1") {
                     $("#list_admin").append(
-                        '<li id="list_' + data[key].id +
+                        '<li id="list_' + resposta[key].id +
                         '" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +
-                        data[key].id + '</span>' + data[key].nome +
+                        resposta[key].id + '</span>' + resposta[key].nome +
                         '</li>');
                 }
             });
@@ -69,6 +69,26 @@ function insertUser(dados)
             success: function (data) { // show response from the php script.
                 console.log(data);
                 $("#error").html(data);
+                $('#addUserModal').modal('toggle');
+                getUsers();
+            },
+            error: function(response){
+                console.log("error->" + response.getAllResponseHeaders);
+            }
+        });
+}
+
+function updateUser(dados)
+{
+        $.ajax({
+            type: "POST",
+            url: 'includes/php/funcsWeb.php',
+            data: dados, // serializes the form's elements.
+            success: function (data) { // show response from the php script.
+                console.log(data);
+                $("#error").html(data);
+                $('#addUserModal').modal('toggle');
+                getUsers();
             },
             error: function(response){
                 console.log("error->" + response.getAllResponseHeaders);
@@ -105,6 +125,5 @@ $(document).ready(function () {
             arrDados.push({"name":"cmd","value":"updateUser"});
             updateUser(arrDados);
         }
-            
     });
 });
