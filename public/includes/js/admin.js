@@ -36,26 +36,32 @@ function getUsers(){
         success:function(response){
             console.log(response);
             var resposta = $.parseJSON(response);
+            var listPaciente;
+            var listFunc;
+            var listAdmin;
+            
             var items = [];
             $.each(resposta, function (key, val) {
                 if (resposta[key].role == "3") {
-                    $("#list_pacientes").append(
-                        '<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +
-                        resposta[key].id + '</span>' + resposta[key].nome +
-                        '</li>');
+                    listFunc += '<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +
+                    resposta[key].id + '</span>' + resposta[key].nome +
+                    '</li>';
+                    
                 } else if (resposta[key].role == "2") {
-                    $("#list_func").append(
-                        '<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;"' +
+                    listFunc+='<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;"' +
                         resposta[key].id + '</span>' + resposta[key].nome +
-                        '</li>');
+                        '</li>';
                 } else if (resposta[key].role == "1") {
-                    $("#list_admin").append(
-                        '<li id="list_' + resposta[key].id +
+                    listAdmin+='<li id="list_' + resposta[key].id +
                         '" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +
                         resposta[key].id + '</span>' + resposta[key].nome +
-                        '</li>');
+                        '</li>';
                 }
             });
+            $("#list_pacientes").html(listPaciente);
+            $("#list_func").html(listFunc);
+            $("#list_admin").html(listAdmin);
+            
         }
     });
 }
