@@ -38,8 +38,9 @@ class User
     public static function getUsers()
     {
         try {
+            require_once
             $Database = new Database();
-            $query = "SELECT id, nome role FROM utilizador fetch first 100 rows only;";
+            $query = "SELECT id, nome, role FROM utilizador fetch first 100 rows only;";
 
             $result = $Database->EXE_QUERY($query);
         
