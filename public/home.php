@@ -1,6 +1,6 @@
 <?php
     session_start();
-    //$_SESSION["role"]="Admin";
+    $_SESSION["role"]="Admin";
     if( !isset($_SESSION)){
         header ( "location: index.php" ); 
     }
@@ -30,13 +30,13 @@
             $type = $_SESSION["role"];
             switch($type){
                 case "Utente":
-                    require_once("modules/home/home_paciente.php");
+                    require_once("modules/home/paciente/paciente.php");
                     break;
                 case "Prof Saúde":
-                    require_once("modules/home/home_profissional.php");
+                    require_once("modules/home/profissional/profissional.php");
                     break;
                 case "Admin":
-                    require_once("modules/home/home_admin.php");
+                    require_once("modules/home/admin/admin.php");
                     echo '<script src="includes/js/admin.js"></script>';
                     break;
 
