@@ -79,7 +79,7 @@ class User
             require_once("class_database.php");
             $Database = new Database();
             // QUERY COM ERRO
-            $query = "SELECT id, nome, role FROM utilizador fetch first 100 rows only";
+            $query = "SELECT id, nome, role FROM utilizador";
             
             $result = $Database->EXE_QUERY($query);
         

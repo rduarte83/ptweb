@@ -36,6 +36,7 @@ function getUsers(){
         success:function(response){
             console.log(response);
             var resposta = $.parseJSON(response);
+            console.log(resposta);
             var listPaciente = '<li class="list-group-item"> ID | Nome</li>';
             var listFunc = '<li class="list-group-item"> ID | Nome</li>';
             var listAdmin = '<li class="list-group-item"> ID | Nome</li>';
