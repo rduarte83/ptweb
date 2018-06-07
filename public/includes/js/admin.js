@@ -36,15 +36,12 @@ function getUsers(){
         success:function(response){
             console.log(response);
             var resposta = $.parseJSON(response);
-            var listPaciente;
-            var listFunc;
-            var listAdmin;
-            
-            var items = [];
+            var listPaciente = '<li class="list-group-item"> ID | Nome</li>';
+            var listFunc = '<li class="list-group-item"> ID | Nome</li>';
+            var listAdmin = '<li class="list-group-item"> ID | Nome</li>';
             $.each(resposta, function (key, val) {
                 if (resposta[key].role == "3") {
                     listFunc += '<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome + '</li>';
-                    
                 } else if (resposta[key].role == "2") {
                     listFunc+='<li class="list-group-item"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' + resposta[key].id + '</span>' + resposta[key].nome +'</li>';
                 } else if (resposta[key].role == "1") {
