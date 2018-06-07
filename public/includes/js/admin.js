@@ -48,6 +48,7 @@ function getUsers(){
                     listAdmin+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome +'</li>';
                 }
             });
+            
             $("#list_pacientes").html(listPaciente);
             $("#list_func").html(listFunc);
             $("#list_admin").html(listAdmin);
