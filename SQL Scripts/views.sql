@@ -1,4 +1,5 @@
-﻿CREATE OR REPLACE VIEW public.vw_utilizadores AS 
+﻿DROP VIEW vw_utilizadores;
+CREATE OR REPLACE VIEW vw_utilizadores AS 
  SELECT uti.id,
     uti.password,
     uti.nome,
@@ -23,6 +24,7 @@
      LEFT JOIN role r ON uti.role = r.id
   ORDER BY uti.id;
 
+
 DROP VIEW vw_categoria;
 CREATE OR REPLACE VIEW vw_categoria AS
 SELECT c.id AS id_categoria
@@ -33,6 +35,8 @@ SELECT c.id AS id_categoria
 FROM categoria c
 LEFT JOIN expressoes e ON c.id_expressao = e.id
 LEFT JOIN zona z       ON c.id_zona = z.id;
+
+
 DROP VIEW vw_artigo;
 CREATE OR REPLACE VIEW vw_artigo AS
 SELECT a.id AS id_artigo

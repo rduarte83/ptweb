@@ -1,9 +1,42 @@
-﻿CREATE OR REPLACE FUNCTION f_activeUser() RETURNS integer AS $$ 
+﻿--Autenticação - devolve true se password validacao
+--SELECT password = crypt('entered password', password) FROM utilizador; 
+
+--Trigger para encriptar a password
+CREATE OR REPLACE FUNCTION f_password() RETURNS trigger AS $$
+    BEGIN
+		NEW.password := crypt(NEW.password, gen_salt('md5'));
+		RETURN NEW;
+    END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE TRIGGER t_password
+BEFORE INSERT OR UPDATE OF password ON utilizador
+FOR EACH ROW EXECUTE PROCEDURE f_password();
+
+
+--Auto fill TRIGGERS
+CREATE OR REPLACE FUNCTION f_profSaude() RETURNS trigger AS $$
+	BEGIN
+	IF (NEW.role = 2) OR (NEW.role = 3) THEN
+		INSERT INTO profissional_saude VALUES (NEW.id);
+		RETURN NEW;
+	END IF;
+	RETURN NEW;
+	END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+
+CREATE TRIGGER t_profSaude AFTER INSERT ON utilizador
+FOR EACH ROW EXECUTE PROCEDURE f_profSaude();
+
+
+CREATE OR REPLACE FUNCTION f_activeUser() RETURNS integer AS $$ 
     DECLARE activeuser int := CURRENT_USER; 
     BEGIN 
     RETURN activeuser; 
     END 
 $$ LANGUAGE plpgsql SECURITY DEFINER;
+
 
 CREATE OR REPLACE FUNCTION f_logs() RETURNS trigger AS $$
 DECLARE activeuser int:= (SELECT f_activeuser());
@@ -24,6 +57,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
+
 -- Query dinamica dos triggers
 -- SELECT select_all_triggers();
 CREATE OR REPLACE FUNCTION select_all_triggers() RETURNS SETOF text AS $$
@@ -34,7 +68,6 @@ SELECT 'CREATE TRIGGER ' || tab_name || ' BEFORE INSERT OR UPDATE OR DELETE ON '
 			WHERE table_schema='public' AND table_name NOT ILIKE 'logs' AND table_name NOT ILIKE 'vw_%'
 			) tablist;
 $$ LANGUAGE sql SECURITY DEFINER;
-
 
 
 -- Funcao para eliminar todos os triggers numa DB
@@ -55,6 +88,7 @@ END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
 
+
 CREATE TRIGGER logs_role BEFORE INSERT OR UPDATE OR DELETE ON role FOR EACH ROW EXECUTE PROCEDURE f_logs();
 CREATE TRIGGER logs_artigo_categoria BEFORE INSERT OR UPDATE OR DELETE ON artigo_categoria FOR EACH ROW EXECUTE PROCEDURE f_logs();
 CREATE TRIGGER logs_artigo BEFORE INSERT OR UPDATE OR DELETE ON artigo FOR EACH ROW EXECUTE PROCEDURE f_logs();
@@ -71,4 +105,3 @@ CREATE TRIGGER logs_expressoes BEFORE INSERT OR UPDATE OR DELETE ON expressoes F
 CREATE TRIGGER logs_categoria BEFORE INSERT OR UPDATE OR DELETE ON categoria FOR EACH ROW EXECUTE PROCEDURE f_logs();
 CREATE TRIGGER logs_episodio_dor BEFORE INSERT OR UPDATE OR DELETE ON episodio_dor FOR EACH ROW EXECUTE PROCEDURE f_logs();
 CREATE TRIGGER logs_expressoes_episodio_dor BEFORE INSERT OR UPDATE OR DELETE ON expressoes_episodio_dor FOR EACH ROW EXECUTE PROCEDURE f_logs();
-
