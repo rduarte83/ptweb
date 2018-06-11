@@ -12,8 +12,8 @@ BEGIN
 		INSERT INTO logs (tab, op, utilizador, new)
 		VALUES (TG_RELNAME, TG_OP, activeuser, row_to_json(NEW));
         RETURN NEW;
-	ELSIF   TG_OP = 'UPDATE'THEN 
-		INSERT INTO logs (tab, op, utilizador, old)
+	ELSIF   TG_OP = 'UPDATE' THEN 
+		INSERT INTO logs (tab, op, utilizador, new, old)
 		VALUES (TG_RELNAME, TG_OP, activeuser, row_to_json(NEW), row_to_json(OLD));
         RETURN NEW;
     ELSIF   TG_OP = 'DELETE' THEN   
