@@ -16,8 +16,4 @@
         <h2>Consultas</h2>
         <i class="fas fa-user-md tamIcon"></i>
     </div>
-    <div class="menu regDor col-md col-sm">
-        <h2>Consultas</h2>
-        <i class="fas fa-user-md tamIcon"></i>
-    </div>
 </div>

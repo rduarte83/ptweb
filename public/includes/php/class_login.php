@@ -70,7 +70,6 @@ class Login
         if(!isset($_SESSION)){
             session_start();
         }
-        
 
         $_SESSION['id'] = $dados[0]['id'];
         $_SESSION['nome'] = $dados[0]['nome'];

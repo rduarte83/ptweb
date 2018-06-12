@@ -1,11 +1,5 @@
 <div class="row">
-    <nav  class="navbar navbar-expand-lg topText corTop">
-        <div id="img-backtop"><h1>DorLogo</h1></div>
-    </nav>
-</div
-
-<div class="row">
-    <nav id="navTop" class="navbar fixed-top navbar-expand-lg navbar-dark topPadding corTop">
+    <nav id="navTop" class="navbar fixed-top navbar-expand-lg navbar-dark corTop">
         <a id="logoDor" class="navbar-brand" href="#">DorLogo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,6 +46,10 @@
             <!-- Entrar / Login -->
             <ul class="navbar-nav navbar-right"> 
                 <li class="nav-item dropdown" id="navEntrar">
+                    <?php 
+                    if(!isset($_SESSION)) session_start();
+
+                    if(!isset($_SESSION["nome"])): ?>
                     <a class="nav-link" href="#" id="navbarDropdownLogin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="glyphicon glyphicon-log-in"></span> Entrar
                     </a>
@@ -68,6 +66,19 @@
                             <button type="submit" class="btn btn-primary">Entrar</button>
                         </form>
                     </div>
+                    <?php else: ?>
+                    <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownLogin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-log-in"></span> <?php echo $_SESSION["nome"];?>
+                    </a>
+                    <!--<div class="dropdown-menu" aria-labelledby="navbarDropdownLogin">
+                        <div id="logout"><i class="fas fa-exit"></i>Sair</div>
+                    </div>-->
+                    <div class="dropdown-menu loginOptions">
+                        <div id="painel" style="cursor:pointer;">Painel</div>
+                        <div class="dropdown-divider"></div>
+                        <div id="logout" style="cursor:pointer;"><i class="fas fa-sign-out-alt"></i>Sair</div>
+                    </div>
+                    <?php endif; ?>
                 </li>
             </ul>
         </div>

@@ -53,7 +53,10 @@ if(isset($_POST,$_POST["cmd"]))
 
             }
             break;
-        
+        case 'logout':
+            if(!isset($_SESSION)) session_start();
+            Login::destroiSessao();
+            break;
         
         default:
             # code...
