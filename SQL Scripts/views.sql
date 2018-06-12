@@ -1,6 +1,6 @@
-﻿DROP VIEW vw_utilizadores;
+﻿--DROP VIEW vw_utilizadores;
 CREATE OR REPLACE VIEW vw_utilizadores AS 
- SELECT uti.id,
+SELECT uti.id,
     uti.password,
     uti.nome,
     uti.morada,
@@ -25,19 +25,7 @@ CREATE OR REPLACE VIEW vw_utilizadores AS
   ORDER BY uti.id;
 
 
-DROP VIEW vw_categoria;
-CREATE OR REPLACE VIEW vw_categoria AS
-SELECT c.id AS id_categoria
-	, e.id AS id_expressao
-	, e.nome AS nome_expressao
-	, z.id AS id_zona
-	, z.nome AS nome_zona
-FROM categoria c
-LEFT JOIN expressoes e ON c.id_expressao = e.id
-LEFT JOIN zona z       ON c.id_zona = z.id;
-
-
-DROP VIEW vw_artigo;
+--DROP VIEW vw_artigo;
 CREATE OR REPLACE VIEW vw_artigo AS
 SELECT a.id AS id_artigo
 	, a.autor
@@ -45,13 +33,36 @@ SELECT a.id AS id_artigo
 	, a.conteudo
 	, a.data_criacao
 	, a.data_edicao
-	, c.id AS id_categoria
-	, e.id AS id_expressao
-	, e.nome AS nome_expressao
 	, z.id AS id_zona
 	, z.nome AS nome_zona
 FROM artigo a
-LEFT JOIN artigo_categoria ac ON a.id = ac.artigo_id
-LEFT JOIN categoria c         ON ac.categoria_id = c.id
-LEFT JOIN expressoes e        ON c.id_expressao = e.id
-LEFT JOIN zona z              ON c.id_zona = z.id;
+LEFT JOIN zona_artigo za ON a.id = za.artigoid
+LEFT JOIN zona z ON z.id = za.zonaid
+;
+
+--DROP VIEW vw_video;
+CREATE OR REPLACE VIEW vw_video AS
+SELECT v.id AS id_video
+	, v.autor
+	, v.url
+	, v.descricao
+	, z.id AS id_zona
+	, z.nome AS nome_zona
+FROM video v
+LEFT JOIN zona_video vz ON v.id = vz.videoid
+LEFT JOIN zona z ON z.id = vz.zonaid
+;
+
+--DROP VIEW vw_episodio;
+CREATE OR REPLACE VIEW vw_episodio AS
+SELECT e.id AS id_episodio
+	, e.data
+	, e.zona
+	, e.utente
+	, z.id AS id_zona
+	, z.nome AS nome_zona
+	, ze.intensidade
+FROM episodio_dor e
+LEFT JOIN zona_episodio_dor ze ON e.id = ze.episodio_dorid
+LEFT JOIN zona z ON z.id = ze.zonaid
+;
