@@ -5,27 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dor</title>
 
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="css/pintar.css">
+	<link rel="stylesheet" href="../includes/css/jquery-ui.css">
+	<link rel="stylesheet" href="../includes/css/pintar.css">
 
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
-	<script src="js/jquery.maphilight.min.js"></script>
-	<script src="js/imageMapResizer.min.js"></script>
-	<script src="js/pintar.js"></script>
+	<script src="../includes/js/jquery-3.3.1.min.js"></script>
+	<script src="../includes/js/jquery-ui.min.js"></script>
+	<script src="../includes/js/jquery.maphilight.min.js"></script>
+	<script src="../includes/js/imageMapResizer.min.js"></script>
+	<script src="../includes/js/pintar.js"></script>
 </head>
 
 <body>
 	<div class="main">
 	<h1>Onde sente dor?</h1>
-		<p>1 - Escolha a intensidade de dor sendo 0 sem dor e 10 dor máxima:</p>
+		<p>1 - Escolha a intensidade de dor (0 - sem dor | 10 - dor máxima):</p>
 		<div id="slider"></div>
 		<br>
-		<br>
-		<br>
-		<p>2 - Seleccione a área do corpo onde a dor se manifesta:</p>
-		<br>
-		<img src="Imagens/front.png" alt="front" class="map" usemap="#front">
+		<p>2 - Seleccione a área do corpo:</p>
+		<img src="../includes/img/front.png" alt="front" class="map" usemap="#front">
 
 		<map name="front">
 
@@ -51,9 +48,6 @@
 				  href="#" alt="Head" title="Head" class="corpo"/>
 
 			<area shape="poly" coords="258,151,272,157,289,211,288,212,286,212,273,202,326,152,329,155,298,212,298,195,306,168,321,153,281,162,305,162,305,164,294,202,292,202,249,180,259,195,277,216,276,216,262,213,217,210,205,200,207,200,335,180,351,188,380,200,368,210,356,205,307,216,307,214,284,220,302,220,302,222,292,237"
-				  href="#" alt="Path 1" title="Path 1" class="corpo"/>
-
-			<area shape="poly" coords="258,151,272,157,289,211,288,212,286,212,273,202,326,152,329,155,298,212,298,195,306,168,321,153,281,162,305,162,305,164,294,202,292,202,333,177,377,197,386,202,385,202,372,207,368,213,327,213,307,218,304,216,249,180,259,195,277,216,276,216,245,209,227,205,217,209,205,200,207,200,335,181,308,215,311,215,355,204,368,209,379,200"
 				  href="#" alt="BellowHead" title="BellowHead" class="corpo"/>
 
 			<area shape="poly" coords="230,211,281,229,281,294,209,295,192,280,200,260,219,219,346,211,358,212,368,222,371,232,386,262,393,280,376,295,347,310,303,293,310,224,292,287,303,304,292,316,292,315,283,300"
@@ -84,7 +78,7 @@
 				  href="#" alt="FootRight" title="FootRight" class="corpo"/>
 
 		</map>
-		<p>4 - Repita o processo o número de vezes que achar necessário</p>
+		<p>4 - Repita o processo se achar necessário</p>
 		<p>5 - Carregue no botão ENVIAR para finalizar</p>
 		<div id="buttons">
 			<button id="clear">LIMPAR</button>

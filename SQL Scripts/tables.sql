@@ -3,7 +3,7 @@ CREATE TABLE artigo (
   autor        int4 NOT NULL, 
   titulo       varchar(100) NOT NULL, 
   conteudo     text NOT NULL, 
-  data_criacao timestamp NOT NULL, 
+  data_criacao timestamp NOT NULL DEFAULT now(), 
   data_edicao  timestamp, 
   PRIMARY KEY (id));
 CREATE TABLE consultas (
@@ -44,7 +44,7 @@ CREATE TABLE role (
   PRIMARY KEY (id));
 CREATE TABLE treino (
   id           SERIAL NOT NULL, 
-  data_criacao date NOT NULL, 
+  data_criacao date NOT NULL DEFAULT now(), 
   data_inicio  date NOT NULL, 
   data_fim     date NOT NULL, 
   descricao    varchar(255) NOT NULL, 

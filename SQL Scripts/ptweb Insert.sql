@@ -1,0 +1,171 @@
+INSERT INTO artigo
+  (id, 
+  autor, 
+  titulo, 
+  conteudo, 
+  data_criacao, 
+  data_edicao) 
+VALUES 
+  (?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?);
+INSERT INTO consultas
+  (id, 
+  data, 
+  prof_saude, 
+  utente, 
+  notas) 
+VALUES 
+  (?, 
+  ?, 
+  ?, 
+  ?, 
+  ?);
+INSERT INTO episodio_dor
+  (id, 
+  data, 
+  zona, 
+  utente, 
+  aviso) 
+VALUES 
+  (?, 
+  ?, 
+  ?, 
+  ?, 
+  ?);
+INSERT INTO logs
+  (id, 
+  tab, 
+  op, 
+  time, 
+  utilizador, 
+  new, 
+  old) 
+VALUES 
+  (?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?);
+INSERT INTO mensagem
+  (id, 
+  data, 
+  origem, 
+  destino, 
+  conteudo) 
+VALUES 
+  (?, 
+  ?, 
+  ?, 
+  ?, 
+  ?);
+INSERT INTO profissional_Saude
+  (id) 
+VALUES 
+  (?);
+INSERT INTO role
+  (id, 
+  nome) 
+VALUES 
+  (?, 
+  ?);
+INSERT INTO treino
+  (id, 
+  data_criacao, 
+  data_inicio, 
+  data_fim, 
+  descricao, 
+  prof_saude, 
+  utente, 
+  concluido) 
+VALUES 
+  (?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?);
+INSERT INTO utente
+  (id, 
+  patologias, 
+  medicacao, 
+  prof_saude) 
+VALUES 
+  (?, 
+  ?, 
+  ?, 
+  ?);
+INSERT INTO utilizador
+  (id, 
+  password, 
+  nome, 
+  morada, 
+  nacionalidade, 
+  nif, 
+  cc, 
+  genero, 
+  data_nascimento, 
+  contacto, 
+  mail, 
+  role, 
+  data_registo, 
+  data_login) 
+VALUES 
+  (?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?, 
+  ?);
+INSERT INTO video
+  (id, 
+  autor, 
+  url, 
+  descricao) 
+VALUES 
+  (?, 
+  ?, 
+  ?, 
+  ?);
+INSERT INTO zona
+  (id, 
+  nome) 
+VALUES 
+  (?, 
+  ?);
+INSERT INTO zona_artigo
+  (zonaid, 
+  artigoid) 
+VALUES 
+  (?, 
+  ?);
+INSERT INTO zona_episodio_dor
+  (episodio_dorid, 
+  zonaid, 
+  intensidade) 
+VALUES 
+  (?, 
+  ?, 
+  ?);
+INSERT INTO zona_video
+  (zonaid, 
+  videoid) 
+VALUES 
+  (?, 
+  ?);
+

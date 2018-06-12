@@ -1,7 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f127e7b-7f92-433f-82b1-14dc65db07a4" name="Default" comment="" />
+    <list default="true" id="4f127e7b-7f92-433f-82b1-14dc65db07a4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../Dor-Expressoes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL Scripts/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../SQL Scripts/tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/.idea/calendar.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/calendar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/css/calendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/css/fontawesome-all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/css/fullcalendar.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/css/fullcalendar.print.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/js/calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/js/fullcalendar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/js/fullcalendar_locale_pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/js/moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/.idea/pintar.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/Imagens/front.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/css/pintar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/js/imageMapResizer.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/js/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/js/jquery.maphilight.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/js/pintar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pintar/pintar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/fa-brands.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/fa-brands.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/fa-regular.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/fa-regular.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/fa-solid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/fa-solid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/fontawesome-all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/fontawesome-all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/css/fontawesome-all.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/fontawesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/css/fontawesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/_variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/fa-brands.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/fa-regular.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/fa-solid.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/less/fontawesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/fa-brands.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/fa-regular.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/fa-solid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scss/fontawesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.woff2" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,65 +126,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="calendar.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/calendar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="340">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/js/index.js">
+      <file leaf-file-name="calendar.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/css/calendar.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_artigos.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/php/class_artigos.php">
+      <file leaf-file-name="pintar.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/css/pintar.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+            <state relative-caret-position="153">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/php/config.php">
+      <file leaf-file-name="pintar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/pintar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class_pesquisar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/php/class_pesquisar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class_database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/php/class_database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class_login.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/includes/php/class_login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10">
-              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+            <state relative-caret-position="680">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
             </state>
           </provider>
         </entry>
@@ -101,6 +189,11 @@
         <option value="$PROJECT_DIR$/includes/js/index.js" />
         <option value="$PROJECT_DIR$/includes/php/teste.php" />
         <option value="$PROJECT_DIR$/includes/php/class_login.php" />
+        <option value="$PROJECT_DIR$/modules/calendar/calendar.html" />
+        <option value="$PROJECT_DIR$/includes/css/calendar.css" />
+        <option value="$PROJECT_DIR$/modules/calendar.html" />
+        <option value="$PROJECT_DIR$/includes/css/pintar.css" />
+        <option value="$PROJECT_DIR$/modules/pintar.html" />
       </list>
     </option>
   </component>
@@ -137,22 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="public" type="cbb8eebc:String" user="public" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="public" type="cbb8eebc:String" user="public" />
-              <item name="modules" type="cbb8eebc:String" user="modules" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,11 +241,44 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="public" type="cbb8eebc:String" user="public" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="public" type="cbb8eebc:String" user="public" />
+              <item name="includes" type="cbb8eebc:String" user="includes" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="public" type="cbb8eebc:String" user="public" />
+              <item name="includes" type="cbb8eebc:String" user="includes" />
+              <item name="css" type="cbb8eebc:String" user="css" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="public" type="cbb8eebc:String" user="public" />
+              <item name="includes" type="cbb8eebc:String" user="includes" />
+              <item name="js" type="cbb8eebc:String" user="js" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="public" type="cbb8eebc:String" user="public" />
+              <item name="modules" type="cbb8eebc:String" user="modules" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pintar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RunDashboard">
@@ -221,14 +331,16 @@
       <workItem from="1528071620085" duration="4401000" />
       <workItem from="1528079168060" duration="26000" />
       <workItem from="1528745559642" duration="16000" />
+      <workItem from="1528818472560" duration="597000" />
+      <workItem from="1528819070605" duration="1354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15015000" />
+    <option name="totallyTimeSpent" value="16966000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -269,41 +381,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/php/class_database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="58" lean-forward="true" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/php/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/php/class_pesquisar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/php/class_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/php/emails.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
@@ -509,13 +586,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="23" selection-end-line="24" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/js/bootstrap.js" />
     <entry file="file://$PROJECT_DIR$/includes/js/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -560,8 +631,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/php/class_artigos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        <state relative-caret-position="561">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -573,10 +644,39 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/php/teste.php" />
+    <entry file="file://$PROJECT_DIR$/modules/calendar/calendar.html" />
     <entry file="file://$PROJECT_DIR$/includes/php/class_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="860">
+          <caret line="80" column="40" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/pintar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/css/pintar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/css/calendar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/calendar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
         </state>
       </provider>
     </entry>
