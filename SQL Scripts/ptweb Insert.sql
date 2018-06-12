@@ -64,6 +64,18 @@ VALUES
   ?, 
   ?, 
   ?);
+INSERT INTO notificacoes
+  (id, 
+  id_notificacao, 
+  tabela, 
+  mensagem, 
+  lido) 
+VALUES 
+  (?, 
+  ?, 
+  ?, 
+  ?, 
+  ?);
 INSERT INTO profissional_Saude
   (id) 
 VALUES 

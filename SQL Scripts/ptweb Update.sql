@@ -37,6 +37,13 @@ UPDATE mensagem SET
   conteudo = ? 
 WHERE
   ;
+UPDATE notificacoes SET 
+  id_notificacao = ?, 
+  tabela = ?, 
+  mensagem = ?, 
+  lido = ? 
+WHERE
+  id = ?;
 UPDATE profissional_Saude SET 
    
 WHERE

@@ -25,7 +25,6 @@ CREATE OR REPLACE FUNCTION f_profSaude() RETURNS trigger AS $$
 	END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
-
 CREATE TRIGGER t_profSaude AFTER INSERT ON utilizador
 FOR EACH ROW EXECUTE PROCEDURE f_profSaude();
 
@@ -38,6 +37,7 @@ CREATE OR REPLACE FUNCTION f_activeUser() RETURNS integer AS $$
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
 
+-- Criação de LOGS
 CREATE OR REPLACE FUNCTION f_logs() RETURNS trigger AS $$
 DECLARE activeuser int:= (SELECT f_activeuser());
 BEGIN
@@ -56,6 +56,30 @@ BEGIN
     END IF;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
+
+
+--- Criação de notificacoes
+CREATE OR REPLACE FUNCTION f_notifications() RETURNS trigger AS $$
+BEGIN
+	IF TG_OP = 'INSERT' THEN 
+		INSERT INTO notificacoes (id_notificacao, tabela, mensagem)
+		VALUES (NEW.id, TG_RELNAME, TG_RELNAME || ' ' || NEW.id || ' adicionado com sucesso');
+        RETURN NEW;
+	ELSIF   TG_OP = 'UPDATE' THEN 
+		INSERT INTO notificacoes (id_notificacao, tabela, mensagem)
+		VALUES (NEW.id, TG_RELNAME, TG_RELNAME || ' ' || NEW.id ||' editado com sucesso.');
+        RETURN NEW;
+    ELSIF   TG_OP = 'DELETE' THEN   
+        INSERT INTO notificacoes (id_notificacao, tabela, mensagem)
+        VALUES (OLD.id, TG_RELNAME, TG_RELNAME || ' ' || NEW.id ||' removido com sucesso.');
+        RETURN OLD;
+    END IF;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE TRIGGER not_artigo BEFORE INSERT OR UPDATE OR DELETE ON artigo FOR EACH ROW EXECUTE PROCEDURE f_notifications();
+CREATE TRIGGER not_treino BEFORE INSERT OR UPDATE OR DELETE ON treino FOR EACH ROW EXECUTE PROCEDURE f_notifications();
+CREATE TRIGGER not_video  BEFORE INSERT OR UPDATE OR DELETE ON video FOR EACH ROW EXECUTE PROCEDURE f_notifications();
 
 
 -- Query dinamica dos triggers

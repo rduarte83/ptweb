@@ -3,7 +3,7 @@ CREATE TABLE artigo (
   autor        int4 NOT NULL, 
   titulo       varchar(100) NOT NULL, 
   conteudo     text NOT NULL, 
-  data_criacao timestamp NOT NULL DEFAULT now(), 
+  data_criacao timestamp DEFAULT now() NOT NULL, 
   data_edicao  timestamp, 
   PRIMARY KEY (id));
 CREATE TABLE consultas (
@@ -35,6 +35,13 @@ CREATE TABLE mensagem (
   origem   int4 NOT NULL, 
   destino  int4 NOT NULL, 
   conteudo int4 NOT NULL);
+CREATE TABLE notificacoes (
+  id             SERIAL NOT NULL, 
+  id_notificacao int4 NOT NULL, 
+  tabela         varchar(50) NOT NULL, 
+  mensagem       text NOT NULL, 
+  lido           bool DEFAULT 'false' NOT NULL, 
+  PRIMARY KEY (id));
 CREATE TABLE profissional_Saude (
   id int4 NOT NULL, 
   PRIMARY KEY (id));
@@ -44,7 +51,7 @@ CREATE TABLE role (
   PRIMARY KEY (id));
 CREATE TABLE treino (
   id           SERIAL NOT NULL, 
-  data_criacao date NOT NULL DEFAULT now(), 
+  data_criacao date DEFAULT now() NOT NULL, 
   data_inicio  date NOT NULL, 
   data_fim     date NOT NULL, 
   descricao    varchar(255) NOT NULL, 
@@ -71,7 +78,7 @@ CREATE TABLE utilizador (
   contacto        varchar(13), 
   mail            varchar(50), 
   role            int4 NOT NULL, 
-  data_registo    date NOT NULL, 
+  data_registo    date DEFAULT now() NOT NULL, 
   data_login      date, 
   PRIMARY KEY (id));
 CREATE TABLE video (

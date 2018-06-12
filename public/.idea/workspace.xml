@@ -1,122 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f127e7b-7f92-433f-82b1-14dc65db07a4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../Dor-Expressoes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL Scripts/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../SQL Scripts/tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/.idea/calendar.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/calendar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/css/calendar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/css/fontawesome-all.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/css/fullcalendar.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/css/fullcalendar.print.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/js/calendar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/js/fullcalendar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/js/fullcalendar_locale_pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/js/moment.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-brands-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-brands-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-brands-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-regular-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-regular-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-regular-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-solid-900.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-solid-900.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-solid-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calendar/webfonts/fa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/.idea/pintar.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/Imagens/front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/css/pintar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/js/imageMapResizer.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/js/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/js/jquery.maphilight.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/js/pintar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pintar/pintar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/fa-brands.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/fa-brands.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/fa-regular.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/fa-regular.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/fa-solid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/fa-solid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/fontawesome-all.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/fontawesome-all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/css/fontawesome-all.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/fontawesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/fontawesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_animated.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_bordered-pulled.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_core.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_fixed-width.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_icons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_larger.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_list.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_rotated-flipped.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_screen-reader.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_stacked.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/_variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/fa-brands.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/fa-regular.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/fa-solid.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/less/fontawesome.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_animated.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_bordered-pulled.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_core.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_fixed-width.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_icons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_larger.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_list.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_rotated-flipped.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_screen-reader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_stacked.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/fa-brands.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/fa-regular.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/fa-solid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/scss/fontawesome.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/includes/webfonts/fa-solid-900.woff2" afterDir="false" />
-    </list>
+    <list default="true" id="4f127e7b-7f92-433f-82b1-14dc65db07a4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -332,15 +217,15 @@
       <workItem from="1528079168060" duration="26000" />
       <workItem from="1528745559642" duration="16000" />
       <workItem from="1528818472560" duration="597000" />
-      <workItem from="1528819070605" duration="1354000" />
+      <workItem from="1528819070605" duration="1972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16966000" />
+    <option name="totallyTimeSpent" value="17584000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
