@@ -1,12 +1,9 @@
 //TODO renomear as zonas do corpo
-//TODO reduzir o numero de zonas???
-//TODO suportar varias zonas??? (criar array)
-//TODO resize https://github.com/davidjbradshaw/image-map-resizer
 
 //Custom hot to cold temperature color gradient
 //http://web-tech.ga-usa.com/2012/05/creating-a-custom-hot-to-cold-temperature-color-gradient-for-use-with-rrdtool/index.html
 
-var zona, cor, valor;
+var zona, cor, valor, numZonas, zonaCorArray;
 var corArray = [
     "#FF0000",
     "#FF6e00",
@@ -17,24 +14,27 @@ var corArray = [
     "#00ff83",
     "#00d4ff",
     "#0084ff",
-    "#0032ff"
+    "#0032ff",
+    "#0500ff"
 ].reverse();
 
 $(document).ready(function () {
-    //Valores default
-    valor = 1;
-    cor = corArray[0].slice(1);
-    $("#pickedColor").css("background-color", corArray[0]);
-    $("#valor").val(valor);
+    reset();
 
-    highlightSettings()
+    highlightSettings();
 
     createSlider();
     createGradient();
     highlight();
 
-    $('map').imageMapResize();
+    $("#clear").click(function () {
+       reset();
+       console.log("RESET")
+    });
+
+    $("map").imageMapResize();
 });
+
 
 function createGradient() {
     var gradient = "linear-gradient(to right";
@@ -45,30 +45,30 @@ function createGradient() {
 
 function createSlider () {
     $("#slider").slider({
-        min : 1,
+        min : 0,
         max : 10,
         width : 500,
         slide: function( event, ui ) {
-            $("#valor").val(ui.value);
             for (var i=0; i<corArray.length ; i++) {
-                if (ui.value == i+1) {
-                    $("#pickedColor").css("backgroundColor",corArray[i]);
-                    cor = $("#pickedColor").css("backgroundColor");
-                    cor = rgbToHex(cor).slice(1);
-                    valor = $("#valor").val();
+                if (ui.value == i) {
+                    cor = corArray[i].slice(1);
+                    valor = ui.value;
                     highlightSettings();
                 }
             }
         }
-    });
-}
-
-function rgbToHex(rgb) {
-    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-    function hex(x) {
-        return ("0" + parseInt(x).toString(16)).slice(-2);
-    }
-    return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+    }).each(function (){
+            // Add labels to slider whose values are specified by min, max and whose step is set to 1
+            // Get the options for this slider
+            var opt = $(this).data().uiSlider.options;
+            // Get the number of possible values
+            var vals = opt.max - opt.min;
+            // Space out values
+            for (var i = 0; i <= vals; i++) {
+                var el = $('<label>'+ i +'</label>').css('left',(i/vals*100)+'%');
+                $( "#slider" ).append(el);
+            }
+        });
 }
 
 function highlightSettings() {
@@ -77,17 +77,43 @@ function highlightSettings() {
         strokeColor: cor,
         strokeWidth: 1,
         fillOpacity: 0.8
-    })
+    });
 }
 
 function highlight() {
-    $('.corpo').click(function(e) {
+    $("area").click(function(e) {
         zona = this.alt;
-        console.log("cor:",cor,"zona:", zona, "valor:", valor);
-        highlightSettings();
+        $(this).data("maphilight", {"stroke":false, "fillColor":cor , "fillOpacity":1});
+
+        console.log("cor:",cor," zona:", zona, " valor:", valor, " numZonas:", numZonas);
+
+        zonaCorArray[numZonas] = [zona, valor];
+        numZonas++;
+
+        console.log("Array: ", zonaCorArray);
+
+        //Keep color in zone
         e.preventDefault();
         var data = $(this).mouseout().data('maphilight') || {};
         data.alwaysOn = !data.alwaysOn;
         $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
-    })
+        //$(this).unbind();
+    });
+}
+
+function reset() {
+    //Valores default
+    zonaCorArray = [];
+    numZonas = 0;
+    valor = 0;
+    cor = corArray[0].slice(1);
+    $("#slider").slider({
+      value: valor
+    });
+
+    $('area').each(function()  {
+        $(this).data('maphilight', {})
+    });
+
+    highlightSettings();
 }

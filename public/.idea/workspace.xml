@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f127e7b-7f92-433f-82b1-14dc65db07a4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/includes/php/teste.php" beforeDir="false" />
-    </list>
+    <list default="true" id="4f127e7b-7f92-433f-82b1-14dc65db07a4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/includes/php/class_database.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="969">
-              <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -70,8 +68,8 @@
       <file leaf-file-name="class_login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/php/class_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+            <state relative-caret-position="10">
+              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -149,17 +147,6 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="public" type="cbb8eebc:String" user="public" />
-              <item name="includes" type="cbb8eebc:String" user="includes" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="public" type="cbb8eebc:String" user="public" />
-              <item name="includes" type="cbb8eebc:String" user="includes" />
-              <item name="php" type="cbb8eebc:String" user="php" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="public" type="cbb8eebc:String" user="public" />
               <item name="modules" type="cbb8eebc:String" user="modules" />
             </path>
           </expand>
@@ -181,7 +168,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pintar" />
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RunDashboard">
@@ -233,15 +220,15 @@
       <workItem from="1528069713447" duration="888000" />
       <workItem from="1528071620085" duration="4401000" />
       <workItem from="1528079168060" duration="26000" />
+      <workItem from="1528745559642" duration="16000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14999000" />
+    <option name="totallyTimeSpent" value="15015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -257,9 +244,9 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39915073" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="7" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="PHP-CGI Server" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908705" />
@@ -510,12 +497,8 @@
     <entry file="file://$PROJECT_DIR$/modules/index/index_navbar.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/home/home_admin.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/home/home_admin_menu.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/home/home_admin.php" />
+    <entry file="file://$PROJECT_DIR$/modules/home/home_admin_menu.php" />
     <entry file="file://$PROJECT_DIR$/includes/php/logout.php" />
     <entry file="file://$PROJECT_DIR$/../temp/galo/index.js" />
     <entry file="file://$PROJECT_DIR$/../temp/galo/index.html" />
@@ -585,21 +568,15 @@
     <entry file="file://$PROJECT_DIR$/includes/php/class_database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
-          <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/php/teste.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/php/teste.php" />
     <entry file="file://$PROJECT_DIR$/includes/php/class_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+        <state relative-caret-position="10">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
         </state>
       </provider>
     </entry>
