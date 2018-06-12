@@ -8,17 +8,17 @@ function carregaData(texto) {
         },
         dataType: "json", // serializes the form's elements.
         success: function (data) {
-            $("form input[name='nome']").val(data[0].nome);
-            $("form input[name='morada']").val(data[0].morada);
-            $("form input[name='nacionalidade']").val(data[0].nacionalidade);
-            $("form input[name='nif']").val(data[0].nif);
-            $("form input[name='cc']").val(data[0].cc);
-            $("form select[name='genero']").val(data[0].genero);
-            $("form input[name='data_nascimento']").val(data[0].data_nascimento);
-            $("form input[name='contacto']").val(data[0].contacto);
-            $("form input[name='email']").val(data[0].mail);
-            $("form select[name='role']").val(data[0].role);
-            $("form input[name='idKey']").val(texto);
+            $("#editUserForm input[name='nome']").val(data[0].nome);
+            $("#editUserForm input[name='morada']").val(data[0].morada);
+            $("#editUserForm input[name='nacionalidade']").val(data[0].nacionalidade);
+            $("#editUserForm input[name='nif']").val(parseInt(data[0].nif));
+            $("#editUserForm input[name='cc']").val(data[0].cc);
+            $("#editUserForm select[name='genero']").val(data[0].genero);
+            $("#editUserForm input[name='data_nascimento']").val(data[0].data_nascimento);
+            $("#editUserForm input[name='contacto']").val(data[0].contacto);
+            $("#editUserForm input[name='email']").val(data[0].mail);
+            $("#editUserForm select[name='role']").val(data[0].role);
+            $("#editUserForm input[name='idKey']").val(parseInt(texto));
         },
         error: function (response) {
             console.log("error " + response.getAllResponseHeaders);
@@ -34,19 +34,19 @@ function getUsers(){
             "cmd":"getUsers"
         },
         success:function(response){
-            console.log(response);
+            //console.log(response);
             var resposta = $.parseJSON(response);
-            console.log(resposta);
+            //console.log(resposta);
             var listPaciente = '<li class="list-group-item"> ID | Nome</li>';
             var listFunc = '<li class="list-group-item"> ID | Nome</li>';
             var listAdmin = '<li class="list-group-item"> ID | Nome</li>';
             $.each(resposta, function (key, val) {
                 if (resposta[key].role == "2" || resposta[key].role == "3") {
-                    listFunc += '<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome + '</li>';
+                    listFunc += '<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#editUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome + '</li>';
                 } else if (resposta[key].role == "4") {
-                    listPaciente+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' + resposta[key].id + '</span>' + resposta[key].nome +'</li>';
+                    listPaciente+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#editUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' + resposta[key].id + '</span>' + resposta[key].nome +'</li>';
                 } else if (resposta[key].role == "1") {
-                    listAdmin+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome +'</li>';
+                    listAdmin+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#editUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' +resposta[key].id + '</span>' + resposta[key].nome +'</li>';
                 }
             });
 
@@ -65,7 +65,7 @@ function insertUser(dados)
             url: 'includes/php/funcsWeb.php',
             data: dados, // serializes the form's elements.
             success: function (data) { // show response from the php script.
-                console.log(data);
+                //console.log(data);
                 $("#error").html(data);
                 $('#addUserModal').modal('toggle');
                 getUsers();
@@ -83,9 +83,9 @@ function updateUser(dados)
             url: 'includes/php/funcsWeb.php',
             data: dados, // serializes the form's elements.
             success: function (data) { // show response from the php script.
-                console.log(data);
+                console.log("Update->"+data);
                 $("#error").html(data);
-                $('#addUserModal').modal('toggle');
+                $('#editUserModal').modal('toggle');
                 getUsers();
             },
             error: function(response){
@@ -99,13 +99,11 @@ $(document).ready(function () {
     getUsers();
 
     $("#add_user").click(function(){
-        $("form").removeClass("edit")
         $("#addUserModal").show();
     });
 
     $("#edit_user").click(function(){
-        $("form").addClass("edit");
-        $("#addUserModal").show();
+        $("#editUserModal").show();
     });
 
     $(document).on("click", ".list-group-item", function () {
@@ -115,13 +113,14 @@ $(document).ready(function () {
     $("#addUserForm").on("submit", function (e) {
         e.preventDefault();
         var arrDados = $(this).serializeArray();
+        arrDados.push({"name":"cmd","value":"insertUser"});
+        insertUser(arrDados);
+    });
+    $("#editUserForm").on("submit", function (e) {
+        e.preventDefault();
+        var arrDados = $(this).serializeArray();
+        arrDados.push({"name":"cmd","value":"updateUser"});
+        updateUser(arrDados);
         
-        if(!$("form").hasClass("edit")){
-            arrDados.push({"name":"cmd","value":"insertUser"});
-            insertUser(arrDados);
-        }else{
-            arrDados.push({"name":"cmd","value":"updateUser"});
-            updateUser(arrDados);
-        }
     });
 });

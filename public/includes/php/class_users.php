@@ -35,36 +35,59 @@ class User
         }
     }
 
-    public static function updateUser($nome, $morada, $nacionalidade, $nif, $cc, $genero,$data_nascimento,
-        $contacto, $email, $role, $id)
+    public static function updateUser($email, $password=null, $nome,  $genero, $data_nascimento, $contacto, $cc, $nif, $morada, $nacionalidade, $role, $id)
     {
 
         try{
             require_once("class_database.php");
             $Database = new Database();
+            $query;
+            $arrParam;
 
-            $arrParam = [
-                ":password" => $password,
-                ":nome" => $nome,
-                ":morada" => $morada,
-                ":nacionalidade" => $nacionalidade,
-                ":nif" => $nif,
-                ":cc" => $cc,
-                ":genero" => $genero,
-                ":data_nascimento" => date("Y-m-d", strtotime($data_nascimento)),
-                ":contacto" => $contacto,
-                ":email" => $email,
-                ":role" => intval($role),
-                ":id" => $id
-            ]; 
+            if (!empty($password)){
+                $arrParam = [
+                    ":password" => $password,
+                    ":nome" => $nome,
+                    ":morada" => $morada,
+                    ":nacionalidade" => $nacionalidade,
+                    ":nif" => $nif,
+                    ":cc" => $cc,
+                    ":genero" => $genero,
+                    ":data_nascimento" => date("Y-m-d", strtotime($data_nascimento)),
+                    ":contacto" => $contacto,
+                    ":email" => $email,
+                    ":role" => intval($role),
+                    ":id" => intval($id)
+                ]; 
+    
+                $query = "UPDATE utilizador 
+                SET nome=:nome,morada=:morada,nacionalidade=:nacionalidade,
+                nif=:nif,cc=:cc,genero=:genero,data_nascimento=:data_nascimento,contacto=:contacto,mail=:email,
+                role=:role, password=:password WHERE id=:id";
+            }else {
+                $arrParam = [
+                    ":nome" => $nome,
+                    ":morada" => $morada,
+                    ":nacionalidade" => $nacionalidade,
+                    ":nif" => $nif,
+                    ":cc" => $cc,
+                    ":genero" => $genero,
+                    ":data_nascimento" => date("Y-m-d", strtotime($data_nascimento)),
+                    ":contacto" => $contacto,
+                    ":email" => $email,
+                    ":role" => intval($role),
+                    ":id" => intval($id)
+                ]; 
 
-            $query = "UPDATE utilizador 
-            SET nome=:nome,morada=:morada,nacionalidade=:nacionalidade,
-            nif=:nif,cc=:cc,genero=:genero,data_nascimento=:data_nascimento,contacto=:contacto,mail=:email,
-            role=:role WHERE id=:id;";
+                $query = "UPDATE utilizador 
+                SET nome=:nome,morada=:morada,nacionalidade=:nacionalidade,
+                nif=:nif,cc=:cc,genero=:genero,data_nascimento=:data_nascimento,contacto=:contacto,mail=:email,
+                role=:role WHERE id=:id";
+            }
+
+            
 
             $result = $Database->EXE_NON_QUERY($query, $arrParam, false);
-
             return $result->rowcount();
 
         } catch (PDOException $e) {

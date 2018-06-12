@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $_SESSION["role"]="Admin";
-    if( !isset($_SESSION)){
+    //$_SESSION["role"]="Admin";
+    if( !isset($_SESSION,$_SESSION["role"])){
         header ( "location: index.php" ); 
     }
 ?>
@@ -38,6 +38,8 @@
                 case "Admin":
                     require_once("modules/home/admin/admin.php");
                     echo '<script src="includes/js/admin.js"></script>';
+                    break;
+                default:
                     break;
 
             }

@@ -30,12 +30,6 @@ class Artigos
         require_once("class_database.php");
         // Query nome_expressao
         $db = new Database();
-        $sql = "SELECT DISTINCT nome_expressao, id_expressao FROM vw_categoria";
-        $result = $db->EXE_QUERY($sql, null, false);
-
-        foreach ( $result as $item ) {
-            array_push($this->listaCat, ["id"=> $item["id_expressao"], "cat" => $item["nome_expressao"]]);
-        }
 
         // Query nome_zona
         $sql = "SELECT DISTINCT nome_zona, id_zona FROM vw_categoria";

@@ -18,7 +18,6 @@ class Login
         if(self::verifyData($email)) {
 
             $dados = $gestor->EXE_QUERY('SELECT * FROM vw_utilizadores WHERE mail LIKE :email',$email_array,false);
-            //var_dump($dados);
             
             if(empty($dados))
                 return self::$message;
@@ -31,8 +30,8 @@ class Login
             ];
 
             $pass = $gestor->EXE_QUERY('SELECT password = crypt(:pwd, password) as pass FROM utilizador WHERE id = :id;',$id_array,false);
-
-           if ($pass[0]["pass"]) {
+            
+            if ($pass[0]["pass"]) {
                $arrID = [
                    ":id" => $id
                ];
@@ -68,11 +67,17 @@ class Login
 
     public static function iniciarSessao($dados){
         //iniciar a sessão
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        
+
         $_SESSION['id'] = $dados[0]['id'];
         $_SESSION['nome'] = $dados[0]['nome'];
-        $_SESSION['role'] = $dados[0]['role_nome'];
+        $role = $dados[0]['role_nome'] == "Prof Saúde Sénior" ? "Prof Saúde" : $dados[0]['role_nome'];
+        $_SESSION['role'] = $role;
     }
-
+    
     public static function destroiSessao(){
         //destroi as variáveis da sessão
         unset($_SESSION['id']);

@@ -33,11 +33,11 @@ if(isset($_POST,$_POST["cmd"]))
         case 'updateUser':
             if(isset($_POST["email"],$_POST["password"],$_POST["nome"],$_POST["genero"],
             $_POST["data_nascimento"],$_POST["contacto"],$_POST["cc"],$_POST["nif"],
-            $_POST["morada"],$_POST["nacionalidade"],$_POST["role"], $_POST["id"])){
-
+            $_POST["morada"],$_POST["nacionalidade"],$_POST["role"], $_POST["idKey"])){
+                
                 $result = User::updateUser($_POST["email"],$_POST["password"],$_POST["nome"],$_POST["genero"],
                 $_POST["data_nascimento"],$_POST["contacto"],$_POST["cc"],$_POST["nif"],
-                $_POST["morada"],$_POST["nacionalidade"],$_POST["role"], $_POST["id"]);
+                $_POST["morada"],$_POST["nacionalidade"],$_POST["role"], $_POST["idKey"]);
 
                 echo json_encode($result);
             }
