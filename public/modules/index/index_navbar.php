@@ -39,7 +39,7 @@
             <ul class="navbar-nav mr-auto"> 
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
                 </form>
             </ul>
 
@@ -63,7 +63,7 @@
                                 <label for="exampleInputPassword1">Palavra-passe</label>
                                 <input type="password" name="pwd" class="form-control" id="exampleInputPassword1" placeholder="Palavra-passe">
                             </div>
-                            <button type="submit" class="btn btn-primary">Entrar</button>
+                            <button id="btn_entrar" type="submit" class="btn btn-primary">Entrar</button>
                         </form>
                     </div>
                     <?php else: ?>

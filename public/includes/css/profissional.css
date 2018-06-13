@@ -1,0 +1,41 @@
+nav.navbar{
+    background-color: #f2f2f0 !important;
+}
+
+nav.sidebar{
+    background-color: #ff5e3a !important;
+}
+
+nav.lista{
+    color: #f2f2f0 !important;
+}
+
+nav.nav-link{
+    color: #f2f2f0 !important;
+}
+
+nav.nav-item{
+    color: #f2f2f0 !important;
+}
+
+nav.nav-link active{
+    color: #f2f2f0 !important;
+}
+
+a.nav-link{
+    color: #f2f2f0 !important;
+
+}
+
+a.navbar-brand{
+    color: #272e4f !important;
+}
+
+.dropdown-container{
+    background-color: #ff5e3a !important;
+}
+
+a{
+    color: #f2f2f0 !important;
+
+}

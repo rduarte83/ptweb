@@ -29,8 +29,7 @@ function logout()
         success: function(response) {
             console.log(response);
             $("#error").html(response);
-            reload();
-            
+            location.reload();
         }
     })
 }
@@ -53,6 +52,11 @@ $(document).ready(function(){
 
     $("#painel").click(function(){
         window.location.href = "home.php";
+    });
+
+    $("#exampleInputPassword1").keyup(function (e) {
+        e.preventDefault();
+        $("#btn_entrar").click();
     });
 
 });
