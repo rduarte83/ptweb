@@ -5,4 +5,8 @@
     require_once("emails.php");
     require_once("class_users.php");
     require_once("class_pesquisar.php");
+    require_once("class_mensagens.php");
+    require_once("class_notificacoes.php");
+    require_once("class_consultas.php");
+    require_once("class_treinos.php");
 ?>

@@ -44,7 +44,7 @@ if(isset($_POST,$_POST["cmd"]))
             break;
         
         /**
-         * -- LOGIN --
+         * -- LOGIN  / Logout--
          */
         case 'login':
             if(isset($_POST["email"],$_POST["pwd"])){
@@ -58,6 +58,39 @@ if(isset($_POST,$_POST["cmd"]))
             Login::destroiSessao();
             break;
         
+        /**
+         *  -- Mensagens --
+         */
+        case "sendTo":
+            if(isset($_POST["id"],$_POST["id_to"],$_POST["mensagem"])){
+                Mensagens::sendMensagens($_POST["id"],$_POST["id_to"],$_POST["mensagem"]);
+            }
+            break;
+        case "getMessages":
+            if(isset($_POST["id"],$_POST["id_to"],$_POST["mensagem"])){
+                echo json_encode(Mensagens::getMensagens($_POST["id"],$_POST["id_to"]));
+            }
+            break;
+        case "getNumberMessages":
+            if(isset($_POST["id"],$_POST["id_to"],$_POST["mensagem"])){
+                echo json_encode(Mensagens::getNumberMensagens($_POST["id"],$_POST["id_to"]));
+            }
+            break;
+
+        /**
+         * -- Notificações
+         */
+        case "getNotification":
+            if(isset($_POST["id"])){
+                echo json_encode(Mensagens::getNotificacoes($_POST["id"]));
+            }
+            break;
+        case "getNotificationNumber":
+            if(isset($_POST["id"])){
+                echo json_encode(Notificacoes::getNumberNotificacoes($_POST["id"]));
+            }
+            break;
+
         default:
             # code...
             break;

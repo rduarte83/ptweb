@@ -149,8 +149,8 @@
 
                                 <select class="form-control" name="role" id="role">
                                     <option value="2">Profissional de Saúde</option>
-                                    <option value="4">Profissional de Saúde Sénior</option>
-                                    <option value="3">Utente</option>
+                                    <option value="3">Profissional de Saúde Sénior</option>
+                                    <option value="4">Utente</option>
                                     <option value="1">Admin</option>
                                 </select>
                             </div>
@@ -270,8 +270,8 @@
 
                                 <select class="form-control" name="role" id="erole">
                                     <option value="2">Profissional de Saúde</option>
-                                    <option value="4">Profissional de Saúde Sénior</option>
-                                    <option value="3">Utente</option>
+                                    <option value="3">Profissional de Saúde Sénior</option>
+                                    <option value="4">Utente</option>
                                     <option value="1">Admin</option>
                                 </select>
                             </div>
