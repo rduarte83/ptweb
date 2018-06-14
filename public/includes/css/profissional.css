@@ -14,14 +14,6 @@ nav.nav-link{
     color: #f2f2f0 !important;
 }
 
-nav.nav-item{
-    color: #f2f2f0 !important;
-}
-
-nav.nav-link active{
-    color: #f2f2f0 !important;
-}
-
 a.nav-link{
     color: #f2f2f0 !important;
 
@@ -37,5 +29,15 @@ a.navbar-brand{
 
 a{
     color: #f2f2f0 !important;
+}
+button.margin8{
+    margin: 8px;
+}
 
+.nav-link.dark-text{
+    color: #272e4f !important;
+}
+
+.menu {
+    border-radius: 5px !important;
 }

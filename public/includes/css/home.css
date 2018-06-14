@@ -81,7 +81,7 @@ a{
 */
 
 .sidebar{
-    position: fixed
+    position: fixed;
 }
 
 .adminContent{
@@ -99,5 +99,5 @@ a{
 
 .homeProf
 {
-    margin-left: 250px;
+    margin-left: 350px;
 }
