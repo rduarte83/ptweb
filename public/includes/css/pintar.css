@@ -1,9 +1,6 @@
 .main {
 	margin: 0 auto;
-	background-color: white;
-	padding: 20px;
-	width: 800px;
-
+	padding: 5px;
 }
 
 h1 {
@@ -28,14 +25,13 @@ h1 {
 }
 
 .map {
-	display: block;
 	margin: 0 auto;
-	height: 500px;
+	height: 400px;
 }
 
 #buttons {
 	float: right;
-	margin-top: -50px;
+	margin-top: -80px;
 }
 
 #submit, #clear {

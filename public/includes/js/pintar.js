@@ -32,7 +32,7 @@ $(document).ready(function () {
        console.log("RESET")
     });
 
-    $("map").imageMapResize();
+    imageMapResize();
 });
 
 
