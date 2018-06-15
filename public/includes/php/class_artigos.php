@@ -52,4 +52,28 @@ class Artigos
         return $text;
     }
 
+    public static function insertArtigo($titulo, $noticia){
+        try {
+
+            $Database = new Database();
+            $arrParam = [
+                ":titulo" => $titulo,
+                ":noticia" => $noticia,
+            ];
+
+            $query = "INSERT INTO artigo 
+            (id, autor, titulo, conteudo, data_criacao, data_edicao)
+            VALUES(DEFAULT, 2, :titulo, :noticia, now(), null)";
+
+            $result = $Database->EXE_NON_QUERY($query, $arrParam, false);
+
+            if($result != null)
+                return $result->rowCount();
+
+        } catch (PDOException $e) {
+            echo "ERROR: " . $e->getMessage();
+        }
+
+    }
+
 }

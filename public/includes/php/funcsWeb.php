@@ -78,6 +78,15 @@ if(isset($_POST,$_POST["cmd"]))
             break;
 
         /**
+         * -- Artigos --
+         */
+
+        case "insertArtigo":
+            $result = Artigos::insertArtigo($_POST["titulo"],$_POST["noticia"]);
+            echo json_encode($result);
+            break;
+
+        /**
          * -- Notificações
          */
         case "getNotification":

@@ -70,6 +70,33 @@ function carregaData(texto) {
     });
 }
 
+function insertArtigo(dados)
+{
+    $.ajax({
+        type: "POST",
+        url: 'includes/php/funcsWeb.php',
+        data: dados, // serializes the form's elements.
+        success: function (data) {
+            // Artigo foi adicionado
+            if(data == 1){
+                $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+                    $("#success-alert").slideUp(500);
+                });
+            }else{
+                $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
+                    $("#danger-alert").slideUp(500);
+                });
+            }
+
+            $("#error").html(data);
+            $('#addUserModal').modal('toggle');
+        },
+        error: function(response){
+            console.log("error->" + response.getAllResponseHeaders);
+        }
+    });
+}
+
 
 var previousMain = [];
 var level = 0;
@@ -91,6 +118,8 @@ function addTrat(id){
 
 
 $(document).ready(function () {
+    $("#success-alert").hide();
+    $("#danger-alert").hide();
 
     $("#main_div").on("click",'#show_list_pac', function (){
 
@@ -106,7 +135,7 @@ $(document).ready(function () {
         alert("lol");
     });
     $("#main_div").on("click",'#add_article', function (){
-        alert("lol");
+        $('#addUserModal').modal('toggle');
     });
     $("#main_div").on("click",'#edit_article', function (){
         alert("lol");
@@ -116,6 +145,13 @@ $(document).ready(function () {
     });
     $("#main_div").on("click",'#edit_video', function (){
         alert("lol");
+    });
+
+    $("#addUserForm").on("submit", function (e) {
+        e.preventDefault();
+        var arrDados = $(this).serializeArray();
+        arrDados.push({"name":"cmd","value":"insertArtigo"});
+        insertArtigo(arrDados);
     });
 
     $(document).on("click", ".list-group-item", function () {
