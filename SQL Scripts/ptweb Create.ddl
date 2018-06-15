@@ -16,9 +16,7 @@ CREATE TABLE consultas (
 CREATE TABLE episodio_dor (
   id     SERIAL NOT NULL, 
   data   date NOT NULL, 
-  zona   int4 NOT NULL, 
   utente int4 NOT NULL, 
-  aviso  bool NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE logs (
   id         SERIAL NOT NULL, 

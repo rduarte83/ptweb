@@ -54,15 +54,15 @@ LEFT JOIN zona z ON z.id = vz.zonaid
 ;
 
 --DROP VIEW vw_episodio;
-CREATE OR REPLACE VIEW vw_episodio AS
-SELECT e.id AS id_episodio
-	, e.data
-	, e.zona
-	, e.utente
-	, z.id AS id_zona
-	, z.nome AS nome_zona
-	, ze.intensidade
-FROM episodio_dor e
-LEFT JOIN zona_episodio_dor ze ON e.id = ze.episodio_dorid
-LEFT JOIN zona z ON z.id = ze.zonaid
+CREATE OR REPLACE VIEW vw_episodio AS 
+ SELECT e.id AS id_episodio,
+    e.data,
+    e.zona,
+    e.utente,
+    z.id AS id_zona,
+    z.nome AS nome_zona,
+    ze.intensidade
+   FROM episodio_dor e
+     LEFT JOIN zona_episodio_dor ze ON e.id = ze.episodio_dorid
+     LEFT JOIN zona z ON z.id = ze.zonaid;
 ;

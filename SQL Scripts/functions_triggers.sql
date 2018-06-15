@@ -57,6 +57,19 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
+-- Alerta de treino concluído
+CREATE OR REPLACE FUNCTION f_alerta_treino() RETURNS trigger AS $$
+BEGIN
+  IF NEW.concluido = 1 THEN
+    INSERT INTO notificacoes (id_notificacao, tabela, mensagem)
+	VALUES (NEW.id, TG_RELNAME, TG_RELNAME || ' ' || NEW.id || ' concluído');
+    RETURN NEW;
+    END IF;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE TRIGGER alerta_treino BEFORE INSERT OR UPDATE ON treino FOR EACH ROW EXECUTE PROCEDURE f_alerta_treino();
+
 
 --- Criação de notificacoes
 CREATE OR REPLACE FUNCTION f_notifications() RETURNS trigger AS $$
@@ -110,7 +123,6 @@ BEGIN
     RETURN 'done';
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
-
 
 
 CREATE TRIGGER logs_role BEFORE INSERT OR UPDATE OR DELETE ON role FOR EACH ROW EXECUTE PROCEDURE f_logs();
