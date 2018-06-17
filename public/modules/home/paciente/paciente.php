@@ -4,6 +4,7 @@
 
     <!-- Receive data ajax || MENU, CALENDARIO, TREINOS, CONSULTAS-->
     <div id="receive"> <?php require_once("menu.php"); ?> </div>
+    <div id="error"></div>
 
     <?php require_once("footer.php"); ?>
     <script src="includes/js/paciente.js"></script>

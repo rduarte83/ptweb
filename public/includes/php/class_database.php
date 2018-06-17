@@ -69,18 +69,19 @@ class Database extends PDO
                 $gestor->execute();
             }
             $this->db->commit();
-            return $gestor;
+            
             
         } catch (PDOException $e) {
             echo '<p>' . $e . '</p>';
             $this->db->rollBack();
-            return $gestor;
         }
 
         #fecha a ligacao por defeito
         if ($fechar_ligacao) {
             $this->db = NULL;
         }
+
+        return $gestor;
         
     }
 

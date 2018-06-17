@@ -62,18 +62,22 @@ if(isset($_POST,$_POST["cmd"]))
          *  -- Mensagens --
          */
         case "sendTo":
-            if(isset($_POST["id"],$_POST["id_to"],$_POST["mensagem"])){
-                Mensagens::sendMensagens($_POST["id"],$_POST["id_to"],$_POST["mensagem"]);
+            if(isset($_POST["id_to"],$_POST["mensagem"])){
+                if(!isset($_SESSION)){ session_start(); }
+
+                Mensagens::sendMensagens($_SESSION["id"],$_POST["id_to"],$_POST["mensagem"]);
             }
             break;
         case "getMessages":
-            if(isset($_POST["id"],$_POST["id_to"],$_POST["mensagem"])){
-                echo json_encode(Mensagens::getMensagens($_POST["id"],$_POST["id_to"]));
+            if(isset($_POST["id_to"])){
+                if(!isset($_SESSION)){ session_start(); }
+                echo json_encode(Mensagens::getMensagens($_SESSION["id"],$_POST["id_to"]));
             }
             break;
         case "getNumberMessages":
-            if(isset($_POST["id"],$_POST["id_to"],$_POST["mensagem"])){
-                echo json_encode(Mensagens::getNumberMensagens($_POST["id"],$_POST["id_to"]));
+            if(isset($_POST["id_to"])){
+                if(!isset($_SESSION)){ session_start(); }
+                echo json_encode(Mensagens::getNumberMensagens($_SESSION["id"],$_POST["id_to"]));
             }
             break;
 
@@ -97,6 +101,15 @@ if(isset($_POST,$_POST["cmd"]))
         case "getNotificationNumber":
             if(isset($_POST["id"])){
                 echo json_encode(Notificacoes::getNumberNotificacoes($_POST["id"]));
+            }
+            break;
+
+        /**
+         *  -- Dor --
+         */
+        case "insertEpisodioDor":
+            if(isset($_POST["zonaCorArray"])){
+                echo json_encode(Dor::registarDor($_POST["zonaCorArray"]));
             }
             break;
 

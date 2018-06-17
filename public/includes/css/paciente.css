@@ -1,7 +1,113 @@
+/* MENSAGENS */
 #containerMensagem{
+    position: fixed;
+    height: 500px;
+    left:0;
+    right:0;
+    bottom:0;
     display: none;
+
 }
+
+#Mensagens{
+    position: relative;
+}
+
+#chat{
+    height: 450px;
+    white-space:normal;
+    word-wrap: break-word;
+    overflow-y: auto;
+}
+
+#mensagem{
+    position: absolute;
+    height: 75px;
+    left:0;
+    right:20px;
+    bottom:0;
+    width: 95%;
+    resize: none;
+    white-space:normal;
+    word-wrap: break-word;
+}
+
+#submitFormChat{
+    position: absolute;
+    height: 75px;
+    width: 5%;
+    right:0;
+    bottom:0;
+}
+
+.chat {
+    word-wrap: break-word;
+}
+
+ul > li{
+    margin-top: 5px;
+    margin-left: -15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    background-color: #4176A4;
+    color: white;
+    display: block;
+    white-space:normal;
+    word-wrap: break-word;
+}
+
+.esquerda{
+    padding: 10px;
+    background-color: red;
+    width: 400px;
+    word-wrap: break-word;
+}
+
+.direita{
+    padding: 10px;
+    float:right;
+    background-color: blue;
+    margin-top: 20px;
+    width: 400px;
+    word-wrap: break-word;
+}
+
+/* FIM MENSAGENS*/
 
 #navbarProfissional{
     cursor: pointer;
+}
+
+.menu{
+    height: 250px;
+    background-color: grey;
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+
+    /*Pedro -> Adicionei isto*/
+    margin-bottom: 20px;
+    min-width: 250px;
+}
+
+.menu:hover
+{
+    cursor: pointer;
+    background-color: darkgrey;
+}
+
+.menu:first-child{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menu > h2 {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+
+#receive{
+    margin-top: 100px;
 }

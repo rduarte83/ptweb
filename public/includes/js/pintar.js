@@ -85,7 +85,7 @@ function highlight() {
         zona = this.alt;
         $(this).data("maphilight", {"stroke":false, "fillColor":cor , "fillOpacity":1});
 
-        console.log("cor:",cor," zona:", zona, " valor:", valor, " numZonas:", numZonas);
+        //console.log("cor:",cor," zona:", zona, " valor:", valor, " numZonas:", numZonas);
 
         zonaCorArray[numZonas] = [zona, valor];
         numZonas++;
@@ -116,4 +116,19 @@ function reset() {
     });
 
     highlightSettings();
+}
+
+function submitDor(){
+    $.ajax({
+        url:"includes/php/funcsWeb",
+        type:"POST",
+        data:{
+            "cmd":"insertEpisodioDor",
+            "zonaCorArray":zonaCorArray,
+        },
+        success:function(resposta){
+            console.log(resposta);
+            $("#error").html(resposta);
+        }
+    });
 }

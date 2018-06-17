@@ -22,9 +22,11 @@ class Mensagens
             ":id_to" => $id_to,
             ":mensagem" => $message
         ];
-        $sql = "INSERT INTO mensagem (origem, destino, conteudo) VALUES (:id, :id_to, :mensagem)";
+        $sql = "INSERT INTO mensagem (data, origem, destino, conteudo) VALUES (now(), :id, :id_to, :mensagem)";
         
         $result = $db->EXE_NON_QUERY($sql, $arrParam);
+
+        return $result->rowCount();
         
     }
 

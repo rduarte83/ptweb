@@ -9,4 +9,5 @@
     require_once("class_notificacoes.php");
     require_once("class_consultas.php");
     require_once("class_treinos.php");
+    require_once("class_dor.php");
 ?>

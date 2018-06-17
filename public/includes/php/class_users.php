@@ -138,6 +138,32 @@ class User
         }
     }
 
+    public static function getProfissinal()
+    {
+        if(!isset($_SESSION))
+            session_start();
+
+        try{
+            require_once("class_database.php");
+            $Database = new Database();
+
+            $arrParam = [
+                ":id" => $_SESSION["id"],
+            ];
+
+            $query = "SELECT * FROM utilizador WHERE id=(SELECT prof_saude FROM utente WHERE id=:id);";
+
+            $reg = $Database->EXE_QUERY($query,$arrParam);
+
+            return $reg;
+
+        } catch (PDOException $e) {
+            return null;
+            echo "ERROR: " . $e->getMessage();
+        }
+    }
+
+
 }
 
 ?>
