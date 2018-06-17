@@ -32,16 +32,16 @@ CREATE TABLE mensagem (
   data     timestamp NOT NULL, 
   origem   int4 NOT NULL, 
   destino  int4 NOT NULL, 
-  conteudo int4 NOT NULL, 
+  conteudo text NOT NULL, 
   lido     bool DEFAULT 'false' NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE notificacoes (
   id             SERIAL NOT NULL, 
+  data           timestamp NOT NULL DEFAULT now(), 
   id_notificacao int4 NOT NULL, 
   tabela         varchar(50) NOT NULL, 
   mensagem       text NOT NULL, 
   lido           bool DEFAULT 'false' NOT NULL, 
-  data           timestamp NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE profissional_Saude (
   id int4 NOT NULL, 

@@ -8,7 +8,7 @@ SELECT id, tab, op, time, utilizador, new, old
   FROM logs;
 SELECT id, data, origem, destino, conteudo, lido 
   FROM mensagem;
-SELECT id, id_notificacao, tabela, mensagem, lido, data 
+SELECT id, data, id_notificacao, tabela, mensagem, lido 
   FROM notificacoes;
 SELECT id 
   FROM profissional_Saude;

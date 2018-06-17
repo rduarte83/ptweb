@@ -36,11 +36,11 @@ UPDATE mensagem SET
 WHERE
   id = ?;
 UPDATE notificacoes SET 
+  data = ?, 
   id_notificacao = ?, 
   tabela = ?, 
   mensagem = ?, 
-  lido = ?, 
-  data = ? 
+  lido = ? 
 WHERE
   id = ?;
 UPDATE profissional_Saude SET 

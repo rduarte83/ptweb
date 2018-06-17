@@ -64,11 +64,11 @@ VALUES
   ?);
 INSERT INTO notificacoes
   (id, 
+  data, 
   id_notificacao, 
   tabela, 
   mensagem, 
-  lido, 
-  data) 
+  lido) 
 VALUES 
   (?, 
   ?, 
