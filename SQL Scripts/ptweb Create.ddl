@@ -3,8 +3,8 @@ CREATE TABLE artigo (
   autor        int4 NOT NULL, 
   titulo       varchar(100) NOT NULL, 
   conteudo     text NOT NULL, 
-  data_criacao timestamp DEFAULT now() NOT NULL, 
-  data_edicao  timestamp, 
+  data_criacao date DEFAULT now() NOT NULL, 
+  data_edicao  date, 
   PRIMARY KEY (id));
 CREATE TABLE consultas (
   id         SERIAL NOT NULL, 
@@ -28,17 +28,20 @@ CREATE TABLE logs (
   old        text, 
   PRIMARY KEY (id));
 CREATE TABLE mensagem (
-  id       int4 NOT NULL, 
-  data     int4 NOT NULL, 
+  id       SERIAL NOT NULL, 
+  data     timestamp NOT NULL, 
   origem   int4 NOT NULL, 
   destino  int4 NOT NULL, 
-  conteudo int4 NOT NULL);
+  conteudo int4 NOT NULL, 
+  lido     bool DEFAULT 'false' NOT NULL, 
+  PRIMARY KEY (id));
 CREATE TABLE notificacoes (
   id             SERIAL NOT NULL, 
   id_notificacao int4 NOT NULL, 
   tabela         varchar(50) NOT NULL, 
   mensagem       text NOT NULL, 
   lido           bool DEFAULT 'false' NOT NULL, 
+  data           timestamp NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE profissional_Saude (
   id int4 NOT NULL, 

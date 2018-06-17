@@ -15,9 +15,7 @@ WHERE
   id = ?;
 UPDATE episodio_dor SET 
   data = ?, 
-  zona = ?, 
-  utente = ?, 
-  aviso = ? 
+  utente = ? 
 WHERE
   id = ?;
 UPDATE logs SET 
@@ -30,18 +28,19 @@ UPDATE logs SET
 WHERE
   id = ?;
 UPDATE mensagem SET 
-  id = ?, 
   data = ?, 
   origem = ?, 
   destino = ?, 
-  conteudo = ? 
+  conteudo = ?, 
+  lido = ? 
 WHERE
-  ;
+  id = ?;
 UPDATE notificacoes SET 
   id_notificacao = ?, 
   tabela = ?, 
   mensagem = ?, 
-  lido = ? 
+  lido = ?, 
+  data = ? 
 WHERE
   id = ?;
 UPDATE profissional_Saude SET 

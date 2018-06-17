@@ -60,11 +60,11 @@ $$ LANGUAGE plpgsql SECURITY DEFINER;
 -- Alerta de treino concluído
 CREATE OR REPLACE FUNCTION f_alerta_treino() RETURNS trigger AS $$
 BEGIN
-  IF NEW.concluido = 1 THEN
+  IF NEW.concluido = true THEN
     INSERT INTO notificacoes (id_notificacao, tabela, mensagem)
 	VALUES (NEW.id, TG_RELNAME, TG_RELNAME || ' ' || NEW.id || ' concluído');
-    RETURN NEW;
     END IF;
+    RETURN NEW;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 

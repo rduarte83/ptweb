@@ -2,13 +2,13 @@ SELECT id, autor, titulo, conteudo, data_criacao, data_edicao
   FROM artigo;
 SELECT id, data, prof_saude, utente, notas 
   FROM consultas;
-SELECT id, data, zona, utente, aviso 
+SELECT id, data, utente 
   FROM episodio_dor;
 SELECT id, tab, op, time, utilizador, new, old 
   FROM logs;
-SELECT id, data, origem, destino, conteudo 
+SELECT id, data, origem, destino, conteudo, lido 
   FROM mensagem;
-SELECT id, id_notificacao, tabela, mensagem, lido 
+SELECT id, id_notificacao, tabela, mensagem, lido, data 
   FROM notificacoes;
 SELECT id 
   FROM profissional_Saude;

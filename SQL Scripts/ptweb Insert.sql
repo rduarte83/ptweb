@@ -27,13 +27,9 @@ VALUES
 INSERT INTO episodio_dor
   (id, 
   data, 
-  zona, 
-  utente, 
-  aviso) 
+  utente) 
 VALUES 
   (?, 
-  ?, 
-  ?, 
   ?, 
   ?);
 INSERT INTO logs
@@ -57,9 +53,11 @@ INSERT INTO mensagem
   data, 
   origem, 
   destino, 
-  conteudo) 
+  conteudo, 
+  lido) 
 VALUES 
   (?, 
+  ?, 
   ?, 
   ?, 
   ?, 
@@ -69,9 +67,11 @@ INSERT INTO notificacoes
   id_notificacao, 
   tabela, 
   mensagem, 
-  lido) 
+  lido, 
+  data) 
 VALUES 
   (?, 
+  ?, 
   ?, 
   ?, 
   ?, 
