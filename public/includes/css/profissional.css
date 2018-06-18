@@ -41,3 +41,9 @@ button.margin8{
 .menu {
     border-radius: 5px !important;
 }
+
+#notification {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

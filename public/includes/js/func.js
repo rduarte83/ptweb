@@ -8,9 +8,9 @@ function getUsersPacientes(){
         },
         success:function(response){
             console.log(response);
-            var resposta = $.parseJSON(response);
+            let resposta = $.parseJSON(response);
             console.log(resposta);
-            var listPaciente = '<li class="list-group-item"> ID | Nome</li>';
+            let listPaciente = '<li class="list-group-item"> ID | Nome</li>';
             $.each(resposta, function (key, val) {
                 if (resposta[key].role === 4) {
                     listPaciente+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' + resposta[key].id + '</span>' + resposta[key].nome +'</li>';
@@ -77,19 +77,55 @@ function insertArtigo(dados)
         url: 'includes/php/funcsWeb.php',
         data: dados, // serializes the form's elements.
         success: function (data) {
+            console.log(data);
             // Artigo foi adicionado
             if(data == 1){
+                alert("E o alert?");
+                $("#sucessoMensagem").html("Artigo adicionado com sucesso!");
+                $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+
+                    $("#success-alert").slideUp(500);
+                });
+            }else{
+                $("#errorMensagem").html("Erro ao adicionar artigo!");
+                $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
+
+                    $("#danger-alert").slideUp(500);
+                });
+            }
+
+            $("#error").html(data);
+            $('#articleModal').modal('toggle');
+        },
+        error: function(response){
+            console.log("error->" + response.getAllResponseHeaders);
+        }
+    });
+}
+
+function insertPacient(dados)
+{
+    $.ajax({
+        type: "POST",
+        url: 'includes/php/funcsWeb.php',
+        data: dados, // serializes the form's elements.
+        success: function (data) {
+            // Artigo foi adicionado
+            if(data == 1){
+
+                $("#sucessoMensagem").html("Paciente adicionado com sucesso!");
                 $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
                     $("#success-alert").slideUp(500);
                 });
             }else{
+                $("#errorMensagem").html("Erro ao adicionar paciente!");
                 $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
                     $("#danger-alert").slideUp(500);
                 });
             }
 
             $("#error").html(data);
-            $('#addUserModal').modal('toggle');
+            $('#addPacientModal').modal('toggle');
         },
         error: function(response){
             console.log("error->" + response.getAllResponseHeaders);
@@ -112,9 +148,7 @@ function addToMain(conteudo){
         '    </div>' + conteudo);
 }
 
-function addTrat(id){
-
-}
+function addTrat(id){}
 
 
 $(document).ready(function () {
@@ -132,10 +166,10 @@ $(document).ready(function () {
     });
 
     $("#main_div").on("click",'#add_pac', function (){
-        alert("lol");
+        $('#addPacientModal').modal('toggle');
     });
     $("#main_div").on("click",'#add_article', function (){
-        $('#addUserModal').modal('toggle');
+        $('#articleModal').modal('toggle');
     });
     $("#main_div").on("click",'#edit_article', function (){
         alert("lol");
@@ -147,7 +181,14 @@ $(document).ready(function () {
         alert("lol");
     });
 
-    $("#addUserForm").on("submit", function (e) {
+    $("#addPacientForm").on("submit", function (e) {
+        e.preventDefault();
+        var arrDados = $(this).serializeArray();
+        arrDados.push({"name":"cmd","value":"insertPacient"});
+        insertPacient(arrDados);
+    });
+
+    $("#addArticle").on("submit", function (e) {
         e.preventDefault();
         var arrDados = $(this).serializeArray();
         arrDados.push({"name":"cmd","value":"insertArtigo"});
@@ -161,6 +202,9 @@ $(document).ready(function () {
 
         let id = $(this).find("span").text();
         addToMain(
+            '    <div class="row-fluid">\n' +
+            '        <button type="button" class="btn btn-primary" id="btn-add-consulta" onclick="">+ Criar consulta</button>\n<br><br>' +
+            '    </div>' +
             '<div class="card">' +
             '<nav>\n' +
             '  <div class="nav nav-tabs" id="nav-tab" role="tablist">\n' +
@@ -172,7 +216,7 @@ $(document).ready(function () {
             '<div class="tab-pane fade show active" id="div-paciente-dados" role="tabpanel" aria-labelledby="nav-profile-tab">\n' +
             '  <div id="panel-body"></div>\n' +
             '</div>' +
-            '  <div class="tab-pane fade" id="div-paciente-tratamentos" role="tabpanel" aria-labelledby="nav-contact-tab"><button type="button" class="btn btn-info margin8" id="btn-back" onclick="addTrat(id);">+ Adicionar tratamento</button></div>\n' +
+            '  <div class="tab-pane fade" id="div-paciente-tratamentos" role="tabpanel" aria-labelledby="nav-contact-tab"><button type="button" class="btn btn-info margin8" id="btn-back" onclick="addTrat(id);">+ Recomendar artigo</button></div>\n' +
             '</div>' +
             '</div> '
         );

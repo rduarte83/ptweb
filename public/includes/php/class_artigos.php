@@ -1,5 +1,6 @@
 <?php
-
+if(!isset($_SESSION))
+    session_start();
 class Artigos
 {
 
@@ -59,11 +60,12 @@ class Artigos
             $arrParam = [
                 ":titulo" => $titulo,
                 ":noticia" => $noticia,
+                ":id" => $_SESSION["id"],
             ];
 
             $query = "INSERT INTO artigo 
             (id, autor, titulo, conteudo, data_criacao, data_edicao)
-            VALUES(DEFAULT, 2, :titulo, :noticia, now(), null)";
+            VALUES(DEFAULT, :id, :titulo, :noticia, now(), null) RETURNING id";
 
             $result = $Database->EXE_NON_QUERY($query, $arrParam, false);
 

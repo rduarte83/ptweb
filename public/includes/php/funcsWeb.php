@@ -10,6 +10,20 @@ if(isset($_POST,$_POST["cmd"]))
          * -- USER COMMANDS --
          * Insert User & GET USER
          */
+        case "insertPacient":
+
+            if(isset($_POST["email"],$_POST["password"],$_POST["nome"],$_POST["genero"],
+                $_POST["data_nascimento"],$_POST["contacto"],$_POST["cc"],$_POST["nif"],
+                $_POST["morada"],$_POST["nacionalidade"])){
+
+                $result = User::insertUser($_POST["email"],$_POST["password"],$_POST["nome"],$_POST["genero"],
+                    $_POST["data_nascimento"],$_POST["contacto"],$_POST["cc"],$_POST["nif"],
+                    $_POST["morada"],$_POST["nacionalidade"],4);
+
+                echo json_encode($result);
+            }
+            break;
+
         case 'insertUser':
                 //( $email, $passsword, $nome, $genero, $data_nascimento, $contacto, $cc, $nif, $morada, $nacionalidade, $role)
             if(isset($_POST["email"],$_POST["password"],$_POST["nome"],$_POST["genero"],
