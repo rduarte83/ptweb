@@ -17,8 +17,8 @@
                     
                     <div class="dropdown-container Utentes">
                         <ul>
-                            <li><a href="#">Informações</a></li>
-                            <li><a href="#">Adicionar</a></li>
+                            <li><a id="show_list_pac_sidebar" href="#">Informações</a></li>
+                            <li><a id="add_pac_sidebar" href="#">Adicionar</a></li>
                         </ul>                     
                     </div>
                 </li>
@@ -30,8 +30,8 @@
                     </a>
                     <div class="dropdown-container Artigos">
                         <ul>
-                            <li><a href="#">Adicionar</a></li>
-                            <li><a href="#">Editar</a></li>
+                            <li><a id="add_article_sidebar" href="#">Adicionar</a></li>
+                            <li><a id="edit_article_sidebar"href="#">Editar</a></li>
                         </ul>                     
                     </div>  
                 </li>
@@ -43,8 +43,8 @@
                     </a>
                     <div class="dropdown-container Videos">
                         <ul>
-                            <li><a href="#">Adicionar</a></li>
-                            <li><a href="#">Editar</a></li>
+                            <li><a id="add_video_sidebar" href="#">Adicionar</a></li>
+                            <li><a id="edit_video_sidebar" href="#">Editar</a></li>
                         </ul>                     
                     </div>  
                 </li>

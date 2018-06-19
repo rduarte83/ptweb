@@ -155,6 +155,8 @@ $(document).ready(function () {
     $("#success-alert").hide();
     $("#danger-alert").hide();
 
+    /*  MAIN DIV BLOCKS */
+
     $("#main_div").on("click",'#show_list_pac', function (){
 
         previousMain[level] = $("#main_div").html();
@@ -168,6 +170,7 @@ $(document).ready(function () {
     $("#main_div").on("click",'#add_pac', function (){
         $('#addPacientModal').modal('toggle');
     });
+
     $("#main_div").on("click",'#add_article', function (){
         $('#articleModal').modal('toggle');
     });
@@ -181,6 +184,38 @@ $(document).ready(function () {
         alert("lol");
     });
 
+    /* Sidebar */
+
+    $(document).on("click",'#show_list_pac_sidebar', function (){
+        previousMain[level] = $("#main_div").html();
+        level++;
+
+        addToMain('<div id="lista_pacientes" class="col-md"> <h1>Pacientes</h1> <div id="list_pacientes"' +
+            ' class="lista"> <li class="list-group-item"> ID | Nome</li> </div> </div>');
+        getUsersPacientes();
+    });
+
+    $(document).on("click",'#add_pac_sidebar', function (){
+        $('#addPacientModal').modal('toggle');
+    });
+
+    $(document).on("click",'#add_article_sidebar', function (){
+        $('#articleModal').modal('toggle');
+    });
+
+    $(document).on("click",'#edit_article_sidebar', function (){
+        alert("lol");
+    });
+
+    $(document).on("click",'#add_video_sidebar', function (){
+        alert("lol");
+    });
+
+    $(document).on("click",'#edit_video_sidebar', function (){
+        alert("lol");
+    });
+    
+    /* FORMS  */
     $("#addPacientForm").on("submit", function (e) {
         e.preventDefault();
         var arrDados = $(this).serializeArray();

@@ -38,6 +38,36 @@ button.margin8{
     color: #272e4f !important;
 }
 
+
+.menu{
+    height: 250px;
+    background-color: grey;
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    /*Pedro -> Adicionei isto*/
+    margin-bottom: 20px;
+    min-width: 250px;
+}
+
+.menu:hover
+{
+    cursor: pointer;
+    background-color: darkgrey;
+}
+
+.menu:first-child{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menu > h2 {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+
 .menu {
     border-radius: 5px !important;
 }
