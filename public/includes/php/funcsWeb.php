@@ -130,6 +130,57 @@ if(isset($_POST,$_POST["cmd"]))
                 echo json_encode(Dor::registarDor($_POST["zonaCorArray"]));
             }
             break;
+        
+        /**
+         *  -- Treinos --
+         */
+        case "insertTreino":
+            //($data_inicio, $data_fim, $profSaude, $utente, $descricao)
+            if(isset($_POST["data_inicio"], $_POST["data_fim"], $_POST["profSaude"], $_POST["utente"], $_POST["descricao"])){
+                echo json_encode(Treinos::insertTreino($_POST["data_inicio"], $_POST["data_fim"], $_POST["profSaude"], $_POST["utente"], $_POST["descricao"]));
+            }
+            break;
+        case "UpdateTreino":
+            //($data_inicio, $data_fim, $profSaude, $utente, $descricao, $concluido, $id_treino)
+            if(isset($_POST["data_inicio"], $_POST["data_fim"], $_POST["profSaude"], $_POST["utente"], $_POST["descricao"], $_POST["concluido"], $_POST["id_treino"])){
+                echo json_encode(Treinos::updateTreino($_POST["data_inicio"], $_POST["data_fim"], $_POST["profSaude"], $_POST["utente"], $_POST["descricao"], $_POST["concluido"], $_POST["id_treino"]));
+            }
+            break;
+        case "getTreinos":
+            if(isset($_POST["utente"])){
+                echo json_encode(Treinos::getTreinos($_POST["utente"]));
+            }
+            break;
+        case "getTreino":
+            if(isset($_POST["id_treino"])){
+                echo json_encode(Treinos::getTreino($_POST["id_treino"]));
+            }
+            break;
+        /**
+         *  -- Consultas --
+         */
+        case "insertConsulta":
+            //($data, $profSaude, $utente, $notas)
+            if(isset($_POST["data"], $_POST["profSaude"], $_POST["utente"], $_POST["notas"])){
+                echo json_encode(Consultas::insertConsulta($_POST["data"], $_POST["profSaude"], $_POST["utente"], $_POST["notas"]));
+            }
+            break;
+        case "updateConsulta":
+            //($data, $profSaude, $utente, $notas, $id_consulta)
+            if(isset($_POST["data"], $_POST["profSaude"], $_POST["utente"], $_POST["notas"], $_POST["id_consulta"])){
+                echo json_encode(Consultas::updateConsulta($_POST["data"], $_POST["profSaude"], $_POST["utente"], $_POST["notas"], $_POST["id_consulta"]));
+            }
+            break;
+        case "getConsultas":
+            if(isset($_POST["utente"])){
+                echo json_encode(Consultas::getConsultas($_POST["utente"]));
+            }
+            break;
+        case "getConsulta":
+            if(isset($_POST["id_consulta"])){
+                echo json_encode(Consultas::getConsulta($_POST["id_consulta"]));
+            }
+            break;
 
         default:
             # code...
