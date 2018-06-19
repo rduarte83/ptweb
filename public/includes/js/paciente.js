@@ -100,11 +100,11 @@ $(document).ready(function(){
     });
 
     $(document).on('click', "#treinos", function(){
-        $("#containerMensagem").toggle();
+        changePage("modules/home/paciente/treinos.php");
     });
 
     $(document).on('click',"#consultas", function(){
-        $("#containerMensagem").toggle();
+        changePage("modules/home/paciente/consultas.php");
     });
 
     $("#infoProfissional").click(function(){

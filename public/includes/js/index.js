@@ -34,9 +34,6 @@ function logout()
     })
 }
 
-
-
-
 $(document).ready(function(){
 
     $("#formLogin").submit(function(e){

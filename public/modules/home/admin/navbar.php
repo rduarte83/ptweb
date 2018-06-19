@@ -10,8 +10,17 @@
                 
             </ul>
             <!-- Entrar / Login -->
-            <ul class="navbar-nav navbar-right mr-right"> 
+            <?php if(!isset($_SESSION)) session_start(); ?>
+            <ul class="navbar-nav navbar-right mr-right dropdown">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownLogin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="glyphicon glyphicon-log-in"></span> <?php echo $_SESSION["nome"];?>
+                </a>
                 <a class="navbar-brand" href="#"><i class="fas fa-bell"></i></a>
+                <div class="dropdown-menu loginOptions">
+                    <div id="pinicial" style="cursor:pointer;">Página Incial</div>
+                    <div class="dropdown-divider"></div>
+                    <div id="logout" style="cursor:pointer;"><i class="fas fa-sign-out-alt"></i>Sair</div>
+                </div>
             </ul>
         </div>
     </nav>

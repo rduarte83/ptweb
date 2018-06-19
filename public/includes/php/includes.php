@@ -10,4 +10,5 @@
     require_once("class_consultas.php");
     require_once("class_treinos.php");
     require_once("class_dor.php");
+    require_once("class_videos.php");
 ?>

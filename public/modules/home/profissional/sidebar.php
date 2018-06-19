@@ -35,19 +35,6 @@
                         </ul>                     
                     </div>  
                 </li>
-                <li class="nav-item">
-                    <a id="openDropDownVideos" class="nav-link" href="#">
-                        <i class="fas fa-users"></i>
-                        Vídeos
-                        <i class="fa fa-caret-down"></i>
-                    </a>
-                    <div class="dropdown-container Videos">
-                        <ul>
-                            <li><a id="add_video_sidebar" href="#">Adicionar</a></li>
-                            <li><a id="edit_video_sidebar" href="#">Editar</a></li>
-                        </ul>                     
-                    </div>  
-                </li>
             </ul>
         </div>
     </nav>

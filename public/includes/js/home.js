@@ -1,5 +1,18 @@
-/* ADMIN */
-
+function logout()
+{
+    $.ajax({
+        type:"POST",
+        url:"includes/php/funcsWeb.php",
+        data:{
+            "cmd":"logout"
+        },
+        success: function(response) {
+            console.log(response);
+            $("#error").html(response);
+            location.reload();
+        }
+    })
+}
 
 $(document).ready(function()
 {
@@ -17,6 +30,15 @@ $(document).ready(function()
 
     $("#openDropDownAdmin").click(function(){
         $("div[class='dropdown-container Admin']").slideToggle( "fast" );
+    });
+
+
+    $("#pinicial").click(function(){
+        window.location.href = "index.php";
+    });
+
+    $("#logout").click(function(){
+        logout();
     });
 });
 

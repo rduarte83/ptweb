@@ -17,11 +17,7 @@
         <i class="fas fa-user-md tamIcon"></i>
     </div>
     <div id="add_video" class="menu regDor col-md col-sm">
-        <h2>Adicionar Vídeo</h2>
-        <i class="fas fa-user-md tamIcon"></i>
-    </div>
-    <div id="edit_video" class="menu regDor col-md col-sm">
-        <h2>Editar Vídeo</h2>
+        <h2>Pedidos de Treinos/Artigos</h2>
         <i class="fas fa-user-md tamIcon"></i>
     </div>
 </div>

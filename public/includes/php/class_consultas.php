@@ -5,12 +5,16 @@ class Consultas
 
     public static function getConsultas($id_utente)
     {
+        require_once("class_database.php");
         $db = new Database();
         $arrParam = [
             ":id_utente" => intval($id_utente),
         ];
 
-        $sql = "SELECT * FROM  consultas WHERE utente=:id_utente";
+        $sql = "SELECT u.nome as utente, ps.nome as prof_saude , c.data, c.id, c.notas FROM consultas as c
+        INNER JOIN utilizador as u ON u.id = c.utente
+        INNER JOIN utilizador as ps ON ps.id = c.prof_saude
+        WHERE utente=:id_utente";
         $result = $db->EXE_QUERY($sql,$arrParam, false);
         return $result;
     }
