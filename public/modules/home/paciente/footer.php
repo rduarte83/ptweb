@@ -36,9 +36,17 @@ $profissional = $profissional[0];
                     </ul>
                 </div>
             </div>
-            <div id="chat">
+            <div id="chatHolder">
                 <ul class="chat">
-                    <li class="esquerda text-left">112312sadjfg7wa6tf7asdygufasdifasgdufbasdf</li>    
+                    <li class="esquerda text-left">112312sadjfg7wa6tf7asdygufasdifasgdufbasdf</li>   
+                    <li class="esquerda text-left">112312sadjfg7wa6tf7asdygufasdifasgdufbasdf</li>  
+                    <li class="esquerda text-left">112312sadjfg7wa6tf7asdygufasdifasgdufbasdf</li>  
+                    <li class="esquerda text-left">112312sadjfg7wa6tf7asdygufasdifasgdufbasdf</li>  
+                    <li class="esquerda text-left">112312sadjfg7wa6tf7asdygufasdifasgdufbasdf</li>  
+                    <li class="direita text-right">112312sadjfg7wa6tf7asdygufasdifaasdasdasdsasgdufbasdf</li>  
+                    <li class="direita text-right">112312sadjfg7wa6tf7asdygufasdifaasdasdasdsasgdufbasdf</li>  
+                    <li class="direita text-right">112312sadjfg7wa6tf7asdygufasdifaasdasdasdsasgdufbasdf</li>  
+                    <li class="direita text-right">112312sadjfg7wa6tf7asdygufasdifaasdasdasdsasgdufbasdf</li>  
                     <li class="direita text-right">112312sadjfg7wa6tf7asdygufasdifaasdasdasdsasgdufbasdf</li>  
                 <ul>
             </div>

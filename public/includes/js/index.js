@@ -53,10 +53,5 @@ $(document).ready(function(){
     $("#painel").click(function(){
         window.location.href = "home.php";
     });
-
-    $("#exampleInputPassword1").keyup(function (e) {
-        e.preventDefault();
-        $("#btn_entrar").click();
-    });
-
+    
 });

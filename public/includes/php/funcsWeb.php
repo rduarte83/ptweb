@@ -56,6 +56,10 @@ if(isset($_POST,$_POST["cmd"]))
                 echo json_encode($result);
             }
             break;
+        case 'getMyUser':
+            if(!isset($_SESSION)){ session_start(); }
+            echo $_SESSION["id"];
+            break;
         
         /**
          * -- LOGIN  / Logout--
@@ -78,8 +82,8 @@ if(isset($_POST,$_POST["cmd"]))
         case "sendTo":
             if(isset($_POST["id_to"],$_POST["mensagem"])){
                 if(!isset($_SESSION)){ session_start(); }
+                echo json_encode(Mensagens::sendMensagens($_SESSION["id"],$_POST["id_to"],$_POST["mensagem"]));
 
-                Mensagens::sendMensagens($_SESSION["id"],$_POST["id_to"],$_POST["mensagem"]);
             }
             break;
         case "getMessages":

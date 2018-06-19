@@ -1,4 +1,4 @@
-var menu;
+var menu, user=0, userTo=0;
 
 function changePage(pagina){
     $.ajax({
@@ -16,8 +16,37 @@ function loadChat(){
         type:"POST",
         data:{
             "cmd":"getMessages",
+            "id_to":$("#id_to").val(),
         },
         success:function(resposta){
+            var trabalhar = $.parseJSON(resposta);
+            var chatFinal ="";
+
+            trabalhar.forEach(function(elem){
+                if ( elem.origem == user  ){
+                    chatFinal += "<li class='direita'>"+elem.conteudo+"</li><span class='clearfix'></span>";
+                }else if( elem.origem == userTo ){
+                    console.log(userTo)
+                    chatFinal += "<li class='esquerda'>"+elem.conteudo+"</li>";
+                }
+                
+            })
+            $(".chat").html(chatFinal);
+        }
+    });
+}
+
+function getMyUser(){
+    $.ajax({
+        url:"includes/php/funcsWeb.php",
+        type:"POST",
+        data:{
+            "cmd":"getMyUser",
+        },
+        success:function(resposta){
+            console.log("AQUI->"+resposta);
+            user=resposta;
+            userTo=$("#id_to").val();
             loadChat();
         }
     });
@@ -34,6 +63,7 @@ function sendMessage(mensagem,id_to){
         },
         success:function(resposta){
             loadChat();
+            console.log(resposta);
         }
     });
 }
@@ -41,6 +71,8 @@ function sendMessage(mensagem,id_to){
 
 
 $(document).ready(function(){
+    getMyUser();
+    
     menu = $("#receive").html();
     
     $("#backMenu").click(function(){

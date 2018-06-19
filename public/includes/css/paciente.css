@@ -13,8 +13,9 @@
     position: relative;
 }
 
-#chat{
+#chatHolder{
     height: 450px;
+    background-color: whitesmoke;
     white-space:normal;
     word-wrap: break-word;
     overflow-y: auto;

@@ -25,7 +25,6 @@ class Mensagens
         $sql = "INSERT INTO mensagem (data, origem, destino, conteudo) VALUES (now(), :id, :id_to, :mensagem)";
         
         $result = $db->EXE_NON_QUERY($sql, $arrParam);
-
         return $result->rowCount();
         
     }
