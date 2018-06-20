@@ -3,9 +3,14 @@ UPDATE artigo SET
   titulo = ?, 
   conteudo = ?, 
   data_criacao = ?, 
-  data_edicao = ? 
+  data_edicao = ?, 
+  aprovado = ? 
 WHERE
   id = ?;
+UPDATE artigo_video SET 
+   
+WHERE
+  artigoid = ? AND videoid = ?;
 UPDATE consultas SET 
   data = ?, 
   prof_saude = ?, 
@@ -61,6 +66,10 @@ UPDATE treino SET
   concluido = ? 
 WHERE
   id = ?;
+UPDATE treino_video SET 
+   
+WHERE
+  treinoid = ? AND videoid = ?;
 UPDATE utente SET 
   patologias = ?, 
   medicacao = ?, 
@@ -84,7 +93,6 @@ UPDATE utilizador SET
 WHERE
   id = ?;
 UPDATE video SET 
-  autor = ?, 
   url = ?, 
   descricao = ? 
 WHERE
@@ -101,8 +109,4 @@ UPDATE zona_episodio_dor SET
   intensidade = ? 
 WHERE
   episodio_dorid = ? AND zonaid = ?;
-UPDATE zona_video SET 
-   
-WHERE
-  zonaid = ? AND videoid = ?;
 

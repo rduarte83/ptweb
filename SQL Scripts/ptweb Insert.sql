@@ -4,13 +4,21 @@ INSERT INTO artigo
   titulo, 
   conteudo, 
   data_criacao, 
-  data_edicao) 
+  data_edicao, 
+  aprovado) 
 VALUES 
   (?, 
   ?, 
   ?, 
   ?, 
   ?, 
+  ?, 
+  ?);
+INSERT INTO artigo_video
+  (artigoid, 
+  videoid) 
+VALUES 
+  (?, 
   ?);
 INSERT INTO consultas
   (id, 
@@ -104,6 +112,12 @@ VALUES
   ?, 
   ?, 
   ?);
+INSERT INTO treino_video
+  (treinoid, 
+  videoid) 
+VALUES 
+  (?, 
+  ?);
 INSERT INTO utente
   (id, 
   patologias, 
@@ -146,12 +160,10 @@ VALUES
   ?);
 INSERT INTO video
   (id, 
-  autor, 
   url, 
   descricao) 
 VALUES 
   (?, 
-  ?, 
   ?, 
   ?);
 INSERT INTO zona
@@ -173,11 +185,5 @@ INSERT INTO zona_episodio_dor
 VALUES 
   (?, 
   ?, 
-  ?);
-INSERT INTO zona_video
-  (zonaid, 
-  videoid) 
-VALUES 
-  (?, 
   ?);
 

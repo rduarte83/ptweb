@@ -20,7 +20,6 @@ SELECT uti.id,
     r.nome AS role_nome
    FROM utilizador uti
      LEFT JOIN utente ute ON uti.id = ute.id
-     LEFT JOIN profissional_saude prof ON uti.id = prof.id
      LEFT JOIN role r ON uti.role = r.id
   ORDER BY uti.id;
 
@@ -35,23 +34,32 @@ SELECT a.id AS id_artigo
 	, a.data_edicao
 	, z.id AS id_zona
 	, z.nome AS nome_zona
+	, v.id AS id_video
+	, v.url
+	, v.descricao
 FROM artigo a
 LEFT JOIN zona_artigo za ON a.id = za.artigoid
 LEFT JOIN zona z ON z.id = za.zonaid
-;
+LEFT JOIN artigo_video av on a.id = av.artigoid
+LEFT JOIN video v on av.videoid = v.id
+ORDER BY a.id;
 
---DROP VIEW vw_video;
-CREATE OR REPLACE VIEW vw_video AS
-SELECT v.id AS id_video
-	, v.autor
-	, v.url
-	, v.descricao
-	, z.id AS id_zona
-	, z.nome AS nome_zona
-FROM video v
-LEFT JOIN zona_video vz ON v.id = vz.videoid
-LEFT JOIN zona z ON z.id = vz.zonaid
-;
+--DROP VIEW vw_treino
+CREATE OR REPLACE VIEW vw_treino AS
+ SELECT t.id AS id_treino
+  , t.data_criacao
+  , t.data_inicio
+  , t.data_fim
+  , t.descricao
+  , t.prof_saude
+  , t.utente
+  , t.concluido
+  , v.id AS id_video
+	, v.url AS url_video
+	, v.descricao AS descricao_video
+ FROM treino t
+ LEFT JOIN treino_video tv on t.id = tv.treinoid
+ ORDER BY t.id;
 
 --DROP VIEW vw_episodio;
 CREATE OR REPLACE VIEW vw_episodio AS 
@@ -64,5 +72,5 @@ CREATE OR REPLACE VIEW vw_episodio AS
     ze.intensidade
    FROM episodio_dor e
      LEFT JOIN zona_episodio_dor ze ON e.id = ze.episodio_dorid
-     LEFT JOIN zona z ON z.id = ze.zonaid;
-;
+     LEFT JOIN zona z ON z.id = ze.zonaid
+  ORDER BY e.id;
