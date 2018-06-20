@@ -1,26 +1,28 @@
+var id_utente_ver;
 function getUsersPacientes(){
     
     $.ajax({
         type:"POST",
         url:"includes/php/funcsWeb.php",
         data:{
-            "cmd":"getUsers"
+            "cmd":"getUsersPaciente"
         },
         success:function(response){
+            console.log("AQUI");
             console.log(response);
             let resposta = $.parseJSON(response);
             console.log(resposta);
             let listPaciente = '<li class="list-group-item"> ID | Nome</li>';
             $.each(resposta, function (key, val) {
-                if (resposta[key].role === 4) {
-                    listPaciente+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' + resposta[key].id + '</span>' + resposta[key].nome +'</li>';
-                }
+                listPaciente+='<li id="list_' + resposta[key].id +'" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addUserModal"><span class="badge badge-primary" style="margin-right: 8px; padding: 10px; vertical-align: middle;">' + resposta[key].id + '</span>' + resposta[key].nome +'</li>';
             });
             
             $("div #list_pacientes").html(listPaciente);
         }
     });
 }
+
+
 
 function carregaData(texto) {
     $.ajax({
@@ -80,18 +82,9 @@ function insertArtigo(dados)
             console.log(data);
             // Artigo foi adicionado
             if(data == 1){
-                alert("E o alert?");
-                $("#sucessoMensagem").html("Artigo adicionado com sucesso!");
-                $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-
-                    $("#success-alert").slideUp(500);
-                });
+                alerta("Artigo adicionado com sucesso!",false);
             }else{
-                $("#errorMensagem").html("Erro ao adicionar artigo!");
-                $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
-
-                    $("#danger-alert").slideUp(500);
-                });
+                alerta("Erro ao adicionar artigo!",true);
             }
 
             $("#error").html(data);
@@ -112,16 +105,9 @@ function insertPacient(dados)
         success: function (data) {
             // Artigo foi adicionado
             if(data == 1){
-
-                $("#sucessoMensagem").html("Paciente adicionado com sucesso!");
-                $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-                    $("#success-alert").slideUp(500);
-                });
+                alerta("Paciente adicionado com sucesso!",false);
             }else{
-                $("#errorMensagem").html("Erro ao adicionar paciente!");
-                $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
-                    $("#danger-alert").slideUp(500);
-                });
+                alerta("Erro ao adicionar paciente!",true);
             }
 
             $("#error").html(data);
@@ -131,6 +117,51 @@ function insertPacient(dados)
             console.log("error->" + response.getAllResponseHeaders);
         }
     });
+}
+
+
+function insertConsulta(dados)
+{
+    $.ajax({
+        type: "POST",
+        url: 'includes/php/funcsWeb.php',
+        data: dados, // serializes the form's elements.
+        success: function (data) {
+            console.log(data);
+            // Artigo foi adicionado
+            if(data == 1){
+                alerta("Consulta adicionada com sucesso!",false);
+            }else{
+                alerta("Erro ao adicionar consulta!",true);
+            }
+
+            $("#error").html(data);
+            $('#addConsultaModal').modal('toggle');
+        },
+        error: function(response){
+            console.log("error->" + response.getAllResponseHeaders);
+        }
+    });
+}
+
+function carregaDataSelectConsulta()
+{
+    $.ajax({
+        type: "POST",
+        url: 'includes/php/funcsWeb.php',
+        data: {
+            "cmd" : "getUsersPaciente"
+        }, // serializes the form's elements.
+        success: function (response) {
+            let resposta = $.parseJSON(response);
+            console.log(resposta);
+            let listPaciente = '<option value="-1">Selecione o paciente...</option>';
+            $.each(resposta, function (key, val) {
+                listPaciente+='<option value="'+resposta[key].id+'">'+resposta[key].nome+'</option>';
+            });
+            $("#paciente").html(listPaciente);
+        }
+    })
 }
 
 
@@ -177,12 +208,20 @@ $(document).ready(function () {
     $("#main_div").on("click",'#edit_article', function (){
         alert("lol");
     });
-    $("#main_div").on("click",'#add_video', function (){
-        alert("lol");
+    $("#main_div").on("click",'#add_consulta', function (){
+        carregaDataSelectConsulta();
+        $('#addConsultaModal').modal('toggle');
     });
     $("#main_div").on("click",'#edit_video', function (){
         alert("lol");
     });
+
+    $(document).on("click",'#btn-add-consulta', function (){
+        carregaDataSelectConsulta();
+        let stringOp = 'option[value="'+id_utente_ver+'"]';
+        $('#addConsultaForm #paciente' +stringOp ).attr("selected",true);
+        $('#addConsultaModal').modal('toggle');
+    })
 
     /* Sidebar */
 
@@ -223,6 +262,13 @@ $(document).ready(function () {
         insertPacient(arrDados);
     });
 
+    $("#addConsultaForm").on("submit", function (e) {
+        e.preventDefault();
+        var arrDados = $(this).serializeArray();
+        arrDados.push({"name":"cmd","value":"insertConsulta"});
+        insertArtigo(arrDados);
+    });
+
     $("#addArticle").on("submit", function (e) {
         e.preventDefault();
         var arrDados = $(this).serializeArray();
@@ -236,6 +282,7 @@ $(document).ready(function () {
         level++;
 
         let id = $(this).find("span").text();
+        id_utente_ver = id;
         addToMain(
             '    <div class="row-fluid">\n' +
             '        <button type="button" class="btn btn-primary" id="btn-add-consulta" onclick="">+ Criar consulta</button>\n<br><br>' +

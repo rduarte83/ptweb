@@ -14,6 +14,20 @@ function logout()
     })
 }
 
+function alerta(mensagem, error=false){
+    if(!error){
+        $("#sucessoMensagem").html(mensagem);
+        $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+            $("#success-alert").slideUp(500);
+        });
+    }else{
+        $("#errorMensagem").html(mensagem);
+        $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
+            $("#danger-alert").slideUp(500);
+        });
+    }
+}
+
 $(document).ready(function()
 {
     $("#openDropDownUtentes").click(function(){
@@ -22,10 +36,6 @@ $(document).ready(function()
 
     $("#openDropDownArtigos").click(function(){
         $("div[class='dropdown-container Artigos']").slideToggle( "fast" );
-    });
-
-    $("#openDropDownVideos").click(function(){
-        $("div[class='dropdown-container Videos']").slideToggle( "fast" );
     });
 
     $("#openDropDownAdmin").click(function(){

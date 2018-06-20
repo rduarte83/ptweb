@@ -41,6 +41,20 @@
 
             }
         ?>
+        <!-- Alert error -->
+        <div class="row" id="notification">
+            <div class="alert alert-danger" id="danger-alert">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                <strong>Error! </strong>
+                <span id="errorMensagem"></span>
+            </div>
+            <!-- Alert success -->
+            <div class="alert alert-success" id="success-alert">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                <strong>Success! </strong>
+                <span id="sucessoMensagem"></span>
+            </div>
+        </div>
     </div>
 
     

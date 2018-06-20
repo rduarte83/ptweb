@@ -16,10 +16,21 @@
         <h2>Editar Artigo</h2>
         <i class="fas fa-user-md tamIcon"></i>
     </div>
-    <div id="add_video" class="menu regDor col-md col-sm">
-        <h2>Pedidos de Treinos/Artigos</h2>
+    <div id="add_consulta" class="menu regDor col-md col-sm">
+        <h2>Adicionar Consulta</h2>
         <i class="fas fa-user-md tamIcon"></i>
     </div>
+
+    <?php 
+    if(!isset($_SESSION))
+        session_start();
+
+    if($_SESSION["role_id"]==2): ?>
+        <div id="show_list_pedidos" class="menu regDor col-md col-sm">
+            <h2>Pedidos de Treinos/Artigos</h2>
+            <i class="fas fa-user-md tamIcon"></i>
+        </div>
+    <?php endif;?>
 </div>
 
 <!-- Modal for adding article -->
@@ -199,20 +210,46 @@
     </div>
 </div>
 
-<!-- Alert error -->
-<div class="row" id="notification">
-    <div class="alert alert-danger" id="danger-alert">
-        <button type="button" class="close" data-dismiss="alert">x</button>
-        <strong>Error! </strong>
-        <span id="errorMensagem"></span>
-    </div>
-    <!-- Alert success -->
-    <div class="alert alert-success" id="success-alert">
-        <button type="button" class="close" data-dismiss="alert">x</button>
-        <strong>Success! </strong>
-        <span id="sucessoMensagem"></span>
-    </div>
+<!-- Modal for adding Consulta -->
+<div class="modal fade" id="addConsultaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Form de Consultas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="addConsultaForm">
+                    <fieldset>
 
+                        <div class="form-group">
+                            <label for="paciente" class="control-label col-sm-2">Paciente</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="paciente" id="paciente">
+                                    <option value="-1">Selecione o paciente...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="data" class="control-label col-sm-2">Data</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" name="data" id="data" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notas" class="control-label col-sm-6">Notas</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="notas" id="notas">
+
+                            </div>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-
-

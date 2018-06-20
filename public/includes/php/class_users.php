@@ -114,6 +114,33 @@ class User
         }
     }
 
+    public static function getUsersPaciente($id)
+    {
+        try {
+            require_once("class_database.php");
+            $Database = new Database();
+
+            $arrParam = [
+                ":id" => intval($id),
+            ];
+
+            // QUERY COM ERRO
+            $query = "SELECT ute.id,uti.nome as nome  FROM utente as ute
+            INNER JOIN utilizador as uti ON uti.id = ute.id
+            INNER JOIN utilizador as ps  ON ps.id = ute.prof_saude
+            WHERE ute.prof_saude=:id";
+            
+            $result = $Database->EXE_QUERY($query,$arrParam);
+        
+            return $result;
+            
+        } catch (PDOException $e) {
+            echo "ERROR: " . $e->getMessage();
+            return null;
+        }
+    }
+
+
     public static function getSingleUser($key)
     {
 

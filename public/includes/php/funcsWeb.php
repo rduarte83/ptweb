@@ -44,6 +44,13 @@ if(isset($_POST,$_POST["cmd"]))
         case 'getSingleUser':
             echo json_encode(User::getSingleUser($_POST["key"]));
             break;
+
+        case 'getUsersPaciente':
+            if(isset($_SESSION["id"])){
+                echo json_encode(User::getUsersPaciente($_SESSION["id"]));
+            }
+            break;
+
         case 'updateUser':
             if(isset($_POST["email"],$_POST["password"],$_POST["nome"],$_POST["genero"],
             $_POST["data_nascimento"],$_POST["contacto"],$_POST["cc"],$_POST["nif"],
@@ -161,8 +168,8 @@ if(isset($_POST,$_POST["cmd"]))
          */
         case "insertConsulta":
             //($data, $profSaude, $utente, $notas)
-            if(isset($_POST["data"], $_POST["profSaude"], $_POST["utente"], $_POST["notas"])){
-                echo json_encode(Consultas::insertConsulta($_POST["data"], $_POST["profSaude"], $_POST["utente"], $_POST["notas"]));
+            if(isset($_POST["data"], $_POST["utente"], $_POST["notas"])){
+                echo json_encode(Consultas::insertConsulta($_POST["data"], $_SESSION["id"], $_POST["utente"], $_POST["notas"]));
             }
             break;
         case "updateConsulta":

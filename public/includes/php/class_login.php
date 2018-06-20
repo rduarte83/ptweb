@@ -75,6 +75,7 @@ class Login
         $_SESSION['nome'] = $dados[0]['nome'];
         $role = $dados[0]['role_nome'] == "Prof Saúde Sénior" ? "Prof Saúde" : $dados[0]['role_nome'];
         $_SESSION['role'] = $role;
+        $_SESSION['role_id'] = $dados[0]['role'];
     }
     
     public static function destroiSessao(){

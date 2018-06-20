@@ -68,11 +68,18 @@ a{
     margin-left: -20px !important;
 }
 
-@media only screen and (max-width: 600px) {
-    
+#notification {
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 .homeProf
 {
     margin-left: 350px;
 }
+
+@media only screen and (max-width: 600px) {
+    
+}
+
