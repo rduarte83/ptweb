@@ -32,7 +32,8 @@ function loadChat(){
                 
             })
             $(".chat").html(chatFinal);
-        }
+        },
+        async:false
     });
 }
 
@@ -67,7 +68,6 @@ function sendMessage(mensagem,id_to){
         }
     });
 }
-
 
 
 $(document).ready(function(){
@@ -107,14 +107,22 @@ $(document).ready(function(){
         changePage("modules/home/paciente/consultas.php");
     });
 
+    $(document).on('click',"#dadosPessoais", function(){
+        changePage("modules/home/paciente/dadosPessoais.php");
+        //$("#utenteInfo").modal('toggle');
+    });
+    
+
     $("#infoProfissional").click(function(){
         $("#containerMensagem").toggle();
     });
-    
+        
 
     $(document).on('click',"#submitFormCorpo", function(e){
         e.preventDefault();
         submitDor();
+
+        
     });
 
     

@@ -190,6 +190,23 @@ class User
         }
     }
 
+    public static function getDadosUtente($id){
+        require_once("class_database.php");
+        $Database = new Database();
+        
+
+        $arrParam = [
+            ":id_user" => intval($id),
+        ];
+
+        $query = "SELECT vu.*, u.nome as prof_saude_nome FROM vw_utilizadores as vu
+        INNER JOIN utilizador as u ON u.id = vu.prof_saude
+        WHERE vu.id = :id_user";
+
+        $reg = $Database->EXE_QUERY($query,$arrParam);
+        return $reg;
+    }
+
 
 }
 
