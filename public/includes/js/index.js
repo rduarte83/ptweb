@@ -12,6 +12,7 @@ function login(form)
             if(resposta.status){
                 window.location.href = "home.php";
             }else {
+                alerta(resposta.message, true);
                 console.log(resposta.message);
             }
         }
@@ -32,6 +33,20 @@ function logout()
             location.reload();
         }
     })
+}
+
+function alerta(mensagem, error=false){
+    if(!error){
+        $("#sucessoMensagem").html(mensagem);
+        $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+            $("#success-alert").slideUp(500);
+        });
+    }else{
+        $("#errorMensagem").html(mensagem);
+        $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
+            $("#danger-alert").slideUp(500);
+        });
+    }
 }
 
 $(document).ready(function(){

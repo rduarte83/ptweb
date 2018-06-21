@@ -1,4 +1,5 @@
 var id_utente_ver;
+var files;
 function getUsersPacientes(){
     
     $.ajax({
@@ -34,7 +35,7 @@ function carregaData(texto) {
         },
         dataType: "json", // serializes the form's elements.
         success: function (data) {
-            $("#panel-body").html('<table class="table">\n' +
+            $("#panel-body").html('<table id="user-paciente-table" class="table">\n' +
                 '  <thead>\n' +
                 '    <tr>\n' +
                 '      <th scope="col">ID</th>\n' +
@@ -131,6 +132,7 @@ function insertConsulta(dados)
             // Artigo foi adicionado
             if(data == 1){
                 alerta("Consulta adicionada com sucesso!",false);
+                $("#addConsultaForm").trigger('reset');
             }else{
                 alerta("Erro ao adicionar consulta!",true);
             }
@@ -144,7 +146,59 @@ function insertConsulta(dados)
     });
 }
 
+function insertTreino(form)
+{
+    console.log(form);
+    var formData = new FormData(form[0]);
+    formData.append("cmd","insertTreino");
+
+    $.ajax({
+        url: 'includes/php/funcsWeb.php',
+        type: 'POST',
+        xhr: function() {
+            var myXhr = $.ajaxSettings.xhr();
+            return myXhr;
+        },
+        success: function (data) {
+            alert("Data Uploaded: "+data);
+            $("#error").html(data);
+        },
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        async:false,
+    });
+    return false;
+}
+
+var carregaConsulta = false;
+
 function carregaDataSelectConsulta()
+{
+    carregaConsulta=false;
+    $.ajax({
+        type: "POST",
+        url: 'includes/php/funcsWeb.php',
+        data: {
+            "cmd" : "getUsersPaciente"
+        }, // serializes the form's elements.
+        success: function (response) {
+            let resposta = $.parseJSON(response);
+            console.log(resposta);
+            let listPaciente = '<option value="-1">Selecione o paciente...</option>';
+            $.each(resposta, function (key, val) {
+                listPaciente+='<option value="'+resposta[key].id+'">'+resposta[key].nome+'</option>';
+            });
+            $("#pacienteConsultaAddModal").html(listPaciente);
+            carregaConsulta = true;
+        },
+        async: false
+    })
+    return carregaConsulta;
+}
+
+function carregaDataSelectTreino()
 {
     $.ajax({
         type: "POST",
@@ -159,9 +213,28 @@ function carregaDataSelectConsulta()
             $.each(resposta, function (key, val) {
                 listPaciente+='<option value="'+resposta[key].id+'">'+resposta[key].nome+'</option>';
             });
-            $("#paciente").html(listPaciente);
-        }
+
+            $("#pacienteTreinoAdd").html(listPaciente);
+            if(id_utente_ver!=0){
+                $('#addTreinoForm select[name="utente"] option[value="'+id_utente_ver+'"]').prop('selected', true);
+            }
+            
+        },
+        async: false
     })
+}
+
+function carregaTreinos()
+{
+    $.ajax({
+        type: "POST",
+        url: 'modules/home/profissional/treinos.php',
+        success: function (response) {
+            addToMain(response);             
+        },
+        async: false
+    });
+    
 }
 
 
@@ -171,6 +244,7 @@ var level = 0;
 function goBack(){
     level--;
     $("#main_div").html(previousMain[level]);
+    if(level == 0) id_utente_ver=0;
 }
 
 function addToMain(conteudo){
@@ -180,6 +254,12 @@ function addToMain(conteudo){
 }
 
 function addTrat(id){}
+
+// Grab the files and set them to our variable
+function prepareUpload(event)
+{
+    files = event.target.files;
+}
 
 
 $(document).ready(function () {
@@ -212,17 +292,28 @@ $(document).ready(function () {
         carregaDataSelectConsulta();
         $('#addConsultaModal').modal('toggle');
     });
-    $("#main_div").on("click",'#edit_video', function (){
-        alert("lol");
+    $("#main_div").on("click",'#add_treino', function (){
+        previousMain[level] = $("#main_div").html();
+        level++;
+
+        carregaTreinos();    
+          
     });
 
     $(document).on("click",'#btn-add-consulta', function (){
-        carregaDataSelectConsulta();
-        let stringOp = 'option[value="'+id_utente_ver+'"]';
-        $('#addConsultaForm #paciente' +stringOp ).attr("selected",true);
-        $('#addConsultaModal').modal('toggle');
+        if(carregaDataSelectConsulta()){
+            //$('select[name="pacienteConsulta"]').find('option[value="4"]').attr("selected",true);
+            $('select[name="utente"] option[value="'+id_utente_ver+'"]').prop('selected', true);
+            $('#addConsultaModal').modal('toggle');
+        }
     })
 
+    $(document).on("click",'#btn-add-treino', function (){
+        previousMain[level] = $("#main_div").html();
+        level++;
+        carregaTreinos();    
+    });
+    
     /* Sidebar */
 
     $(document).on("click",'#show_list_pac_sidebar', function (){
@@ -266,7 +357,8 @@ $(document).ready(function () {
         e.preventDefault();
         var arrDados = $(this).serializeArray();
         arrDados.push({"name":"cmd","value":"insertConsulta"});
-        insertArtigo(arrDados);
+        insertConsulta(arrDados);
+
     });
 
     $("#addArticle").on("submit", function (e) {
@@ -276,7 +368,26 @@ $(document).ready(function () {
         insertArtigo(arrDados);
     });
 
-    $(document).on("click", ".list-group-item", function () {
+
+
+    $(document).on("submit", "#addTreinoForm", function (e) {
+        e.preventDefault();
+        var arrDados = $(this).serializeArray();
+       // Create a formdata object and add the files
+        //var data = new FormData();
+       /* $.each(files, function(key, value)
+        {
+            arrDados.push({"name":"files[]","value":value});
+        });*/
+
+        //arrDados.push({"name":"cmd","value":"insertTreino"});
+        console.log(arrDados);
+        insertTreino($(this));
+    });
+
+    
+
+    $(document).on("click", ".list-group-item-action", function () {
 
         previousMain[level] = $("#main_div").html();
         level++;
@@ -286,12 +397,15 @@ $(document).ready(function () {
         addToMain(
             '    <div class="row-fluid">\n' +
             '        <button type="button" class="btn btn-primary" id="btn-add-consulta" onclick="">+ Criar consulta</button>\n<br><br>' +
+            '        <button type="button" class="btn btn-primary" id="btn-add-treino" onclick="">+ Criar Treino</button>\n<br><br>' +
             '    </div>' +
             '<div class="card">' +
             '<nav>\n' +
             '  <div class="nav nav-tabs" id="nav-tab" role="tablist">\n' +
             '    <a class="nav-item nav-link active dark-text" id="nav-paciente-dados" data-toggle="tab" href="#div-paciente-dados" role="tab" aria-controls="div-paciente-dados" aria-selected="false">Dados</a>\n' +
             '    <a class="nav-item nav-link dark-text" id="nav-paciente-tratamentos" data-toggle="tab" href="#div-paciente-tratamentos" role="tab" aria-controls="div-paciente-tratamentos" aria-selected="false">Tratamentos</a>\n' +
+            '    <a class="nav-item nav-link dark-text" id="nav-paciente-consultas" data-toggle="tab" href="#div-paciente-consultas" role="tab" aria-controls="div-paciente-consultas" aria-selected="false">Consultas</a>\n' +
+            '    <a class="nav-item nav-link dark-text" id="nav-paciente-treinos" data-toggle="tab" href="#div-paciente-treinos" role="tab" aria-controls="div-paciente-treinos" aria-selected="false">Treinos</a>\n' +
             '  </div>\n' +
             '</nav>' +
             '<div class="tab-content" id="nav-tabContent">\n' +
@@ -307,5 +421,11 @@ $(document).ready(function () {
     });
 
     previousMain[level] = $("#main_div").html();
+
+    /*  */
+    // Add events
+    $(document).on("change", 'input[type=file]', prepareUpload);
+
+    
 });
 

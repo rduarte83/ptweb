@@ -14,6 +14,18 @@ class Treinos
         return $result;
     }
 
+    public static function getTreinosCalendar($id_utente)
+    {
+        $db = new Database();
+        $arrParam = [
+            ":id_utente" => intval($id_utente),
+        ];
+
+        $sql = "SELECT id, data_inicio AS inicio, data_fim as fim, descricao AS titulo FROM treino WHERE utente=:id_utente";
+        $result = $db->EXE_QUERY($sql,$arrParam, false);
+        return $result;
+    }
+
     public static function getTreino($id_treino)
     {
         $db = new Database();
@@ -26,19 +38,24 @@ class Treinos
         return $result;
     }
 
-    public static function insertTreino($data_inicio, $data_fim, $profSaude, $utente, $descricao)
+    public static function insertTreino($data_inicio, $data_fim, $profSaude, $utente, $descricao, $descVideo)
     {
         $db = new Database();
         $arrParam = [
             ":data_inicio" => date("d-m-Y",strtotime($data_inicio)),
-            ":data_fim" => date("d-m-Y",strtotime($data)),
+            ":data_fim" => date("d-m-Y",strtotime($data_fim)),
             ":id_prof" => intval($profSaude),
             ":id_utente" => intval($utente),
             ":descricao" => $descricao
         ];
 
-        $sql = "INSERT INTO treino (data_criacao, data_inicio, data_fim, prof_saude,utente,descricao) VALUES (now(), :data_inicio, :data_fim, :id_prof, :id_utente, :descricao)";
+        $sql = "INSERT INTO treino (data_criacao, data_inicio, data_fim, prof_saude,utente,descricao) VALUES (now(), :data_inicio, :data_fim, :id_prof, :id_utente, :descricao) RETURNING id";
         $result = $db->EXE_NON_QUERY($sql,$arrParam, false);
+        
+        $id_treino = $result->fetch();
+
+        Videos::insertVideoTreino($id_treino, $descVideo);
+
         return $result->rowCount();
     }
 

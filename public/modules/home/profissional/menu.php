@@ -2,23 +2,29 @@
 
     <div id="show_list_pac" class="menu regDor col-md col-sm">
         <h2>Lista de Utentes</h2>
-        <i class="fas fa-chart-line tamIcon"></i>
+        <i class="fas fa-users tamIcon"></i>
     </div>
     <div id="add_pac" class="menu regDor col-md col-sm">
         <h2>Adicionar Utente</h2>
-        <i class="far fa-calendar-alt tamIcon"></i>
+        <i class="far fa-user tamIcon"></i>
     </div>
     <div id="add_article" class="menu regDor col-md col-sm">
         <h2>Adicionar Artigo</h2>
-        <i class="fas fa-child tamIcon"></i>        
+        <i class="fas fa-newspaper tamIcon"></i>        
     </div>
     <div id="edit_article" class="menu regDor col-md col-sm" style="border-radius: 5px;">
         <h2>Editar Artigo</h2>
-        <i class="fas fa-user-md tamIcon"></i>
+        <i class="fas fa-pencil-alt tamIcon"></i>
     </div>
     <div id="add_consulta" class="menu regDor col-md col-sm">
         <h2>Adicionar Consulta</h2>
-        <i class="fas fa-user-md tamIcon"></i>
+        
+        <i class="fas fa-stethoscope tamIcon"></i>
+    </div>
+
+    <div id="add_treino" class="menu regDor col-md col-sm">
+        <h2>Adicionar Treino</h2>
+        <i class="fas fa-child tamIcon"></i>
     </div>
 
     <?php 
@@ -27,11 +33,13 @@
 
     if($_SESSION["role_id"]==2): ?>
         <div id="show_list_pedidos" class="menu regDor col-md col-sm">
-            <h2>Pedidos de Treinos/Artigos</h2>
-            <i class="fas fa-user-md tamIcon"></i>
+            <h2>Aprovar Artigos</h2>
+            <i class="fas fa-check tamIcon"></i>
         </div>
     <?php endif;?>
 </div>
+
+<div id="error"></div>
 
 <!-- Modal for adding article -->
 <div class="modal fade" id="articleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -225,9 +233,9 @@
                     <fieldset>
 
                         <div class="form-group">
-                            <label for="paciente" class="control-label col-sm-2">Paciente</label>
+                            <label for="pacienteConsultaAddModal" class="control-label col-sm-2">Paciente</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="paciente" id="paciente">
+                                <select class="form-control" name="utente" id="pacienteConsultaAddModal">
                                     <option value="-1">Selecione o paciente...</option>
                                 </select>
                             </div>

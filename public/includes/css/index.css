@@ -85,6 +85,16 @@ body{
     padding: 10px;
 }
 
+
+#notification {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#danger-alert, #success-alert {
+    display:none;
+}
 @media only screen and (max-width: 600px) {
     
 }

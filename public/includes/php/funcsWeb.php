@@ -143,8 +143,8 @@ if(isset($_POST,$_POST["cmd"]))
          */
         case "insertTreino":
             //($data_inicio, $data_fim, $profSaude, $utente, $descricao)
-            if(isset($_POST["data_inicio"], $_POST["data_fim"], $_POST["profSaude"], $_POST["utente"], $_POST["descricao"])){
-                echo json_encode(Treinos::insertTreino($_POST["data_inicio"], $_POST["data_fim"], $_POST["profSaude"], $_POST["utente"], $_POST["descricao"]));
+            if(isset($_POST["data-inicio"], $_POST["data-fim"], $_POST["profSaude"], $_POST["utente"], $_POST["descricao"], $_POST["descVideo"])){
+                echo json_encode(Treinos::insertTreino($_POST["data-inicio"], $_POST["data-fim"], $_POST["profSaude"], $_POST["utente"], $_POST["descricao"], $_POST["descVideo"]));
             }
             break;
         case "UpdateTreino":
@@ -161,6 +161,16 @@ if(isset($_POST,$_POST["cmd"]))
         case "getTreino":
             if(isset($_POST["id_treino"])){
                 echo json_encode(Treinos::getTreino($_POST["id_treino"]));
+            }
+            break;
+        case "getEventsCalendar":
+            if(isset($_POST["utente"])){
+                $arrResposta = [
+                    Treinos::getTreinosCalendar($_POST["utente"]),
+                    Consultas::getConsultasCalendar($_POST["utente"])
+                ];
+                echo json_encode($arrResposta);
+
             }
             break;
         /**

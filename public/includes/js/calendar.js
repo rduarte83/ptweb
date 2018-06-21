@@ -2,8 +2,8 @@
     var event = {id:1 , title: 'Evento NOVO', start: '2018-06-30', end:'2018-06-31' };
     $('#calendar').fullCalendar( 'renderEvent', event, true);*/
 
-var calendar
-$(document).ready(function() {
+var eventosCalendario;
+function buildCalendar(){
     $('#calendar').fullCalendar({
         header: {
             left: 'prev,next today',
@@ -21,47 +21,42 @@ $(document).ready(function() {
         navLinks: false,
         editable: false,
         eventLimit: true,
-        events: [
-            {
-                title: 'Event',
-                start: '2018-06-01',
-            },
-            {
-                title: 'Long Event',
-                start: '2018-06-18',
-                end: '2018-06-28'
-            },
-            {
-                id: 1,
-                title: 'Repeating Event',
-                start: '2018-06-04'
-            },
-            {
-                id: 1,
-                title: 'Repeating Event',
-                start: '2018-06-11'
-            },
-            {
-                title: 'Event 1',
-                start: '2018-06-08',
-            },
-            {
-                title: 'Event 2',
-                start: '2018-06-08'
-            },
-            {
-                title: 'Event 3',
-                start: '2018-06-08'
-            },
-            {
-                title: 'Event 4',
-                start: '2018-06-08'
-            },
-            {
-                title: 'Event 5',
-                start: '2018-06-08'
-            },
-        ]
+        events: []
     });
+}
+
+
+function getDataUser()
+{
+    console.log(user);
+    $.ajax({
+        url:"includes/php/funcsWeb.php",
+        type:"POST",
+        data:{
+            "cmd":"getEventsCalendar",
+            "utente":user,
+        },
+        dataType:"JSON",
+        success:function(resposta){
+            console.log(resposta);
+            $.each(resposta[0], function(index, value){
+                var event = {id: resposta[0][index].id , title: resposta[0][index].titulo, start: resposta[0][index].inicio, end: resposta[0][index].fim };
+                $('#calendar').fullCalendar( 'renderEvent', event, true);
+            })
+
+            $.each(resposta[1], function(index, value){
+                var event = {id: resposta[1][index].id , title: resposta[1][index].titulo, start: resposta[1][index].inicio };
+                $('#calendar').fullCalendar( 'renderEvent', event, true);
+            })
+            
+        }
+
+    });
+}
+
+var calendar;
+$(document).ready(function() {
+    buildCalendar();
+    getDataUser();
 });
 

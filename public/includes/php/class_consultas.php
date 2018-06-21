@@ -19,6 +19,23 @@ class Consultas
         return $result;
     }
 
+    public static function getConsultasCalendar($id_utente)
+    {
+        require_once("class_database.php");
+        $db = new Database();
+        $arrParam = [
+            ":id_utente" => intval($id_utente),
+        ];
+
+        $sql = "SELECT c.id as id, c.data as inicio, notas as titulo FROM consultas as c
+        INNER JOIN utilizador as u ON u.id = c.utente
+        INNER JOIN utilizador as ps ON ps.id = c.prof_saude
+        WHERE utente=:id_utente";
+        $result = $db->EXE_QUERY($sql,$arrParam, false);
+        return $result;
+    }
+
+
     public static function getConsulta($id_consulta)
     {
         $db = new Database();
