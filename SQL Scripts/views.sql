@@ -59,6 +59,7 @@ CREATE OR REPLACE VIEW vw_treino AS
 	, v.descricao AS descricao_video
  FROM treino t
  LEFT JOIN treino_video tv on t.id = tv.treinoid
+ LEFT JOIN video v on tv.videoid = v.id
  ORDER BY t.id;
 
 --DROP VIEW vw_episodio;

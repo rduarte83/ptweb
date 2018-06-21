@@ -1,8 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
 
 
+<link rel="stylesheet" href="../includes/css/bootstrap.min.css">
 <link rel="stylesheet" href="../includes/css/jquery-ui.css">
 <link rel="stylesheet" href="../includes/css/pintar.css">
 
+<script src="../includes/js/jquery-3.3.1.min.js"></script>
 <script src="../includes/js/jquery-ui.min.js"></script>
 <script src="../includes/js/jquery.maphilight.min.js"></script>
 <script src="../includes/js/imageMapResizer.min.js"></script>
@@ -13,6 +25,11 @@
 	<p>1 - Escolha a intensidade de dor (0 - sem dor | 10 - dor máxima):</p>
 	<div id="slider"></div>
 	<br>
+	<div id="legenda">
+		<div id="min" style="float: left">SEM DOR</div>
+		<div id="max" style="float: right">DOR MÁXIMA</div>
+		<div id="mid" style="text-align: center">DOR MODERADA</div>
+	</div>
 	<p>2 - Seleccione a área do corpo:</p>
 	<img src="../includes/img/front.png" alt="front" class="map" usemap="#front">
 
@@ -72,7 +89,9 @@
 	<p>4 - Repita o processo se achar necessário</p>
 	<p>5 - Carregue no botão ENVIAR para finalizar</p>
 	<div id="buttons">
-		<button id="clear">LIMPAR</button>
-		<button id="submit">ENVIAR</button>
+		<button type="button" id="clear" class="btn btn-primary btn-lg">LIMPAR</button>
+		<button type="button" id="submit" class="btn btn-primary btn-lg">ENVIAR</button>
 	</div>
 </div>
+</body>
+</html>
