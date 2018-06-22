@@ -117,3 +117,11 @@ ul > li{
 .barColor{
     background-color: #93c572;
 }
+
+
+#notification {
+    position: fixed;
+    bottom: 45px;
+    right: 0;
+}
+

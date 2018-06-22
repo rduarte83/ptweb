@@ -1,4 +1,4 @@
-var id_utente_ver, user, userTo;
+var id_utente_ver, user, userTo, epDorID;
 var files;
 
 
@@ -373,6 +373,40 @@ function aprovarRejeitarArtigo(id, aprovar){
     }
 }
 
+function loadEpDorTabela()
+{
+    $.ajax({
+        type: "POST",
+        url: 'modules/home/profissional/tabelaEpDor.php',
+        data: {
+            "utente" : id_utente_ver,
+        },
+        success: function (response) {
+            $("#div-paciente-epDor").html(response);
+            $('#tabela-epDor').DataTable(); 
+        },
+        async: false
+    });
+}
+
+function loadEpDorPintar(id)
+{
+    $.ajax({
+        type: "POST",
+        url: 'modules/home/profissional/pintar.php',
+        data:{
+            "utente":id_utente_ver,
+            "epDor":id
+        },
+        success: function (response) {
+            previousMain[level] = $("#main_div").html();
+            level++;
+            addToMain(response);      
+        },
+        async: false
+    });
+}
+
 var previousMain = [];
 var level = 0;
 
@@ -562,7 +596,7 @@ $(document).ready(function () {
             '       </div>' +
             '       <div class="tab-pane fade" id="div-paciente-treinos" role="tabpanel" aria-labelledby="nav-contact-tab"><button type="button" class="btn btn-info margin8" id="btn-back" onclick="addTrat(id);">+ Recomendar artigo</button></div>\n' +
             '       <div class="tab-pane fade" id="div-paciente-epDor"></div>' +
-            '       <div class="tab-pane fade" id="div-paciente-epDor"></div>' +
+            '       <div class="tab-pane fade" id="div-paciente-consultas"></div>' +
             '       <div class="tab-pane fade" id="div-paciente-chat"></div>' +
             '   </div>' +
             '</div> '
@@ -571,6 +605,7 @@ $(document).ready(function () {
         carregaData(id);
         getChatDiv();
         loadChat();
+        
     });
 
     previousMain[level] = $("#main_div").html();
@@ -597,6 +632,18 @@ $(document).ready(function () {
         if(confirma){
             aprovarRejeitarArtigo($(this).attr("id-aprovar"), false);
         }
+    });
+
+    // Load epDor
+    $(document).on("click", "#nav-paciente-epDor", function(){
+        loadEpDorTabela();
+    });
+
+    // Ver zona EP DOR
+    $(document).on("click", "#tabela-epDor .btn-ver", function(){
+        //aprovarRejeitarArtigo($(this).attr("id-aprovar"), false);
+        epDorID = $(this).attr("id-episodio");
+        loadEpDorPintar($(this).attr("id-episodio"));
     });
 
     

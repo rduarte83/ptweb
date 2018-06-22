@@ -4,6 +4,7 @@ class Treinos
 {
     public static function getTreinos($id_utente)
     {
+        require_once("class_database.php");
         $db = new Database();
         $arrParam = [
             ":id_utente" => intval($id_utente),

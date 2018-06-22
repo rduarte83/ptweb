@@ -27,16 +27,10 @@ $(document).ready(function () {
     createGradient();
     highlight();
 
-    $("#clear").click(function () {
-       reset();
-       console.log("RESET")
-    });
-
-    $("#submit").click(function(){
-        submitDor();
-    });
-
     imageMapResize();
+
+    buscarDadosArray();
+    
 });
 
 
@@ -86,23 +80,45 @@ function highlightSettings() {
 
 function highlight() {
     $("area").click(function(e) {
-        zona = this.alt;
-        $(this).data("maphilight", {"stroke":false, "fillColor":cor , "fillOpacity":1});
-
-        //console.log("cor:",cor," zona:", zona, " valor:", valor, " numZonas:", numZonas);
-
-        zonaCorArray[numZonas] = [zona, valor];
-        numZonas++;
-
-        console.log("Array: ", zonaCorArray);
 
         //Keep color in zone
         e.preventDefault();
-        var data = $(this).mouseout().data('maphilight') || {};
-        data.alwaysOn = !data.alwaysOn;
-        $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
-        //$(this).unbind();
     });
+}
+
+function preencheCorpo(arrPreencher){
+    $.each(arrPreencher, function(index, value){
+        console.log(value);
+        let zonaAtual = value.zona;
+        let corAtual = value.cor;
+        let corPor = corArray[corAtual].slice(1);
+        console.log(zonaAtual + " - " + corPor);
+
+        console.log($("area[alt='"+zonaAtual+"']").attr("title")); 
+        $("area[alt='"+zonaAtual+"']").data("maphilight", {"stroke":false, "fillColor": corPor, "fillOpacity":1,"alwaysOn":true}).trigger('alwaysOn.maphilight');
+        //$("area[alt='"+zonaAtual+"']").mouseover();
+        
+    });
+}
+
+function buscarDadosArray(){
+
+    $.ajax({
+        type: "POST",
+        url: 'includes/php/funcsWeb.php',
+        data:{
+            "cmd":"getEpisodioDor",
+            "utente":id_utente_ver,
+            "epDorID":epDorID,
+        },
+        success: function (response) { 
+            console.log(response);
+            var resposta = $.parseJSON(response);
+            preencheCorpo(resposta); 
+        },
+        async: false
+    });
+    
 }
 
 function reset() {
@@ -120,26 +136,4 @@ function reset() {
     });
 
     highlightSettings();
-}
-
-function submitDor(){
-    $.ajax({
-        url:"includes/php/funcsWeb",
-        type:"POST",
-        data:{
-            "cmd":"insertEpisodioDor",
-            "zonaCorArray":zonaCorArray,
-        },
-        success:function(resposta){
-            console.log(resposta);
-            var respostaJSON = $.parseJSON(resposta);
-            if(respostaJSON.status == 1){
-                alerta(respostaJSON.message,false);
-                $("#receive").html(menu);
-            }else {
-                alerta(respostaJSON.message,true);
-            }
-            
-        }
-    });
 }

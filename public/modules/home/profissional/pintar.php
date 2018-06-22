@@ -7,11 +7,9 @@
 <script src="../includes/js/jquery-ui.min.js"></script>
 <script src="../includes/js/jquery.maphilight.min.js"></script>
 <script src="../includes/js/imageMapResizer.min.js"></script>
-<script src="../includes/js/pintar.js"></script>
+<script src="../includes/js/pintar-profissional.js"></script>
 
 <div class="main">
-	<h1>Onde sente dor?</h1>
-	<p>1 - Escolha a intensidade de dor (0 - sem dor | 10 - dor máxima):</p>
 	<div id="slider"></div>
 	<br>
 	<div id="legenda">
@@ -19,7 +17,7 @@
 		<div id="max" style="float: right">DOR MÁXIMA</div>
 		<div id="mid" style="text-align: center">DOR MODERADA</div>
 	</div>
-	<p>2 - Seleccione a área do corpo:</p>
+
 	<img src="../includes/img/front.png" alt="front" class="map" usemap="#front">
 
 	<map name="front">
@@ -75,10 +73,4 @@
 				href="#" alt="17" title="Pé Esquerdo" class="corpo"/>
 
 	</map>
-	<p>4 - Repita o processo se achar necessário</p>
-	<p>5 - Carregue no botão ENVIAR para finalizar</p>
-	<div id="buttons">
-		<button type="button" id="clear" class="btn btn-primary btn-lg">LIMPAR</button>
-		<button type="button" id="submit" class="btn btn-primary btn-lg">ENVIAR</button>
-	</div>
 </div>

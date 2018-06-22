@@ -6,7 +6,22 @@ function changePage(pagina){
         type:"GET",
         success:function(resposta){
             $("#receive").html(resposta);
-        }
+        },
+        async:false
+    });
+}
+
+function verTreino(pagina, id){
+    $.ajax({
+        url:pagina,
+        type:"POST",
+        data:{
+            "idTreino":id,
+        },
+        success:function(resposta){
+            $("#receive").html(resposta);
+        },
+        async:false
     });
 }
 
@@ -112,6 +127,11 @@ $(document).ready(function(){
         changePage("modules/home/paciente/dadosPessoais.php");
         //$("#utenteInfo").modal('toggle');
     });
+
+    $(document).on('click',"#treinos", function(){
+        changePage("modules/home/paciente/tabelaTreinos.php");
+       
+    });
     
 
     $("#infoProfissional").click(function(){
@@ -122,8 +142,13 @@ $(document).ready(function(){
     $(document).on('click',"#submitFormCorpo", function(e){
         e.preventDefault();
         submitDor();
+    });
 
+     // Ver zona EP DOR
+     $(document).on("click", "#tabela-treinos .btn-treino", function(){
+        //aprovarRejeitarArtigo($(this).attr("id-aprovar"), false);
         
+        verTreino("modules/home/paciente/treinos.php",$(this).attr("id-treino"));
     });
 
     

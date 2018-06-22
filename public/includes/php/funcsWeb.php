@@ -151,6 +151,11 @@ if(isset($_POST,$_POST["cmd"]))
                 echo json_encode(Dor::registarDor($_POST["zonaCorArray"]));
             }
             break;
+        case "getEpisodioDor":
+            if(isset($_POST["utente"], $_POST["epDorID"])){
+                echo json_encode(Dor::getEpisodioDor($_POST["utente"],$_POST["epDorID"]));
+            }
+            break;
         
         /**
          *  -- Treinos --
