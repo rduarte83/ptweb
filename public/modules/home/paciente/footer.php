@@ -5,7 +5,7 @@ $profissional = User::getProfissinal();
 $profissional = $profissional[0];
 ?>
 
-<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark barColor">
     <img src="..." alt="..." class="img-thumbnail">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarProfissional" aria-controls="navbarProfissional" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@ $profissional = $profissional[0];
     <div class="Mensagens">
        
         <div id="containerMensagem">
-            <div id="infoProfissional" style="cursor: pointer;" class="navbar navbar-dark bg-dark">
+            <div id="infoProfissional" style="cursor: pointer;" class="navbar navbar-dark barColor">
                 <img src="..." alt="..." class="img-thumbnail">
 
                 <div class="collapse navbar-collapse" >

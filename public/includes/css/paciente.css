@@ -14,7 +14,7 @@
 }
 
 #chatHolder{
-    height: 450px;
+    height: 370px;
     background-color: whitesmoke;
     white-space:normal;
     word-wrap: break-word;
@@ -59,7 +59,8 @@ ul > li{
 
 .esquerda{
     padding: 10px;
-    background-color: red;
+    background-color: #1e5d6f;
+    margin-top: 20px;
     width: 400px;
     word-wrap: break-word;
 }
@@ -67,7 +68,7 @@ ul > li{
 .direita{
     padding: 10px;
     float:right;
-    background-color: blue;
+    background-color: #b69c7c;
     margin-top: 20px;
     width: 400px;
     word-wrap: break-word;
@@ -81,7 +82,7 @@ ul > li{
 
 .menu{
     height: 250px;
-    background-color: grey;
+    background-color: #569099;
     border: 1px solid black;
     margin-left: 20px;
     margin-right: 20px;
@@ -95,7 +96,7 @@ ul > li{
 .menu:hover
 {
     cursor: pointer;
-    background-color: darkgrey;
+    background-color: #90c9c2;
 }
 
 .menu:first-child{
@@ -111,4 +112,8 @@ ul > li{
 
 #receive{
     margin-top: 100px;
+}
+
+.barColor{
+    background-color: #93c572;
 }
