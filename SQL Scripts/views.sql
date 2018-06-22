@@ -32,6 +32,7 @@ SELECT a.id AS id_artigo
 	, a.conteudo
 	, a.data_criacao
 	, a.data_edicao
+	, a.aprovado
 	, z.id AS id_zona
 	, z.nome AS nome_zona
 	, v.id AS id_video

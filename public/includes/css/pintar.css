@@ -1,11 +1,11 @@
 .main {
 	margin: 0 auto;
-	padding: 20px;
-	width: 50%;
+	width: 80%;
 }
 
 h1 {
-	font-size: 50px;
+	font-size: 40px;
+	text-align: center;
 }
 
 #slider {
@@ -38,7 +38,7 @@ h1 {
 
 #buttons {
 	float: right;
-	margin-top: -80px;
+	margin-top: -150px;
 }
 
 #submitFormCorpo, #clear #submit{
