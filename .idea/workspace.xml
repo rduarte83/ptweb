@@ -4,12 +4,10 @@
     <bookmark url="uml://DATABASE/021a60a3-3b54-499c-bce6-9585791bd0c3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5c08b19-6139-4f86-91ca-8ed7d73508d6" name="Default" comment="">
+    <list default="true" id="d5b5bf37-0e3d-49de-9c21-2449f6104eac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity Relationship Diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/Entity Relationship Diagram.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL Scripts/views.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL Scripts/views.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/includes/css/calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/includes/css/calendar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/includes/css/pintar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/includes/css/pintar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/modules/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/modules/calendar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/modules/pintar.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/modules/pintar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,50 +33,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="PostgreSQL - ptaw-gr4-2018@estga-dev.clients.ua.pt" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="PostgreSQL - ptaw-gr4-2018@estga-dev.clients.ua.pt" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="PostgreSQL - ptaw-gr4-2018@estga-dev.clients.ua.pt" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ptaw-gr4-2018: database" type="6d9b600a:PostgresImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="PostgreSQL - ptaw-gr4-2018@estga-dev.clients.ua.pt" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ptaw-gr4-2018: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="PostgreSQL - ptaw-gr4-2018@estga-dev.clients.ua.pt" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ptaw-gr4-2018: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="PostgreSQL - ptaw-gr4-2018@estga-dev.clients.ua.pt" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ptaw-gr4-2018: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="PostgreSQL - ptaw-gr4-2018@estga-dev.clients.ua.pt" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ptaw-gr4-2018: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-        <item name="views" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
     </expand>
     <select />
   </component>
@@ -87,40 +41,26 @@
       <file leaf-file-name="pintar.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/modules/pintar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="275">
+              <caret line="93" column="8" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pintar.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/includes/js/pintar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-986">
-              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pintar.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pintar.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/includes/css/pintar.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="160">
+              <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calendar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/modules/calendar.html">
+      <file leaf-file-name="pintar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/includes/js/pintar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+            <state relative-caret-position="256">
+              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -144,8 +84,9 @@
         <option value="$PROJECT_DIR$/SQL Scripts/functions_triggers.sql" />
         <option value="$PROJECT_DIR$/public/home.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/021a60a3-3b54-499c-bce6-9585791bd0c3/console.sql" />
-        <option value="$PROJECT_DIR$/SQL Scripts/views.sql" />
         <option value="$PROJECT_DIR$/public/modules/calendar.html" />
+        <option value="$PROJECT_DIR$/SQL Scripts/views.sql" />
+        <option value="$PROJECT_DIR$/public/includes/css/calendar.css" />
         <option value="$PROJECT_DIR$/public/modules/pintar.html" />
         <option value="$PROJECT_DIR$/public/includes/css/pintar.css" />
       </list>
@@ -171,7 +112,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-36" />
     <option name="y" value="55" />
     <option name="width" value="1400" />
@@ -182,7 +123,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,21 +142,12 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ptweb18" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ptweb18" type="462c0819:PsiDirectoryNode" />
-              <item name="SQL Scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ptweb18" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -260,7 +192,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f5c08b19-6139-4f86-91ca-8ed7d73508d6" name="Default" comment="" />
+      <changelist id="d5b5bf37-0e3d-49de-9c21-2449f6104eac" name="Default" comment="" />
       <created>1529269124680</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -279,55 +211,56 @@
       <workItem from="1529546462506" duration="67000" />
       <workItem from="1529546552267" duration="647000" />
       <workItem from="1529588405401" duration="10785000" />
+      <workItem from="1529659136055" duration="1979000" />
+      <workItem from="1529664972342" duration="1048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28490000" />
+    <option name="totallyTimeSpent" value="31521000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-4" y="-4" width="1288" height="764" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.50859106" visible="true" weight="0.28917608" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="11" />
-      <window_info anchor="bottom" id="PHP-CGI Server" order="13" sideWeight="0.49573562" weight="0.32100108" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info id="Image Layers" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" x="0" y="332" width="1920" height="376" id="Event Log" order="10" sideWeight="0.50885415" side_tool="true" weight="0.32908705" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" x="0" y="332" width="1920" height="376" id="Event Log" order="10" sideWeight="0.5105008" side_tool="true" visible="true" weight="0.3796875" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.15105008" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49114582" weight="0.20912951" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" weight="0.3297062" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info anchor="bottom" id="Database Console" order="7" sideWeight="0.49520257" visible="true" weight="0.36343852" />
-      <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.50859106" visible="true" weight="0.28091684" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.15138593" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48949918" visible="true" weight="0.3796875" />
       <window_info id="Structure" order="1" sideWeight="0.49140894" side_tool="true" weight="0.28091684" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" weight="0.3297062" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4946695" weight="0.40805224" />
-      <window_info anchor="bottom" id="Dependency Viewer" order="11" weight="0.38100436" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Database Console" order="7" sideWeight="0.49520257" visible="true" weight="0.36343852" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32995737" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="13" sideWeight="0.49573562" weight="0.32100108" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="11" weight="0.38100436" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32995737" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.3297062" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49114582" visible="true" weight="0.3280255" />
       <window_info anchor="bottom" id="Database Console" order="7" sideWeight="0.49520257" weight="0.32861805" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.49946696" visible="true" weight="0.3297062" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49114582" visible="true" weight="0.3280255" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="3" />
@@ -352,6 +285,7 @@
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.49946696" visible="true" weight="0.3297062" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4946695" weight="0.40805224" />
     </layout-to-restore>
   </component>
@@ -519,9 +453,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/021a60a3-3b54-499c-bce6-9585791bd0c3/console_1.sql" />
-    <entry file="file://$PROJECT_DIR$/public/includes/css/calendar.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/includes/js/calendar.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -635,7 +566,7 @@
           </nodes>
           <notes />
           <edges>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/calendar.js">
+            <edge source="$PROJECT_DIR$/public/modules/pintar.html" target="$PROJECT_DIR$/public/includes/css/jquery-ui.css">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
@@ -643,23 +574,7 @@
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="$PROJECT_DIR$/public/includes/js/fullcalendar_locale_pt.js#fullcalendar#100;D:/git/ptweb18/public/includes/js/fullcalendar_locale_pt.js#moment#82;" target="moment">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/includes/js/bootstrap.min.js#jquery#317;D:/git/ptweb18/public/includes/js/bootstrap.min.js#popper.js#335;" target="popper.js">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/includes/js/fullcalendar.min.js#jquery#197;D:/git/ptweb18/public/includes/js/fullcalendar.min.js#moment#179;" target="moment">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
             <edge source="$PROJECT_DIR$/public/modules/pintar.html" target="$PROJECT_DIR$/public/includes/js/pintar.js">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/pintar.html" target="$PROJECT_DIR$/public/includes/img/front.png">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
@@ -667,7 +582,75 @@
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
+            <edge source="$PROJECT_DIR$/public/includes/js/moment.min.js#e#14094;" target="e">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/includes/js/fullcalendar.min.js#jquery#197;D:/git/ptweb18/public/includes/js/fullcalendar.min.js#moment#179;" target="moment">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/includes/js/fullcalendar_locale_pt.js#fullcalendar#100;D:/git/ptweb18/public/includes/js/fullcalendar_locale_pt.js#moment#82;" target="moment">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/bootstrap.min.css">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/pintar.html" target="$PROJECT_DIR$/public/includes/js/imageMapResizer.min.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
             <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/fullcalendar_locale_pt.js#fullcalendar#100;D:/git/ptweb18/public/includes/js/fullcalendar_locale_pt.js#moment#82;">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/includes/js/fullcalendar_locale_pt.js#fullcalendar#100;D:/git/ptweb18/public/includes/js/fullcalendar_locale_pt.js#moment#82;" target="fullcalendar">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/jquery-3.3.1.min.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/moment.min.js#e#14094;">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/calendar.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/fullcalendar.min.js#jquery#197;D:/git/ptweb18/public/includes/js/fullcalendar.min.js#moment#179;">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/includes/js/bootstrap.min.js#jquery#317;D:/git/ptweb18/public/includes/js/bootstrap.min.js#popper.js#335;" target="jquery">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/fullcalendar.min.css">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/includes/js/bootstrap.min.js#jquery#317;D:/git/ptweb18/public/includes/js/bootstrap.min.js#popper.js#335;" target="popper.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/fullcalendar.print.min.css">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/pintar.html" target="$PROJECT_DIR$/public/includes/img/front.png">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/pintar.html" target="$PROJECT_DIR$/public/includes/css/pintar.css">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
@@ -676,58 +659,6 @@
               <point x="0.0" y="0.0" />
             </edge>
             <edge source="$PROJECT_DIR$/public/modules/pintar.html" target="$PROJECT_DIR$/public/includes/js/jquery.maphilight.min.js">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/moment.min.js#e#14094;">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/includes/js/moment.min.js#e#14094;" target="e">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/bootstrap.min.css">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/includes/js/bootstrap.min.js#jquery#317;D:/git/ptweb18/public/includes/js/bootstrap.min.js#popper.js#335;" target="jquery">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/includes/js/fullcalendar_locale_pt.js#fullcalendar#100;D:/git/ptweb18/public/includes/js/fullcalendar_locale_pt.js#moment#82;" target="fullcalendar">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/fullcalendar.min.css">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/jquery-3.3.1.min.js">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/pintar.html" target="$PROJECT_DIR$/public/includes/js/imageMapResizer.min.js">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/fullcalendar.print.min.css">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/pintar.html" target="$PROJECT_DIR$/public/includes/css/pintar.css">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/fullcalendar.min.js#jquery#197;D:/git/ptweb18/public/includes/js/fullcalendar.min.js#moment#179;">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/pintar.html" target="$PROJECT_DIR$/public/includes/css/jquery-ui.css">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
@@ -744,63 +675,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://DATABASE/021a60a3-3b54-499c-bce6-9585791bd0c3">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>021a60a3-3b54-499c-bce6-9585791bd0c3</OriginalElement>
-          <nodes>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.profissional_saude</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.artigo_video</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.zona</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.VIEW:ptaw-gr4-2018.public.vw_treino</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.treino_video</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.VIEW:ptaw-gr4-2018.public.vw_episodio</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.artigo</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.treino</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.video</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.utilizador</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.consultas</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.zona_episodio_dor</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.zona_artigo</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.mensagem</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.notificacoes</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.logs</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.utente</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.VIEW:ptaw-gr4-2018.public.vw_artigo</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.VIEW:ptaw-gr4-2018.public.vw_utilizadores</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.role</node>
-            <node x="" y="">021a60a3-3b54-499c-bce6-9585791bd0c3.TABLE:ptaw-gr4-2018.public.episodio_dor</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="532.5" y="745.5" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL Scripts/views.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="76" column="16" lean-forward="true" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://021a60a3-3b54-499c-bce6-9585791bd0c3/database/ptaw-gr4-2018/schema/public/view/vw_treino">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL Scripts/functions_triggers.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2163">
-          <caret line="4" selection-start-line="4" selection-end-line="12" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -828,13 +706,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/021a60a3-3b54-499c-bce6-9585791bd0c3/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/021a60a3-3b54-499c-bce6-9585791bd0c3/console.sql" />
     <entry file="uml://JavaScript-modules-diagram/D:/git/ptweb18/public/modules/pintar.html">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -854,11 +726,12 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="277.5" y="194.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="278.0" y="195.0" />
           <SelectedNodes />
           <Categories>
             <Category>All</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
           <VISIBILITY>Details</VISIBILITY>
         </state>
       </provider>
@@ -883,35 +756,11 @@
           </nodes>
           <notes />
           <edges>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/calendar.js">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/bootstrap.min.css">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/moment.min.js">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/jquery-3.3.1.min.js">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/fullcalendar.min.css">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/fullcalendar.print.min.css">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
             <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/calendar.css">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
-            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/calendar.js">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
@@ -919,52 +768,111 @@
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/fullcalendar.min.css">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
             <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/fullcalendar_locale_pt.js">
               <point x="0.0" y="0.0" />
               <point x="0.0" y="0.0" />
             </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/bootstrap.min.css">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/css/fullcalendar.print.min.css">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/jquery-3.3.1.min.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/public/modules/calendar.html" target="$PROJECT_DIR$/public/includes/js/moment.min.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="4.5" y="203.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="5.0" y="203.0" />
           <SelectedNodes>
             <node>https://use.fontawesome.com/releases/v5.0.13/css/all.css</node>
           </SelectedNodes>
           <Categories>
             <Category>All</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
           <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/021a60a3-3b54-499c-bce6-9585791bd0c3">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>021a60a3-3b54-499c-bce6-9585791bd0c3</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="349.0" y="295.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL Scripts/functions_triggers.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL Scripts/views.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/modules/calendar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+        <state relative-caret-position="144">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/includes/css/pintar.css">
+    <entry file="file://$PROJECT_DIR$/public/includes/css/calendar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/modules/pintar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="16">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/includes/js/pintar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-986">
+        <state relative-caret-position="256">
           <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/modules/pintar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="93" column="8" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/includes/css/pintar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
         </state>
       </provider>
     </entry>
