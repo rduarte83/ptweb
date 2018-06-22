@@ -87,7 +87,7 @@ BEGIN
         RETURN NEW;
     ELSIF   TG_OP = 'DELETE' THEN   
         INSERT INTO notificacoes (id_notificacao, tabela, mensagem)
-        VALUES (OLD.id, TG_RELNAME, TG_RELNAME || ' ' || NEW.id ||' removido com sucesso.');
+        VALUES (OLD.id, TG_RELNAME, TG_RELNAME || ' ' || OLD.id ||' removido com sucesso.');
         RETURN OLD;
     END IF;
 END;
