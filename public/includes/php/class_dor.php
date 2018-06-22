@@ -25,12 +25,10 @@ class Dor
                 ":zonaid" => intval($oneByOne[0]),
                 ":intensidade" => intval($oneByOne[1]),
             ];
-            var_dump($arrParamZona);
-
+            
             $sql = "INSERT INTO zona_episodio_dor VALUES (:episodio_dorid, :zonaid, :intensidade)";
 
             $result = $db->EXE_NON_QUERY($sql, $arrParamZona, false);
-            var_dump($result->rowCount());
 
             if($result->rowCount()>0)
                 $sucesso = true;

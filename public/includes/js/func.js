@@ -319,6 +319,60 @@ function carregaTreinos()
 }
 
 
+function carregaAprovarArtigos(){
+    $.ajax({
+        type: "POST",
+        url: 'modules/home/profissional/aprovarArtigos.php',
+        success: function (response) {
+            addToMain(response);   
+            $('#tabela-aprovar').DataTable();          
+        },
+        async: false
+    });
+}
+
+function aprovarRejeitarArtigo(id, aprovar){
+    if(aprovar){
+        $.ajax({
+            type: "POST",
+            url: 'includes/php/funcsWeb.php',
+            data:{
+                "cmd" : "aprovarArtigo",
+                "id":id,
+            },
+            success: function (response) {
+                console.log(response)     
+                if(response == 1){
+                    alerta("Artigo aprovado com sucesso!",false);
+                    carregaAprovarArtigos();
+                }else{
+                    alerta("Erro ao aprovar artigo!",true);
+                }
+            },
+            async: false
+        });
+    }else {
+        $.ajax({
+            type: "POST",
+            url: 'includes/php/funcsWeb.php',
+            data:{
+                "cmd" : "removerArtigo",
+                "id":id,
+            },
+            success: function (response) {
+                console.log(response)     
+                if(response == 1){
+                    alerta("Artigo removido com sucesso!",false);
+                    carregaAprovarArtigos();
+                }else{
+                    alerta("Erro ao remover artigo!",true);
+                }
+            },
+            async: false
+        });
+    }
+}
+
 var previousMain = [];
 var level = 0;
 
@@ -367,12 +421,21 @@ $(document).ready(function () {
     $("#main_div").on("click",'#add_article', function (){
         $('#articleModal').modal('toggle');
     });
+
     $("#main_div").on("click",'#edit_article', function (){
         alert("lol");
     });
+
     $("#main_div").on("click",'#add_consulta', function (){
         carregaDataSelectConsulta();
         $('#addConsultaModal').modal('toggle');
+    });
+
+    $("#main_div").on("click",'#show_aprovar_artigos', function (){
+        previousMain[level] = $("#main_div").html();
+        level++;
+        carregaAprovarArtigos();
+        
     });
     $("#main_div").on("click",'#add_treino', function (){
         previousMain[level] = $("#main_div").html();
@@ -381,6 +444,7 @@ $(document).ready(function () {
         carregaTreinos();    
           
     });
+    
 
     $(document).on("click",'#btn-add-consulta', function (){
         if(carregaDataSelectConsulta()){
@@ -515,11 +579,24 @@ $(document).ready(function () {
     // Add events
     $(document).on("change", 'input[type=file]', prepareUpload);
 
+    // CHAT 
     $(document).on("submit", "#formChat", function(e){
         e.preventDefault();
         var mensagem = $("#mensagem").val();
         $("#mensagem").val("");
         sendMessage(mensagem, id_utente_ver);
+    });
+
+    // Tabela AprovarArtigos
+    $(document).on("click", "#tabela-aprovar .btn-aprovar", function(){
+        aprovarRejeitarArtigo($(this).attr("id-aprovar"), true);
+    });
+
+    $(document).on("click", "#tabela-aprovar .btn-rejeitar", function(){
+        var confirma = confirm("Tem a certeza que quer apagar o artigo?");
+        if(confirma){
+            aprovarRejeitarArtigo($(this).attr("id-aprovar"), false);
+        }
     });
 
     

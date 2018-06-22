@@ -129,6 +129,20 @@ if(isset($_POST,$_POST["cmd"]))
             }
             break;
 
+        case "aprovarArtigo":
+            if(isset($_POST["id"])){
+                $result = Artigos::aprovarArtigo($_POST["id"]);
+                echo json_encode($result);
+            }
+            break;
+        
+        case "removerArtigo":
+            if(isset($_POST["id"])){
+                $result = Artigos::removerArtigo($_POST["id"]);
+                echo json_encode($result);
+            }
+            break;
+
         /**
          *  -- Dor --
          */

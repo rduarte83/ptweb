@@ -32,6 +32,10 @@ $(document).ready(function () {
        console.log("RESET")
     });
 
+    $("#submit").click(function(){
+        submitDor();
+    });
+
     imageMapResize();
 });
 

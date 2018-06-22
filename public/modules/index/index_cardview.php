@@ -26,7 +26,7 @@ foreach($artigo->listaArtigos() as $elem){
                         <!-- POST DAY -->
                         <div class='mb-1 text-muted'>".$elem["data_criacao"]."</div>
                         <!-- CONTENT -->
-                        <p class='card-text mb-auto'>".$artigo->limit_text($elem["conteudo"],80)."</p>
+                        <p class='card-text mb-auto'>".Artigos::limit_text($elem["conteudo"],80)."</p>
                         <a href='#'>Continue reading</a>
                     </div>
                 </div>

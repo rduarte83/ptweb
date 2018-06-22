@@ -20,7 +20,7 @@ class Artigos
     public function listaArtigos()
     {
         $db = new Database();
-        $sql = "SELECT * FROM vw_artigo";
+        $sql = "SELECT * FROM vw_artigo WHERE aprovado = true";
         $result = $db->EXE_NON_QUERY($sql);
         return ($result);
 
@@ -33,18 +33,18 @@ class Artigos
         $db = new Database();
 
         // Query nome_zona
-        $sql = "SELECT DISTINCT nome_zona, id_zona FROM vw_categoria";
+        $sql = "SELECT  id, nome FROM zona";
 
         $result = $db->EXE_QUERY($sql, null, true);
 
         foreach ( $result as $item ) {
-            array_push($this->listaCat, ["id" => $item["id_zona"],"cat" => $item["nome_zona"]]);
+            array_push($this->listaCat, ["id" => $item["id"],"cat" => $item["nome"]]);
         }
 
         return ($this->listaCat);
     }
 
-    public function limit_text($text, $limit) {
+    public static function limit_text($text, $limit) {
         if (str_word_count($text, 0) > $limit) {
             $words = str_word_count($text, 2);
             $pos = array_keys($words);
@@ -76,6 +76,61 @@ class Artigos
             echo "ERROR: " . $e->getMessage();
         }
 
+    }
+
+    public static function getListaArtigosAprovar ()
+    {
+        require_once("class_database.php");
+        $Database = new Database();
+
+        $query = "SELECT a.*, u.nome as prof_saude FROM artigo as a
+        INNER JOIN utilizador as u ON u.id = a.autor
+        WHERE aprovado = false";
+
+        $result = $Database->EXE_QUERY($query);
+        return $result;
+    }
+
+    public static function aprovarArtigo ($id)
+    {
+        require_once("class_database.php");
+        $Database = new Database();
+
+        $arrParam = [
+            ":id" => intval($id),
+        ];
+
+
+        $query = "UPDATE artigo 
+        SET aprovado = TRUE
+        WHERE id=:id";
+
+        $result = $Database->EXE_NON_QUERY($query, $arrParam, false);
+
+        return $result->rowCount();
+    }
+
+    public static function removerArtigo ($id)
+    {
+        require_once("class_database.php");
+        $Database = new Database();
+
+        $arrParam = [
+            ":id" => intval($id),
+        ];
+
+
+        $query = "DELETE FROM video WHERE id = (SELECT videoid FROM artigo_video WHERE artigoid=:id);";
+        $query2 = "DELETE FROM artigo_video WHERE artigoid=:id;";
+        $query3 = "DELETE FROM artigo WHERE id=:id;";
+
+        
+
+        $result = $Database->EXE_NON_QUERY($query, $arrParam, false);
+        $result = $Database->EXE_NON_QUERY($query2, $arrParam, false);
+        $result = $Database->EXE_NON_QUERY($query3, $arrParam, false);
+
+        return $result->rowCount();
     }
 
 }

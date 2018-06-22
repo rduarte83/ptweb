@@ -32,7 +32,7 @@
         session_start();
 
     if($_SESSION["role_id"]==2): ?>
-        <div id="show_list_pedidos" class="menu regDor col-md col-sm">
+        <div id="show_aprovar_artigos" class="menu regDor col-md col-sm">
             <h2>Aprovar Artigos</h2>
             <i class="fas fa-check tamIcon"></i>
         </div>
