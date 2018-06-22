@@ -1,6 +1,6 @@
 <div class="">
     <div class="table-responsive">
-        <table class="table">
+        <table class="table" id="tabela-consultas">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -29,3 +29,7 @@
         </table>
     </div>
 </div>
+
+<script>
+    $("#tabela-consultas").DataTable();
+</script>

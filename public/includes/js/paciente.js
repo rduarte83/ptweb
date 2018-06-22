@@ -1,11 +1,29 @@
 var menu, user=0, userTo=0;
 
+var previousMain = [];
+var level = 0;
+
+function goBack(){
+    level--;
+    $("#receive").html(previousMain[level]);
+}
+
+function addToMain(conteudo){
+
+    previousMain[level] = $("#receive").html();
+    level++;
+    $("#receive").html("");
+    $("#receive").html('    <div class="row-fluid">\n' +
+        '        <button type="button" class="btn btn-info" id="btn-back" onclick="goBack();">Back</button>\n<br><br>' +
+        '    </div>' + conteudo);
+}
+
 function changePage(pagina){
     $.ajax({
         url:pagina,
-        type:"GET",
+        type:"POST",
         success:function(resposta){
-            $("#receive").html(resposta);
+            addToMain(resposta);  
         },
         async:false
     });
@@ -19,7 +37,7 @@ function verTreino(pagina, id){
             "idTreino":id,
         },
         success:function(resposta){
-            $("#receive").html(resposta);
+            addToMain(resposta);  
         },
         async:false
     });
@@ -79,20 +97,25 @@ function sendMessage(mensagem,id_to){
         },
         success:function(resposta){
             loadChat();
-            console.log(resposta);
         },
         async:false
     });
 }
-
-
+/*
+previousMain[level] = $("#receive").html();
+level++;
+addToMain(response);    
+*/
 $(document).ready(function(){
     getMyUser();
     
     menu = $("#receive").html();
+    previousMain[level] = $("#receive").html();
     
     $("#backMenu").click(function(){
         $("#receive").html(menu);
+        previousMain = [];
+        level = 0;
     });
 
     $("#navbarProfissional").click(function(){
@@ -146,9 +169,8 @@ $(document).ready(function(){
 
      // Ver zona EP DOR
      $(document).on("click", "#tabela-treinos .btn-treino", function(){
-        //aprovarRejeitarArtigo($(this).attr("id-aprovar"), false);
-        
         verTreino("modules/home/paciente/treinos.php",$(this).attr("id-treino"));
+        $("#tabela-treinos").DataTable();
     });
 
     
