@@ -1,5 +1,86 @@
-var id_utente_ver;
+var id_utente_ver, user, userTo;
 var files;
+
+
+/** CHAT */
+function intrevalLoadChat()
+{
+ // PRECISA SER IMPLEMENTADO...
+}
+
+function getChatDiv(){
+    $.ajax({
+        url:"modules/home/profissional/chat.php",
+        type:"POST",
+        success:function(resposta){
+            $("#div-paciente-chat").html(resposta);
+        },
+        async:false
+    });
+}
+
+function loadChat(){
+    $.ajax({
+        url:"includes/php/funcsWeb.php",
+        type:"POST",
+        data:{
+            "cmd":"getMessages",
+            "id_to":id_utente_ver,
+        },
+        success:function(resposta){
+            console.log(resposta);
+            var trabalhar = $.parseJSON(resposta);
+            var chatFinal ="";
+
+            trabalhar.forEach(function(elem){
+                if ( elem.origem == user ){
+                    chatFinal += "<li class='direita'>"+elem.conteudo+"</li><span class='clearfix'></span>";
+                }else if( elem.origem == id_utente_ver ){
+                    console.log(id_utente_ver)
+                    chatFinal += "<li class='esquerda'>"+elem.conteudo+"</li><span class='clearfix'></span>";
+                }
+                
+            })
+            $(".chat").html(chatFinal);
+        },
+        async:false
+    });
+}
+
+function getMyUser(){
+    $.ajax({
+        url:"includes/php/funcsWeb.php",
+        type:"POST",
+        data:{
+            "cmd":"getMyUser",
+        },
+        success:function(resposta){
+            console.log("AQUI->"+resposta);
+            user=resposta;
+            loadChat();
+        },
+        async:false
+    });
+}
+
+function sendMessage(mensagem,id_to){
+    $.ajax({
+        url:"includes/php/funcsWeb.php",
+        type:"POST",
+        data:{
+            "cmd":"sendTo",
+            "mensagem":mensagem,
+            "id_to":id_to,
+        },
+        success:function(resposta){
+            loadChat();
+            console.log(resposta);
+        },
+        async:false
+    });
+}
+
+/** OTHERS */
 function getUsersPacientes(){
     
     $.ajax({
@@ -263,6 +344,7 @@ function prepareUpload(event)
 
 
 $(document).ready(function () {
+    getMyUser();
     $("#success-alert").hide();
     $("#danger-alert").hide();
 
@@ -393,31 +475,38 @@ $(document).ready(function () {
         level++;
 
         let id = $(this).find("span").text();
+
         id_utente_ver = id;
         addToMain(
-            '    <div class="row-fluid">\n' +
-            '        <button type="button" class="btn btn-primary" id="btn-add-consulta" onclick="">+ Criar consulta</button>\n<br><br>' +
-            '        <button type="button" class="btn btn-primary" id="btn-add-treino" onclick="">+ Criar Treino</button>\n<br><br>' +
-            '    </div>' +
+            '<div class="row-fluid">\n' +
+            '   <button type="button" class="btn btn-primary" id="btn-add-consulta" onclick="">+ Criar consulta</button>\n<br><br>' +
+            '   <button type="button" class="btn btn-primary" id="btn-add-treino" onclick="">+ Criar Treino</button>\n<br><br>' +
+            '</div>' +
             '<div class="card">' +
-            '<nav>\n' +
-            '  <div class="nav nav-tabs" id="nav-tab" role="tablist">\n' +
-            '    <a class="nav-item nav-link active dark-text" id="nav-paciente-dados" data-toggle="tab" href="#div-paciente-dados" role="tab" aria-controls="div-paciente-dados" aria-selected="false">Dados</a>\n' +
-            '    <a class="nav-item nav-link dark-text" id="nav-paciente-tratamentos" data-toggle="tab" href="#div-paciente-tratamentos" role="tab" aria-controls="div-paciente-tratamentos" aria-selected="false">Tratamentos</a>\n' +
-            '    <a class="nav-item nav-link dark-text" id="nav-paciente-consultas" data-toggle="tab" href="#div-paciente-consultas" role="tab" aria-controls="div-paciente-consultas" aria-selected="false">Consultas</a>\n' +
-            '    <a class="nav-item nav-link dark-text" id="nav-paciente-treinos" data-toggle="tab" href="#div-paciente-treinos" role="tab" aria-controls="div-paciente-treinos" aria-selected="false">Treinos</a>\n' +
-            '  </div>\n' +
-            '</nav>' +
-            '<div class="tab-content" id="nav-tabContent">\n' +
-            '<div class="tab-pane fade show active" id="div-paciente-dados" role="tabpanel" aria-labelledby="nav-profile-tab">\n' +
-            '  <div id="panel-body"></div>\n' +
-            '</div>' +
-            '  <div class="tab-pane fade" id="div-paciente-tratamentos" role="tabpanel" aria-labelledby="nav-contact-tab"><button type="button" class="btn btn-info margin8" id="btn-back" onclick="addTrat(id);">+ Recomendar artigo</button></div>\n' +
-            '</div>' +
+            '   <nav>\n' +
+            '       <div class="nav nav-tabs" id="nav-tab" role="tablist">\n' +
+            '           <a class="nav-item nav-link active dark-text" id="nav-paciente-dados" data-toggle="tab" href="#div-paciente-dados" role="tab" aria-controls="div-paciente-dados" aria-selected="false">Dados</a>\n' +
+            '           <a class="nav-item nav-link dark-text" id="nav-paciente-treinos" data-toggle="tab" href="#div-paciente-treinos" role="tab" aria-controls="div-paciente-treinos" aria-selected="false">Treinos</a>\n' +
+            '           <a class="nav-item nav-link dark-text" id="nav-paciente-epDor" data-toggle="tab" href="#div-paciente-epDor" role="tab" aria-controls="div-paciente-epDor" aria-selected="false">Episodios de Dor</a>\n' +
+            '           <a class="nav-item nav-link dark-text" id="nav-paciente-consultas" data-toggle="tab" href="#div-paciente-consultas" role="tab" aria-controls="div-paciente-consultas" aria-selected="false">Consultas</a>\n' +
+            '           <a class="nav-item nav-link dark-text" id="nav-paciente-chat" data-toggle="tab" href="#div-paciente-chat" role="tab" aria-controls="div-paciente-chat" aria-selected="false">Chat</a>\n' +
+            '       </div>\n' +
+            '   </nav>' +
+            '   <div class="tab-content" id="nav-tabContent">\n' +
+            '       <div class="tab-pane fade show active" id="div-paciente-dados" role="tabpanel" aria-labelledby="nav-profile-tab">\n' +
+            '           <div id="panel-body"></div>\n' +
+            '       </div>' +
+            '       <div class="tab-pane fade" id="div-paciente-treinos" role="tabpanel" aria-labelledby="nav-contact-tab"><button type="button" class="btn btn-info margin8" id="btn-back" onclick="addTrat(id);">+ Recomendar artigo</button></div>\n' +
+            '       <div class="tab-pane fade" id="div-paciente-epDor"></div>' +
+            '       <div class="tab-pane fade" id="div-paciente-epDor"></div>' +
+            '       <div class="tab-pane fade" id="div-paciente-chat"></div>' +
+            '   </div>' +
             '</div> '
         );
 
         carregaData(id);
+        getChatDiv();
+        loadChat();
     });
 
     previousMain[level] = $("#main_div").html();
@@ -425,6 +514,13 @@ $(document).ready(function () {
     /*  */
     // Add events
     $(document).on("change", 'input[type=file]', prepareUpload);
+
+    $(document).on("submit", "#formChat", function(e){
+        e.preventDefault();
+        var mensagem = $("#mensagem").val();
+        $("#mensagem").val("");
+        sendMessage(mensagem, id_utente_ver);
+    });
 
     
 });

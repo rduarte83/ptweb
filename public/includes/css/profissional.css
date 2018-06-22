@@ -24,7 +24,7 @@ a.navbar-brand{
 }
 
 .dropdown-container{
-    background-color: #ff5e3a !important;
+    background-color: #f4623e !important;
 }
 
 a{
@@ -70,5 +70,81 @@ button.margin8{
 
 .menu {
     border-radius: 5px !important;
+}
+
+#containerMensagem{
+    position: absolute;
+    height: 450px;
+    width: 500px;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.Mensagens{
+    width: 500px;
+    height: 450px;
+}
+
+#chatHolder{
+    height: 370px;
+    width: 500px;
+    background-color: whitesmoke;
+    white-space:normal;
+    word-wrap: break-word;
+    overflow-y: auto;
+}
+
+#mensagem{
+    position: absolute;
+    height: 75px;
+    left:0;
+    right:20px;
+    bottom:0;
+    width: 95%;
+    resize: none;
+    white-space:normal;
+    word-wrap: break-word;
+}
+
+#submitFormChat{
+    position: absolute;
+    height: 75px;
+    width: 15%;
+    right:0;
+    bottom:0;
+}
+
+.chat {
+    word-wrap: break-word;
+}
+
+.chat > li{
+    margin-top: 5px;
+    margin-left: -15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    color: white;
+    display: block;
+    white-space:normal;
+    word-wrap: break-word;
+}
+
+.esquerda{
+    padding: 10px;
+    background-color: #1e5d6f;
+    margin-top: 20px;
+    width: 200px;
+    word-wrap: break-word;
+}
+
+.direita{
+    text-align: right;
+    padding: 10px;
+    float:right;
+    background-color: #b69c7c;
+    margin-top: 20px;
+    width: 200px;
+    word-wrap: break-word;
 }
 

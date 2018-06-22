@@ -65,7 +65,8 @@ function sendMessage(mensagem,id_to){
         success:function(resposta){
             loadChat();
             console.log(resposta);
-        }
+        },
+        async:false
     });
 }
 
