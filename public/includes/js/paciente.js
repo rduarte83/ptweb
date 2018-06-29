@@ -10,9 +10,6 @@ function goBack(){
 
     
     $("#receive").html(previousMain[level]);
-    tableTreino.destroy();
-
-    tableTreino = $("#tabela-treinos").DataTable();
 }
 
 function addToMain(conteudo){
