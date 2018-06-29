@@ -125,3 +125,15 @@ ul > li{
     right: 0;
 }
 
+.treinosBox{
+    color: whitesmoke;
+    margin: 20px !important;
+    margin-bottom:  80px !important;
+    background-color: #17A2B8;
+    border-radius: 5px;
+
+}
+
+.sizeLetter{
+    font-size: 26px;
+}

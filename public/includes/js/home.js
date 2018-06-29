@@ -14,18 +14,48 @@ function logout()
     })
 }
 
-function alerta(mensagem, error=false){
+function alerta(mensagem, error=false, tempo = 2000){
     if(!error){
         $("#sucessoMensagem").html(mensagem);
-        $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+        $("#success-alert").fadeTo(tempo, 500).slideUp(500, function(){
             $("#success-alert").slideUp(500);
         });
     }else{
         $("#errorMensagem").html(mensagem);
-        $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
+        $("#danger-alert").fadeTo(tempo, 500).slideUp(500, function(){
             $("#danger-alert").slideUp(500);
         });
     }
+}
+
+function notificacoes(id){
+    $.ajax({
+        type:"POST",
+        url:"includes/php/funcsWeb.php",
+        data:{
+            "cmd":"getNotificacoes"
+        },
+        success: function(response) {
+            console.log(response);
+            $("#error").html(response);
+            location.reload();
+        }
+    })
+}
+
+function numberNotificacoes(id){
+    $.ajax({
+        type:"POST",
+        url:"includes/php/funcsWeb.php",
+        data:{
+            "cmd":"getNotificacoes"
+        },
+        success: function(response) {
+            console.log(response);
+            $("#error").html(response);
+            location.reload();
+        }
+    })
 }
 
 $(document).ready(function()

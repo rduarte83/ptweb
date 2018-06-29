@@ -1,11 +1,18 @@
 var menu, user=0, userTo=0;
-
+var tableTreino;
 var previousMain = [];
 var level = 0;
 
 function goBack(){
     level--;
+    if(level == 0)
+        location.reload();
+
+    
     $("#receive").html(previousMain[level]);
+    tableTreino.destroy();
+
+    tableTreino = $("#tabela-treinos").DataTable();
 }
 
 function addToMain(conteudo){
@@ -110,12 +117,13 @@ $(document).ready(function(){
     getMyUser();
     
     menu = $("#receive").html();
-    previousMain[level] = $("#receive").html();
+    previousMain[0] = $("#receive").html();
     
     $("#backMenu").click(function(){
         $("#receive").html(menu);
         previousMain = [];
         level = 0;
+        location.reload();
     });
 
     $("#navbarProfissional").click(function(){
@@ -153,7 +161,7 @@ $(document).ready(function(){
 
     $(document).on('click',"#treinos", function(){
         changePage("modules/home/paciente/tabelaTreinos.php");
-       
+        $("#tabela-treinos").DataTable();
     });
     
 
@@ -170,7 +178,7 @@ $(document).ready(function(){
      // Ver zona EP DOR
      $(document).on("click", "#tabela-treinos .btn-treino", function(){
         verTreino("modules/home/paciente/treinos.php",$(this).attr("id-treino"));
-        $("#tabela-treinos").DataTable();
+        //$("#tabela-treinos").DataTable();
     });
 
     

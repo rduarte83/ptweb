@@ -29,12 +29,13 @@ class Treinos
 
     public static function getTreino($id_treino)
     {
+        require_once("class_database.php");
         $db = new Database();
         $arrParam = [
             ":id_treino" => intval($id_treino),
         ];
 
-        $sql = "SELECT * FROM  treino WHERE id=:id_treino";
+        $sql = "SELECT * FROM vw_treino WHERE id_treino=:id_treino";
         $result = $db->EXE_QUERY($sql,$arrParam, false);
         return $result;
     }
@@ -53,11 +54,21 @@ class Treinos
         $sql = "INSERT INTO treino (data_criacao, data_inicio, data_fim, prof_saude,utente,descricao) VALUES (now(), :data_inicio, :data_fim, :id_prof, :id_utente, :descricao) RETURNING id";
         $result = $db->EXE_NON_QUERY($sql,$arrParam, false);
         
-        $id_treino = $result->fetch();
+        $id_treino = $result->fetch(PDO::FETCH_ASSOC);
 
-        Videos::insertVideoTreino($id_treino, $descVideo);
+        $arrMensagem = [
+            "status"=>0, 
+            "message"=>""
+        ];
 
-        return $result->rowCount();
+        $arrMensagem=Videos::insertVideoTreino($id_treino["id"], $descVideo);
+
+        if($result->rowCount() > 0){
+            $arrMensagem["status"] = 1;
+            $arrMensagem["message"] = "Treino criado com sucesso" . "<br>" .  $arrMensagem["message"];
+        }
+        return $arrMensagem;
+        
     }
 
     public static function updateTreino($data_inicio, $data_fim, $profSaude, $utente, $descricao, $concluido, $id_treino)

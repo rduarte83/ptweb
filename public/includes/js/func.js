@@ -229,20 +229,28 @@ function insertConsulta(dados)
 
 function insertTreino(form)
 {
-    console.log(form);
     var formData = new FormData(form[0]);
-    formData.append("cmd","insertTreino");
+    //formData.append("cmd","insertTreino");
 
     $.ajax({
         url: 'includes/php/funcsWeb.php',
-        type: 'POST',
+        type: "POST",
         xhr: function() {
             var myXhr = $.ajaxSettings.xhr();
             return myXhr;
         },
-        success: function (data) {
-            alert("Data Uploaded: "+data);
-            $("#error").html(data);
+        success: function (response) {
+            var resposta = $.parseJSON(response);
+            //alert("Data Uploaded: "+data);
+
+            console.log(resposta)     
+            if(resposta.status == 1){
+                alerta(resposta.message, false, 4000);
+            }else{
+                alerta(resposta.message,true, 4000);
+            }
+            
+            //$("#respostaTreinos").html(response);
         },
         data: formData,
         cache: false,

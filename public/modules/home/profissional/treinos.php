@@ -8,7 +8,7 @@
 ?>
 <div class="row-fluid col-md-11" >
     <h1>Adicionar treino</h1>
-    <form class="form-horizontal" id="addTreinoForm">
+    <form class="form-horizontal" id="addTreinoForm" method="post" enctype="multipart/form-data">
 
         <div class="form-group">
             <label for="pacienteTreinoAdd" class="control-label col-sm-2">Paciente</label>
@@ -45,7 +45,7 @@
                 <input type="text" class="form-control" name="descVideo" id="descVideo" placeholder="Descrição do video">
             </div>
             <input type="hidden" name="profSaude" value="<?php echo $_SESSION['id'];?>">
-                
+            <input type="hidden" name="cmd" value="insertTreino">
         </div>
         <div class="clear-fix form-group">
             <button type="submit" class="btn btn-primary">Guardar</button>
@@ -53,8 +53,10 @@
         </div>
         
     </form>
+
+    <div id="respostaTreinos"></div>
 </div>
 
 <script>
-carregaDataSelectTreino();
+    carregaDataSelectTreino();
 </script>

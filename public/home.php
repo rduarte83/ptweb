@@ -14,15 +14,21 @@
     <title>Home - <?php echo $_SESSION["role"]; ?></title>
     <link rel="stylesheet" href="includes/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" href="includes/css/home.css">
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css"/>
+    <link href="https://vjs.zencdn.net/7.0.3/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="includes/css/home.css">
  
     <!-- Scripts -->
     <script src="includes/js/jquery-3.3.1.min.js"></script>
     <script src="includes/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="includes/js/home.js"></script>
+    <script src="http://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
     <script type="text/javascript" src="http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="includes/js/home.js"></script>
+    
+    
+
+    
 </head>
 <body>
     <div class="container-fluid">
