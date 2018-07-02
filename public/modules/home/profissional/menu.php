@@ -46,7 +46,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Form de utilizador</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Form de noticia</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -61,6 +61,29 @@
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="titulo" id="titulo" required="required">
 
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nome" class="control-label col-sm-2">Categorias</label>
+                            <div class="row col-sm-12">
+                                <div class="col-sm-11">
+                                    <select class="form-control" name="categorias" id="categorias">
+                                        <option value="-1">Selecione a categoria</option>
+                                        <option value="1">Perna</option>
+                                        <option value="2">Cotovelo</option>
+                                        <option value="3">Joelho</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-1">
+                                    <button id="addCat" class="btn button form-control"><i class="fas fa-plus"></i></button>
+                                </div>
+                            
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row col-sm-12" id="divCategoriasSelecionadas">
                             </div>
                         </div>
                         <!-- Text input http://getbootstrap.com/css/#forms -->

@@ -8,8 +8,15 @@ function goBack(){
     if(level == 0)
         location.reload();
 
+
+   
     
     $("#receive").html(previousMain[level]);
+
+    if($("#tabela-treinos") != null){
+        $("#tabela-treinos").destroy();
+        $("#tabela-treinos").DataTable();
+    }
 }
 
 function addToMain(conteudo){

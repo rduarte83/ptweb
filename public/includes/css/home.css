@@ -83,6 +83,24 @@ a{
     display:none;
 }
 
+.rightMargin{
+    position: absolute !important;
+    margin-left: -200px !important;
+    max-height: 300px;
+    overflow-y: scroll;
+    background-color:#90c9c2;
+}
+
+.data-fim{
+    text-align: right;
+}
+
+.no-text{
+    min-width: 250px;
+    overflow-y: hidden !important;
+    
+}
+
 @media only screen and (max-width: 600px) {
     
 }

@@ -43,7 +43,6 @@ class Mensagens
         return $result;
     }
 
-
 }
 
 ?>

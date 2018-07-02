@@ -35,5 +35,5 @@
 </div>
 
 <script>
-    tableTreino = $("#tabela-treinos").DataTable();
+    //tableTreino = $("#tabela-treinos").DataTable();
 </script>

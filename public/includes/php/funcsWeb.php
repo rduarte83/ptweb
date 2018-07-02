@@ -111,23 +111,35 @@ if(isset($_POST,$_POST["cmd"]))
          */
 
         case "insertArtigo":
-            $result = Artigos::insertArtigo($_POST["titulo"],$_POST["noticia"]);
-            echo json_encode($result);
+            if(isset($_POST["titulo"],$_POST["noticia"],$_POST["cat"])){
+                $result = Artigos::insertArtigo($_POST["titulo"],$_POST["noticia"],$_POST["cat"]);
+                echo json_encode($result);
+            }
             break;
 
+        case "getCategorias":
+                $result = Artigos::getCategorias();
+                echo json_encode($result);
+            break;
         /**
          * -- Notificações
          */
         case "getNotification":
-            if(isset($_POST["id"])){
-                echo json_encode(Mensagens::getNotificacoes($_POST["id"]));
+            if(isset($_SESSION["id"])){
+                echo Notificacoes::getNotificacoes($_SESSION["id"],$_SESSION["role_id"]);
             }
             break;
         case "getNotificationNumber":
-            if(isset($_POST["id"])){
-                echo json_encode(Notificacoes::getNumberNotificacoes($_POST["id"]));
+            if(isset($_SESSION["id"])){
+                echo json_encode(Notificacoes::getNumberNotificacoes($_SESSION["id"],$_SESSION["role_id"]));
             }
             break;
+        case "readNotification":
+                if(isset($_SESSION["id"])){
+                    echo json_encode(Notificacoes::setNotificacoesLidas($_SESSION["id"]));
+                }
+                break;
+
 
         case "aprovarArtigo":
             if(isset($_POST["id"])){

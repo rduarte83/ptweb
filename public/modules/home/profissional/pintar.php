@@ -1,9 +1,7 @@
 
-<link rel="stylesheet" href="../includes/css/bootstrap.min.css">
 <link rel="stylesheet" href="../includes/css/jquery-ui.css">
 <link rel="stylesheet" href="../includes/css/pintar.css">
 
-<script src="../includes/js/jquery-3.3.1.min.js"></script>
 <script src="../includes/js/jquery-ui.min.js"></script>
 <script src="../includes/js/jquery.maphilight.min.js"></script>
 <script src="../includes/js/imageMapResizer.min.js"></script>

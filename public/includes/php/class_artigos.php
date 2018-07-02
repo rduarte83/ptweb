@@ -44,6 +44,25 @@ class Artigos
         return ($this->listaCat);
     }
 
+    public static function  getCategorias()
+    {
+        $listaCat = [];
+        require_once("class_database.php");
+        // Query nome_expressao
+        $db = new Database();
+
+        // Query nome_zona
+        $sql = "SELECT DISTINCT id, nome FROM zona";
+
+        $result = $db->EXE_QUERY($sql, null, true);
+
+        foreach ( $result as $item ) {
+            array_push($listaCat, ["id" => $item["id"],"cat" => $item["nome"]]);
+        }
+
+        return ($listaCat);
+    }
+
     public static function limit_text($text, $limit) {
         if (str_word_count($text, 0) > $limit) {
             $words = str_word_count($text, 2);
@@ -53,7 +72,7 @@ class Artigos
         return $text;
     }
 
-    public static function insertArtigo($titulo, $noticia){
+    public static function insertArtigo($titulo, $noticia, $categorias){
         try {
 
             $Database = new Database();
@@ -63,14 +82,35 @@ class Artigos
                 ":id" => $_SESSION["id"],
             ];
 
-            $query = "INSERT INTO artigo 
-            (id, autor, titulo, conteudo, data_criacao, data_edicao)
-            VALUES(DEFAULT, :id, :titulo, :noticia, now(), null) RETURNING id";
+            if(!isset($_SESSION)) session_start();
+            if($_SESSION["role_id"]==2){
+                $query = "INSERT INTO artigo 
+                    (id, autor, titulo, conteudo, data_criacao, data_edicao, aprovado)
+                    VALUES(DEFAULT, :id, :titulo, :noticia, now(), null, TRUE) RETURNING id";
+            }else {
+                $query = "INSERT INTO artigo 
+                    (id, autor, titulo, conteudo, data_criacao, data_edicao)
+                    VALUES(DEFAULT, :id, :titulo, :noticia, now(), null) RETURNING id";
+            }
+            
 
-            $result = $Database->EXE_NON_QUERY($query, $arrParam, false);
+            $result1 = $Database->EXE_NON_QUERY($query, $arrParam, false);
 
-            if($result != null)
-                return $result->rowCount();
+
+            if($result1 != null){
+                $id_artigo = $result1->fetch(PDO::FETCH_ASSOC)["id"];
+                foreach( $categorias as $cat ) {
+                    $arrParam = [
+                        ":id_zona" => intval($cat),
+                        ":id_artigo" => intval($id_artigo),
+                    ];
+                    $query = "INSERT INTO zona_artigo (zonaid, artigoid)
+                        VALUES (:id_zona, :id_artigo)";
+                    $result2 = $Database->EXE_NON_QUERY($query, $arrParam, false);
+                }
+                return $result1->rowCount();
+            }
+                
 
         } catch (PDOException $e) {
             echo "ERROR: " . $e->getMessage();

@@ -148,3 +148,15 @@ button.margin8{
     word-wrap: break-word;
 }
 
+.divCategoriaSelecionada{
+    border: 1px solid #76aab1;
+    background-color: #76aab1;
+    box-shadow: 1px 1px 1px 1px #1e5d6f;
+    padding:5px;
+    margin: 5px;
+}
+
+.divCategoriaSelecionada > i{
+    float:right;
+    padding: 5px;
+}

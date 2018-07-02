@@ -415,6 +415,62 @@ function loadEpDorPintar(id)
     });
 }
 
+var arrCategoria = [];
+var arrDivCat = [];
+var div;
+
+function adicionaCategoria(optionFromSelect)
+{
+    div = "";
+    arrCategoria.push(optionFromSelect.val());
+    div = '<div class="col-sm-3 divCategoriaSelecionada">' +
+                optionFromSelect.text()+'<i class="fas fa-times removeThisCat" id-cat="'+optionFromSelect.val()+'" style="cursor:pointer"></i>' +
+          '</div>';
+    arrDivCat[optionFromSelect.val()]=div;
+    escreveNaDivCaterogia();
+}
+
+function removeCategoria(valueToRemove)
+{
+    arrCategoria.find(function(value, index) {
+        if(valueToRemove==value)
+            delete arrCategoria[index];
+    })
+
+    delete arrDivCat[valueToRemove];
+    escreveNaDivCaterogia();
+}
+
+function escreveNaDivCaterogia(){
+    $("#divCategoriasSelecionadas").html("");
+    $.each(arrDivCat,function(value, index) {
+        $("#divCategoriasSelecionadas").append(arrDivCat[value]);
+    });
+}
+
+function carregaListaCategorias(){
+    $.ajax({
+        type: "POST",
+        url: 'includes/php/funcsWeb.php',
+        data: {
+            "cmd" : "getCategorias"
+        }, // serializes the form's elements.
+        success: function (response) {
+            console.log(response);
+            let resposta = $.parseJSON(response);
+            console.log(resposta);
+            let listCategoria = '<option value="-1">Selecione a categoria...</option>';
+            $.each(resposta, function (key, val) {
+                listCategoria+='<option value="'+resposta[key].id+'">'+resposta[key].cat+'</option>';
+            });
+            $("#categorias").html(listCategoria);
+        },
+        async: false
+    });
+}
+
+
+
 var previousMain = [];
 var level = 0;
 
@@ -443,6 +499,7 @@ $(document).ready(function () {
     getMyUser();
     $("#success-alert").hide();
     $("#danger-alert").hide();
+    carregaListaCategorias();
 
     /*  MAIN DIV BLOCKS */
 
@@ -553,6 +610,11 @@ $(document).ready(function () {
         e.preventDefault();
         var arrDados = $(this).serializeArray();
         arrDados.push({"name":"cmd","value":"insertArtigo"});
+        $.each(arrCategoria, function(value, index) {
+            arrDados.push({"name":"cat[]","value":value});
+        })
+        //arrDados.push({"name":"cat[]","value":arrCategoria});
+        console.log(arrDados);
         insertArtigo(arrDados);
     });
 
@@ -616,6 +678,10 @@ $(document).ready(function () {
         
     });
 
+    $("#nav-paciente-epDor").click(function(){
+        $('#tabela-epDor').DataTable(); 
+    })
+
     previousMain[level] = $("#main_div").html();
 
     /*  */
@@ -652,6 +718,17 @@ $(document).ready(function () {
         //aprovarRejeitarArtigo($(this).attr("id-aprovar"), false);
         epDorID = $(this).attr("id-episodio");
         loadEpDorPintar($(this).attr("id-episodio"));
+    });
+
+    $("#addCat").click(function(e){
+        e.preventDefault();
+        var catselected = $("#addArticle select[name='categorias'] option:selected");
+        adicionaCategoria(catselected);
+    }); 
+
+    $(document).on("click", ".removeThisCat", function(){
+        var id = $(this).attr("id-cat");
+        removeCategoria(id);
     });
 
     

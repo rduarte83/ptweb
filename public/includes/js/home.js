@@ -1,3 +1,5 @@
+var utilizadorNotificaceos=0;
+
 function logout()
 {
     $.ajax({
@@ -33,12 +35,12 @@ function notificacoes(id){
         type:"POST",
         url:"includes/php/funcsWeb.php",
         data:{
-            "cmd":"getNotificacoes"
+            "cmd":"getNotification"
         },
         success: function(response) {
             console.log(response);
-            $("#error").html(response);
-            location.reload();
+            $("#notificacoes").html(response);
+            //location.reload();
         }
     })
 }
@@ -48,18 +50,53 @@ function numberNotificacoes(id){
         type:"POST",
         url:"includes/php/funcsWeb.php",
         data:{
-            "cmd":"getNotificacoes"
+            "cmd":"getNotificationNumber"
         },
         success: function(response) {
             console.log(response);
-            $("#error").html(response);
-            location.reload();
+            $("#numberNotificacoes").html(response);
+        }
+    })
+}
+
+function getAtualUser(){
+    $.ajax({
+        url:"includes/php/funcsWeb.php",
+        type:"POST",
+        data:{
+            "cmd":"getMyUser",
+        },
+        success:function(resposta){
+            console.log("AQUI->"+resposta);
+            utilizadorNotificaceos=resposta;
+        },
+        async: false
+    });
+}
+
+function notificacoesLidas(){
+    $.ajax({
+        type:"POST",
+        url:"includes/php/funcsWeb.php",
+        data:{
+            "cmd":"readNotification"
+        },
+        success: function(response) {
+            console.log(response);
+            $("#numberNotificacoes").html(response);
         }
     })
 }
 
 $(document).ready(function()
 {
+
+    getAtualUser();
+
+    numberNotificacoes(utilizadorNotificaceos);
+    notificacoes(utilizadorNotificaceos);
+
+
     $("#openDropDownUtentes").click(function(){
         $("div[class='dropdown-container Utentes']").slideToggle( "fast" );
     });
@@ -80,5 +117,12 @@ $(document).ready(function()
     $("#logout").click(function(){
         logout();
     });
+
+
+    $("#navbarDropdownAlertas").click(function(){
+        notificacoesLidas();
+    });
+    
+    
 });
 

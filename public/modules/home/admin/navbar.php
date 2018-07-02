@@ -15,11 +15,20 @@
                 <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownLogin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     <span class="glyphicon glyphicon-log-in"></span> <?php echo $_SESSION["nome"];?>
                 </a>
-                <a class="navbar-brand" href="#"><i class="fas fa-bell"></i></a>
                 <div class="dropdown-menu loginOptions">
                     <div id="pinicial" style="cursor:pointer;">Página Incial</div>
                     <div class="dropdown-divider"></div>
                     <div id="logout" style="cursor:pointer;"><i class="fas fa-sign-out-alt"></i>Sair</div>
+                </div>
+            </ul>
+
+            <ul class="navbar-nav navbar-right mr-right dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAlertas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <i id="numberNotificacoes" class="fas fa-bell"></i>
+                </a>
+                <!-- Notificacões -->
+                <div id="notificacoes" class="dropdown-menu rightMargin">
+                    <div class="dropdown-divider"></div>
                 </div>
             </ul>
         </div>
