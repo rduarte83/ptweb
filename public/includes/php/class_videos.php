@@ -65,7 +65,7 @@ class Videos
         $folder = "../uploads/";
 
         if(!file_exists($folder)){
-            mkdir($folder, 755);
+            mkdir($folder, 777);
         } 
         $db = new Database();
         foreach ($_FILES as $file){
